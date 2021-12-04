@@ -1,0 +1,26 @@
+.NavMenu a{
+    margin-left: 20px;
+  color: rgb(0, 0, 0);
+  text-decoration: none;
+  font-size: 20px;
+
+  position: relative;
+  
+  }
+  .NavMenu {
+    height: 50px;
+    display: flex;
+    
+    border-color: rgb(245, 104, 104);
+    border-style: solid;
+    border-width: 0.5px;
+    
+
+}
+.Nav{
+  align-items: center;
+  margin-left: 500px;
+  display: flex;
+
+    
+}

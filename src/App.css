@@ -1,0 +1,36 @@
+.app-wrapper{
+ display: grid;
+ grid-template-areas: 
+ "h h h"
+ "n n n"
+ "c c c"
+ "m m m";
+}
+.h{
+    grid-area: h;
+}
+.n{
+    grid-area: n;
+}
+.c{
+    grid-area: c;
+}
+.r{
+    grid-area:r;
+}
+.l{
+    grid-area:l;
+}
+.m{
+    grid-area:m;
+    background-color: black;
+}
+
+@import url('https://fonts.googleapis.com/css2?family=PT+Sans&display=swap');
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  font-family: 'PT Sans', sans-serif;
+}

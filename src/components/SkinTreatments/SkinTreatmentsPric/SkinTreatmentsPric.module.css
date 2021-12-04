@@ -1,0 +1,83 @@
+.PricCard{
+    margin-top: 40px;
+    margin-left: 50px;
+    margin-bottom: 20px;
+    width: 300px;
+    height: 225px;
+    background-color: rgb(250, 229, 229);
+    border-color: rgb(31, 6, 6);
+    border-style: solid;
+    border-width: 0.5px;
+    align-items: center;
+    
+}
+.NavbarClass {
+    
+    margin-top: -10px;
+    color:white;
+    background-color: gold;
+    align-items: center;
+}
+.include{
+    margin-left: 10px;
+    margin-top: 3px;
+}
+.Procedure{
+    margin-left: 10px;
+}
+.Procedure h5{
+    margin-left: 10px;
+    color: black;
+ 
+}
+.Pric{
+    margin-left: 10px;
+    margin-top: 3px;
+    color: black;
+}
+.PricCardBlock{
+    text-decoration: none;
+    display: flex;
+    flex-direction: row;
+   flex-flow: wrap ;
+
+}
+.Duration {
+    margin-left: 10px;
+    margin-top: 3px;
+    color: black;
+}
+.Prerequisite{
+    float: right;
+    margin-right: 10px;
+    margin-top: 3px;
+    color: black;
+}
+.ADD{
+    display: flex;
+
+}
+.Navbtn{
+    float: right;
+    margin-top: 5px;
+    border-radius: 30px;
+    margin-bottom: 5px;
+    display: flex;
+    align-items: center;
+    background-color: rgb(255, 254, 254);
+   
+}
+.NavbtnLink{
+    border-radius: 30px;
+    background-color: rgb(255, 253, 253);
+    border: none;
+    outline: none;
+    cursor: pointer;
+    transition: all 0.2s ease-in-out;
+    
+}
+.PricCard a{
+    
+    text-decoration:none;
+    color: rgb(204, 99, 117);
+}

@@ -1,0 +1,68 @@
+
+.Nav{
+    position: sticky;
+    top: 0;
+    width: 100%;
+    background: #000;
+    height: 120px;
+     display: flex;
+     justify-content: space-between;
+     padding: 0.5rem calc((100vw - 1000px) /2);
+     z-index: 10;
+}
+.active{
+    color: #15cdfc;
+}
+.NavMenu{
+    
+    display: flex;
+    align-items: center;
+}
+.Navbtn{
+    border-radius: 20px;
+
+    margin-top: 10px;
+    height: 50px;
+    display: flex;
+    align-items: center;
+    margin-right: -200px;
+    background-color: rgb(58, 53, 53);
+   
+}
+.NavbtnLink{
+    border-radius: 20px;
+    background-color: rgb(58, 53, 53);
+    padding: 10px 22px;
+    color: #fff;
+    border: none;
+    outline: none;
+    cursor: pointer;
+    transition: all 0.2s ease-in-out;
+    text-decoration: none;
+    
+}
+.logo img{
+    width: 180px;
+    
+}
+.logo{
+    width: 50px;
+    margin-top: 5px;
+    margin-left: -200px;
+    color: green
+
+    ;
+}
+.NavMenu a{
+  margin-left: 20px;
+color: gray;
+text-decoration: none;
+font-size: 18px;
+
+}
+.NavMenu a.active
+{
+    color: red;
+}
+
+        
