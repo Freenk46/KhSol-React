@@ -1,7 +1,5 @@
-import React from 'react';
 import Header from './Header'
 import {connect} from 'react-redux'
- 
   let mapStateToProps=(state) =>{
     return{
       HeaderNavbarDate: state.ManePagereducer.ManePage.HNbD
