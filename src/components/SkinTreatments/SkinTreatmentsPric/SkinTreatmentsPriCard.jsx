@@ -7,14 +7,9 @@ const SkinTreatmentsPricCard = (props) => {
       <SkinTreatmentsPricitme
          Duration={E.Duration} Procedure={E.Procedure} Pric={E.Pric} NavbarClass={E.NavbarClass}
          Prerequisite={E.Prerequisite} id={E.id} login={props.login} email={props.email}
-
-         AddNewProcedure={props.AddNewProcedure} UpdateNewName={props.UpdateNewName}
-         UpdateNewProcedureClass={props.UpdateNewProcedureClass} UpdateNewSurname={props.UpdateNewSurname}
-         UpdateNewNumber={props.UpdateNewNumber} UpdateNewEmail={props.UpdateNewEmail}
-         UpdateNewGender={props.UpdateNewGender} UpdateNewProcedureName={props.UpdateNewProcedureName}
-
+         AddNewProcedureCart={props.AddNewProcedureCart}
+         isAuth={props.isAuth}
       />);
-
    return (
       <div>
          <div className={s.PricCardBlock} >

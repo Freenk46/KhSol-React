@@ -1,25 +1,18 @@
-import React from 'react';
+
 import ContentBlock from './ContetBlock';
 import { connect } from 'react-redux'
-import { AddNewProcedure, UpdateNewName, UpdateNewSurname, UpdateNewEmail, UpdateNewProcedureName, UpdateNewProcedureClass, UpdateNewNumber, UpdateNewGender } from '../../redux/NewProcedure-reducer';
+import { AddNewProcedureCart, } from '../../redux/NewProcedure-reducer';
 let mapStateToProps = (state) => {
 
   return {
-
     PathMen: state.LaserHairRemovalreducer.LaserHairRemoval.PathMen,
     PathWomen: state.LaserHairRemovalreducer.LaserHairRemoval.PathWomen,
-    LHRPricNavbarDate: state.LaserHairRemovalreducer.LaserHairRemoval.PricNavbarDate,
-    MostPopularProcedurePric: state.LaserHairRemovalreducer.LaserHairRemoval.MostPopularProcedurePric,
-    UpperBodyProcedurePric: state.LaserHairRemovalreducer.LaserHairRemoval.UpperBodyProcedurePric,
-    FaceNeckProcedurePric: state.LaserHairRemovalreducer.LaserHairRemoval.FaceNeckProcedurePric,
-    LowerBodyProcedurePric: state.LaserHairRemovalreducer.LaserHairRemoval.LowerBodyProcedurePric,
-    FullBodyProcedurePric: state.LaserHairRemovalreducer.LaserHairRemoval.FullBodyProcedurePric,
-    STPricNavbarDate: state.SkinTreatmentsreducer.SkinTreatments.PricNavbarDate,
-    Microdermabrasion: state.SkinTreatmentsreducer.SkinTreatments.Microdermabrasion,
-    Rejuvapen: state.SkinTreatmentsreducer.SkinTreatments.Rejuvapen,
-    LEDlightTherapy: state.SkinTreatmentsreducer.SkinTreatments.LEDlightTherapy,
-    HydraFacial: state.SkinTreatmentsreducer.SkinTreatments.HydraFacial,
-    CosmeticGradePeels: state.SkinTreatmentsreducer.SkinTreatments.CosmeticGradePeels,
+    LHRPricNavbarDate: state.LaserHairRemovalreducer.LaserHairRemoval.PricNavbarData,
+    MostPopularProcedurePric: state.LaserHairRemovalreducer.LaserHairRemoval.MostPopular,
+    UpperBodyProcedurePric: state.LaserHairRemovalreducer.LaserHairRemoval.UpperBody,
+    FaceNeckProcedurePric: state.LaserHairRemovalreducer.LaserHairRemoval.FaceNeck,
+    LowerBodyProcedurePric: state.LaserHairRemovalreducer.LaserHairRemoval.LowerBody,
+    FullBodyProcedurePric: state.LaserHairRemovalreducer.LaserHairRemoval.FullBody,
     text1: state.LaserHairRemovalreducer.LaserHairRemoval.InformationNet.text1,
     text2: state.LaserHairRemovalreducer.LaserHairRemoval.InformationNet.text2,
     text3: state.LaserHairRemovalreducer.LaserHairRemoval.InformationNet.text3,
@@ -30,15 +23,10 @@ let mapStateToProps = (state) => {
     Mimg1: state.LaserHairRemovalreducer.LaserHairRemoval.InformationNet.Mimg1,
     Mimg2: state.LaserHairRemovalreducer.LaserHairRemoval.InformationNet.Mimg2,
     Mimg3: state.LaserHairRemovalreducer.LaserHairRemoval.InformationNet.Mimg3,
-    email: state.authReducer.email,
-    login: state.authReducer.login,
-    id: state.authReducer.id,
-
   }
 }
 
 const ContentBlockConteiner = connect(mapStateToProps,
-  AddNewProcedure, UpdateNewName, UpdateNewSurname,
-  UpdateNewEmail, UpdateNewProcedureName, UpdateNewProcedureClass,
-  UpdateNewNumber, UpdateNewGender)(ContentBlock)
+  AddNewProcedureCart,
+)(ContentBlock)
 export default ContentBlockConteiner;

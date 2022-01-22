@@ -1,18 +1,15 @@
-import RegistLaserHairRemoval from './RegistLaserHairRemoval/RegistLaserHairRemoval';
-import ImageSlider from '../Slider/ImageSlider';
-import { SliderData } from '../Slider/SliderData';
+import FormRegistProcedureConteiner from './FormRegistProcedure/FormRegistProcedureConteiner';
+import s from '../RegisterProcedure/FormRegistProcedure/RegisterProcedure.module.css'
 
 const RegisterProcedure = (props) => {
 
     return (
-        <div>
-            <div>
-                <ImageSlider slides={SliderData} />
+        <div className={s.formcontainer}>
+            <div className={s.formcontentleft}>
             </div>
-            <div>
-                <RegistLaserHairRemoval />
-            </div>
+            <FormRegistProcedureConteiner />
         </div>
+
     );
 }
 export default RegisterProcedure;

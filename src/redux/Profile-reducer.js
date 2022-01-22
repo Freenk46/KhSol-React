@@ -16,8 +16,6 @@ const ProfileReducer = (state = initialState, action) => {
    }
 }
 export const setUsersProfile = (Profile) => ({ type: SET_USERS_PROFILE, Profile })
-
-
 export const getUsersProfileThunk = (userId) => (dispatch) => {
    userAPI.getProfile(userId).then(response => {
       dispatch(setUsersProfile(response.data));

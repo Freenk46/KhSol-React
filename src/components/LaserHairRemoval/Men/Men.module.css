@@ -1,0 +1,51 @@
+.Menwrapper {
+    display: grid;
+    grid-template-areas:
+        "p "
+        "n "
+        "c "
+        "i "
+        "b ";
+    background-color: rgb(250, 236, 238);
+}
+.PricNavbar {
+    margin-top: -40px;
+    grid-area: i;
+    height: 50pxs;
+    color: rgb(0, 0, 0);
+    text-decoration: none;
+    font-size: 20px;
+    background-color: rgb(250, 236, 238);
+}
+
+.x {
+    grid-area: p;
+
+    align-items: center;
+    margin-bottom: 60px;
+}
+
+.c {
+    grid-area: c;
+
+    align-items: center;
+    margin-bottom: 60px;
+    background-color: white;
+}
+.c h1 {
+    margin-bottom: 40px;
+    margin-top: 50px;
+    margin-left: 700px;
+}
+
+.p {
+    grid-area: p;
+}
+.n {
+    grid-area: n;
+}
+.LaserPricboxs {
+    grid-area: b;
+
+    background-color: rgb(250, 236, 238);
+}

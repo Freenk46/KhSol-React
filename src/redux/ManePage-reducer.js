@@ -2,10 +2,11 @@ let initialState = {
   ManePage: {
     NbD: [
       { name: 'LaserHairRemoval', NavbarPath: 'LaserHairRemoval', },
-      { name: 'SkinTreatments', NavbarPath: 'SkinTreatments' },
-      { name: 'CosmeticInjections ', NavbarPath: 'COSMETIC INJECTIONS' },
+      { name: 'SkinCare', NavbarPath: 'SkinCare' },
+      { name: 'CosmeticInjections ', NavbarPath: 'CosmeticInjections' },
       { name: 'Promo', NavbarPath: 'Promo' },
-      { name: 'Procedure', NavbarPath: 'Procedure' }
+      { name: 'Procedure', NavbarPath: 'Procedure' },
+      { name: 'Register', NavbarPath: 'Register' },
     ],
     HNbD: [
       { name: 'OurStory', HeaderNavbarPath: 'OurStory' },
@@ -14,6 +15,7 @@ let initialState = {
       { name: 'Users', HeaderNavbarPath: 'Users' },
       { name: 'MyProfile', HeaderNavbarPath: 'MyProfile' }
     ],
+    img: 'https://i.pinimg.com/736x/cf/04/c1/cf04c1f86d5d9920131276f4db7ea7bf.jpg',
   }
 }
 const ManePagereducer = (state = initialState) => {

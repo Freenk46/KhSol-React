@@ -1,0 +1,145 @@
+.table_wrapper {
+   font-family: Arial, Helvetica, sans-serif;
+   border-collapse: collapse;
+   width: 95%;
+   margin: 50px 40px;
+   font-size: 25px;
+   border: 1px solid #ddd;
+   font-size: 25px;
+}
+.table_header {
+   padding-top: 12px;
+   padding-bottom: 12px;
+   text-align: left;
+   background-color: #000000;
+   color: white;
+}
+.table_wrapper tr {
+   width: 100%;
+   border-bottom: 0.5px black solid;
+   height: 50px;
+}
+.table_wrapper td {
+   width: 20px;
+   border-bottom: 0.5px black solid;
+   text-align: center;
+}
+.tr:hover {
+   border-bottom: 0.5px pink solid;
+   height: 55px;
+   background-color: pink;
+}
+.Cart_wrapper {
+   font-family: Arial, Helvetica, sans-serif;
+   border-collapse: collapse;
+   width: 100%;
+   font-size: 25px;
+   border: 1px solid #ddd;
+   padding: 8px;
+   display: flex;
+}
+.Cart_Header {
+}
+.Editer_conteiner {
+   display: flex;
+   justify-content: space-between;
+   width: 90%;
+   margin: 30px 50px -40px 50px;
+   height: 50px;
+   border-bottom: solid 0.5px black;
+}
+.Del_btn_conteiner {
+   display: flex;
+   align-items: center;
+   margin-left: 20px;
+}
+.Del_btn {
+   margin: auto;
+   display: flex;
+   text-align: center;
+   justify-content: center;
+   align-items: center;
+   text-transform: uppercase;
+   position: relative;
+   background-color: black;
+   color: white;
+   height: 30px;
+   width: 70px;
+   color: #fff;
+   transition-duration: 0s;
+}
+.Del_btn:hover {
+   top: 2px;
+   box-shadow: 0 3px 0px #222222;
+   background-color: #222222;
+}
+.Edit_btn_conteiner {
+   display: flex;
+   align-items: center;
+}
+.Edit_btn {
+   display: flex;
+   text-align: center;
+   justify-content: center;
+   align-items: center;
+   text-transform: uppercase;
+   position: relative;
+   background-color: black;
+   color: white;
+   height: 30px;
+   width: 70px;
+   color: #fff;
+   transition-duration: 0s;
+}
+.Edit_btn:hover {
+   top: 2px;
+   box-shadow: 0 3px 0px #222222;
+   background-color: #222222;
+}
+.TotalPrice_conteiner {
+   display: flex;
+   align-items: center;
+}
+.TotalPrice_title {
+   color: pink;
+   font-size: 35px;
+}
+
+.Bay_btn_conteiner {
+   display: flex;
+   align-items: center;
+   margin-right: 110px;
+   float: right;
+   margin-bottom: 50px;
+}
+.Bay_btn {
+   display: flex;
+   text-align: center;
+   justify-content: center;
+   align-items: center;
+   text-transform: uppercase;
+   position: relative;
+   background-color: rgb(255, 208, 215);
+   color: rgb(255, 255, 255);
+   height: 30px;
+   width: 120px;
+   color: #fff;
+   transition-duration: 0s;
+   border: solid 0.5px white;
+}
+.Bay_btn:hover {
+   top: 2px;
+   box-shadow: 0 3px 0px rgb(250, 213, 219);
+   background-color: rgb(248, 210, 216);
+}
+.table_wrapper tbody {
+   display: block;
+   width: 100%;
+   min-height: 100px;
+   max-height: 300px;
+   overflow: auto;
+}
+thead,
+tbody tr {
+   display: table;
+}

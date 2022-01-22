@@ -1,44 +1,98 @@
-.Profile_wrapper {
+.About_wrapper {
 }
-.Profile_Conteiner {
+.About_Conteiner {
+   margin-top: -40px;
    display: flex;
+   width: 100%;
+   background-color: #fff5f0;
+   height: 350px;
 }
-.Profile_title_conteiner {
+
+.About_info_conteiner {
+   display: flex;
+   flex-direction: column;
+   margin: 40px 30px 100px 100px;
+   width: 50%;
 }
-.Profile_title {
-   margin: 0 auto;
-   align-items: center;
+.tile_conteiner {
+   margin-bottom: 20px;
+}
+.About_title {
+   color: black;
+   font-size: 60px;
+}
+.text_conteiner {
+   margin-bottom: 20px;
+}
+.About_text {
+   color: rgb(58, 58, 58);
+}
+
+.btn_conteiner {
+   margin-top: 20px;
+}
+.About_btn {
+   display: flex;
    text-align: center;
+   justify-content: center;
+   align-items: center;
+   text-transform: uppercase;
+   position: relative;
+   background-color: rgb(255, 254, 254);
+   color: rgb(0, 0, 0);
+   height: 50px;
+   width: 300px;
+   transition-duration: 0s;
 }
-.Profile_Img_Conteiner {
-   margin: 40px auto;
+.About_btn:hover {
+   top: 2px;
+   box-shadow: 0 3px 0px #b3b1b1;
+   background-color: #b1adad;
+}
+.About_video_conteienr {
+   margin: 20px 100px 0 50px;
+}
+.About_video_conteienr img {
+   margin-top: 20px;
+   width: 250px;
+   height: 250px;
+   border-radius: 120px;
+}
+
+.Menu_item_conteiner {
+   margin: 30px 5% 50px 5%;
+   width: 90%;
+   font-size: 20px;
+}
+.Menu_conteiner {
+   height: 50px;
+   border-bottom: rgb(0, 0, 0) solid 0.5px;
+   border-top: rgb(0, 0, 0) solid 0.5px;
+   align-items: center;
    display: flex;
-   width: 200px;
+   background-color: white;
+   justify-content: space-between;
 }
-.Profile_Img {
-   width: 200px;
+.Menu_list {
+   background-color: white;
+   margin: 10px 0;
+   align-items: center;
+   display: flex;
 }
-.Profile_Info_Conteiner {
-   margin: 40px auto;
-}
-.Profile_Info_name {
+.Menu_list_item {
+   margin: 0 100px;
+   display: flex;
+   text-align: center;
+   justify-content: center;
+   align-items: center;
+   position: relative;
+   background-color: rgb(255, 254, 254);
+   color: rgb(0, 0, 0);
+   transition-duration: 0s;
+   text-decoration: none;
    font-size: 20px;
 }
-.Profile_Info_Country {
-   font-size: 15px;
-}
-.Profile_Info_City {
-   font-size: 20px;
-}
-.Profile_Info_Gender {
-   font-size: 20px;
-}
-.Profile_Info_Number {
-   font-size: 20px;
-}
-.Procedure_conteiner {
-   margin: 40px auto;
-   width: 900px;
-   flex: end;
-   font-size: 20px;
+.Menu_list_item:hover {
+   top: 2px;
+   color: rgb(0, 0, 0);
 }

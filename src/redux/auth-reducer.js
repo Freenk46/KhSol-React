@@ -6,6 +6,7 @@ let initialState = {
    email: null,
    login: null,
    isAuth: false,
+   img: 'https://i.pinimg.com/736x/cf/04/c1/cf04c1f86d5d9920131276f4db7ea7bf.jpg',
 }
 const authReducer = (state = initialState, action) => {
    switch (action.type) {
@@ -14,20 +15,35 @@ const authReducer = (state = initialState, action) => {
             ...state,
             ...action.data,
             isAuth: true,
-
          }
       }
       default: return state;
    }
 }
 
-export const SetAuthUserData = (id, email, login) => ({ type: SET_USERS_DATA, data: { id, email, login } })
-export const getAuthUsersDataThunk = (userId) => (dispatch) => {
-   authAPI.authMe().then(response => {
+export const SetAuthUserData = (id, email, login, isAuth) => ({ type: SET_USERS_DATA, data: { id, email, login, isAuth } })
+export const getAuthUsersDataThunk = (id) => (dispatch) => {
+   return authAPI.authMe().then(response => {
       if (response.data.resultCode === 0) {
-         let { id, email, login } = response.data.data;
-         dispatch(SetAuthUserData(id, email, login));
+         let { id, login, email } = response.data.data;
+         dispatch(SetAuthUserData(id, email, login, true));
       }
    });
+}
+export const login = (email, password, rememberMe) => (dispatch) => {
+   authAPI.login(email, password, rememberMe)
+      .then(response => {
+         if (response.data.resultCode === 0) {
+            dispatch(getAuthUsersDataThunk())
+         }
+      });
+}
+export const logout = () => (dispatch) => {
+   authAPI.logout()
+      .then(response => {
+         if (response.data.resultCode === 0) {
+            dispatch(SetAuthUserData(null, null, null, false))
+         }
+      });
 }
 export default authReducer;

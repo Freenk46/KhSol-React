@@ -3,7 +3,7 @@
     top: 0;
     width: 100%;
     background: #000;
-    height: 120px;
+    height: 80px;
     display: flex;
     justify-content: space-between;
     padding: 0.5rem calc((100vw - 1000px) / 2);
@@ -13,23 +13,20 @@
     margin: auto 0;
     display: flex;
     align-items: center;
+    flex-direction: row;
 }
 .Header_List {
     margin: auto 0;
     display: flex;
     align-items: center;
 }
-.Head_Menu_item {
-}
-.Head_Menu_link {
-}
+
 .SignUp_Conteiner {
     border-radius: 20px;
     margin: auto 0;
     height: 50px;
     display: flex;
     align-items: center;
-    margin-right: -250px;
     background-color: rgb(58, 53, 53);
 }
 .SignUp_Link {
@@ -44,8 +41,10 @@
     text-decoration: none;
 }
 .Header_Logo_Conteiner {
-    width: 50px;
-    margin: auto 0;
+    width: 30px;
+    display: flex;
+    align-items: center;
+    flex-direction: row;
     margin-left: -200px;
 }
 .Head_Menu_link {
@@ -55,11 +54,10 @@
     font-size: 18px;
 }
 .Profile_conteiner {
-    margin: auto 0;
+    margin: auto -40px;
     align-items: center;
     display: flex;
     justify-content: flex-end;
-    margin-right: -200px;
     flex-direction: column;
 }
 .Profile_Name {
@@ -69,28 +67,25 @@
     text-decoration: none;
 }
 .Profile_Logo_Conteiner {
-    width: 30px;
-    margin: auto 0;
-    margin-left: -50px;
+    margin: auto 0px;
     color: green;
     text-decoration: none;
-    margin-right: 20px;
 }
 .Header_Logo {
-    width: 100px;
-    border-radius: 40px;
+    width: 70px;
+    border-radius: 25px;
 }
 .Profile_Logo {
-    width: 50px;
+    width: 60px;
+    border-radius: 29px;
 }
 .Profile_Logo_Conteiner a {
     color: white;
 }
 .Cart_conteiner {
-    margin: auto 0;
+    margin: auto 50px;
     display: flex;
     align-items: center;
-    margin-right: -200px;
     color: white;
 }
 .Cart_Logo_Conteiner {
@@ -98,6 +93,11 @@
     text-decoration: none;
 }
 .Cart_logo {
-    width: 50px;
+    width: 30px;
     color: white;
+}
+.Header_end_conteiner {
+    display: flex;
+    justify-content: space-between;
+    margin-right: -240px;
 }

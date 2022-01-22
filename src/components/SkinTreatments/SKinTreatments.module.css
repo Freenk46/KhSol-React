@@ -2,6 +2,8 @@
     display: grid;
     grid-template-areas:
         "p p"
+        "a a"
+        "x x"
         "c c"
         "i i"
         "b b";
@@ -50,6 +52,9 @@
 .p {
     grid-area: p;
 }
+.a {
+    grid-area: a;
+}
 .n {
     width: 100%;
     grid-area: n;
@@ -58,4 +63,7 @@
     grid-area: b;
 
     background-color: rgb(250, 236, 238);
+}
+.x {
+    grid-area: x;
 }

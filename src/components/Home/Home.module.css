@@ -1,0 +1,26 @@
+.Home_wrapper {
+  display: grid;
+  grid-template-areas:
+    "p p"
+    "a a"
+    "l l"
+    "s s"
+    "i i";
+
+  background-color: rgb(250, 236, 238);
+}
+.p {
+  grid-area: p;
+}
+.a {
+  grid-area: a;
+}
+.l {
+  grid-area: l;
+}
+.s {
+  grid-area: s;
+}
+.i {
+  grid-area: i;
+}

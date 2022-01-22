@@ -1,94 +1,99 @@
-const ADD_ROCEDURE = 'ADD-ROCEDURE';
-const UPDATE_NEW_NAME = 'UPDATE-NEW-NAME';
-const UPDATE_NEW_SURNAME = 'UPDATE-NEW-SURNAME';
-const UPDATE_NEW_EMAIL = 'UPDATE-NEW-EMAIL';
-const UPDATENEW_PROCEDURENAME = 'UPDATENEW-PROCEDURENAME';
-const UPDATENEW_PROCEDURECLASS = 'UPDATENEW-PROCEDURECLASS';
-const UPDATE_NEW_NUMBER = 'UPDATE-NEW-NAMBER';
-const UPDATE_NEW_GENDER = 'UPDATE-NEW-GENDER';
+const ADD_ROCEDURE_CART = 'ADD_ROCEDURE_CART';
+const CHANGE_NEW_ID = 'CHANGE_NEW_ID';
+const DEL_NEW_PROCEDURE_CART = 'DEL_NEW_PROCEDURE_CART';
+const BAY_NEW_ROCEDURE = 'BAY_NEW_ROCEDURE';
 let initialState = {
   NewProcedure: {
-    ProcedureLaserHairRemoval: [
-      { id: '0', ProcedureName: 'MaleFullBody', ProcedureClass: 'FullBody', Gender: 'Men', Name: 'Sergi', Surname: 'gvazava', Email: 'serguna.sergi@gmail.com', Numer: '551093330' },
+    MyProcedure: [
 
     ],
-    NewElementProcedureName: 'Enter your ProcedureName',
-    NewElementProcedureClass: 'Enter your ProcedureClass',
-    NewElementGender: 'Enter your Gender',
-    NewElementName: 'Enter your Name',
-    NewElementSurname: 'Enter your Surname',
-    NewElementEmail: 'Enter your Eemail',
-    NewElementNumber: 'Enter your Number',
-    id: 0,
+    CartProcedure: [
 
+    ],
+    NewElementWhen: '12/07/2021 05:04 PM',
+    id: 0,
+    Price: 0,
+    ProcedureChangeId: null,
   },
 }
 const NewProcedureReducer = (state = initialState, action) => {
+  var totalprice = 0;
+  let id = [state.NewProcedure.CartProcedure.length + 1];
   switch (action.type) {
-    case ADD_ROCEDURE: {
-      let id = [state.NewProcedure.ProcedureLaserHairRemoval.length + 1]
-      let NewProcedure = {
-
-        id: id,
-        Name: state.NewProcedure.NewElementName,
-        Surname: state.NewProcedure.NewElementSurname,
-        Email: state.NewProcedure.NewElementEmail,
-        ProcedureName: state.NewProcedure.NewElementProcedureName,
-        ProcedureClass: state.NewProcedure.NewElementProcedureClass,
-        Numer: state.NewProcedure.NewElementNumber,
-        Gender: state.NewProcedure.NewElementGender,
+    case BAY_NEW_ROCEDURE: {
+      let stateCopy = { ...state };
+      stateCopy.NewProcedure.MyProcedure = [...state.NewProcedure.MyProcedure];
+      stateCopy.NewProcedure.CartProcedure = [...state.NewProcedure.CartProcedure];
+      for (var m = 0; m < state.NewProcedure.CartProcedure.length; m++) {
+        let MyProcedure = {
+          id: state.NewProcedure.MyProcedure.length + 1,
+          ProcedureName: state.NewProcedure.CartProcedure[m].ProcedureName,
+          ProcedureClass: state.NewProcedure.CartProcedure[m].ProcedureClass,
+          When: state.NewProcedure.CartProcedure[m].When,
+          Time: state.NewProcedure.CartProcedure[m].Time,
+          Price: state.NewProcedure.CartProcedure[m].Price,
+        };
+        stateCopy.NewProcedure.MyProcedure.push(MyProcedure);
+      };
+      while (stateCopy.NewProcedure.CartProcedure.length) {
+        stateCopy.NewProcedure.CartProcedure.pop();
       }
+      stateCopy.NewProcedure.Price = 0;
+      stateCopy.NewProcedure.id = 0;
+      return state;
+    };
+    case DEL_NEW_PROCEDURE_CART: {
+      let id = state.NewProcedure.ProcedureChangeId;
+      var index = state.NewProcedure.CartProcedure.map(x => {
+        return x.id;
+      }).indexOf(id);
       let stateCopy = { ...state };
+      stateCopy.NewProcedure.CartProcedure = [...state.NewProcedure.CartProcedure];
+      stateCopy.NewProcedure.CartProcedure.splice(index, 1);
+      for (var k = 0; k < stateCopy.NewProcedure.CartProcedure.length; k++) {
+        stateCopy.NewProcedure.CartProcedure[k].id = k + 1
+      };
+      for (var j = 0; j < state.NewProcedure.CartProcedure.length; j++) {
+        totalprice += state.NewProcedure.CartProcedure[j].Price;
+      };
+      if (state.NewProcedure.CartProcedure.length === 0) (
+        id = 0
+      );
+      stateCopy.NewProcedure.Price = totalprice;
       stateCopy.NewProcedure.id = id
-      stateCopy.NewProcedure.ProcedureLaserHairRemoval = [...state.NewProcedure.ProcedureLaserHairRemoval];
-      stateCopy.NewProcedure.ProcedureLaserHairRemoval.push(NewProcedure);
       return state;
     }
-    case UPDATE_NEW_NAME: {
+    case ADD_ROCEDURE_CART: {
+      totalprice = action.FormData.Price;
+      for (var i = 0; i < state.NewProcedure.CartProcedure.length; i++) {
+        totalprice += state.NewProcedure.CartProcedure[i].Price;
+      }
+      let NewProcedure = {
+        id: id,
+        ProcedureName: action.FormData.ProcedureName,
+        ProcedureClass: action.FormData.ProcedureClass,
+        When: state.NewProcedure.NewElementWhen,
+        Time: action.FormData.Time,
+        Price: action.FormData.Price,
+      };
       let stateCopy = { ...state };
-      stateCopy.NewProcedure.NewElementName = action.Name;
+      stateCopy.NewProcedure.CartProcedure = [...state.NewProcedure.CartProcedure];
+      stateCopy.NewProcedure.CartProcedure.push(NewProcedure);
+      stateCopy.NewProcedure.Price = totalprice
+      stateCopy.NewProcedure.id = id
       return state;
-    }
-    case UPDATE_NEW_SURNAME: {
+    };
+    case CHANGE_NEW_ID: {
       let stateCopy = { ...state };
-      stateCopy.NewProcedure.NewElementSurname = action.Surname;
+      stateCopy.NewProcedure.ProcedureChangeId = action.id;
       return state;
-    }
-    case UPDATE_NEW_EMAIL: {
-      let stateCopy = { ...state };
-      stateCopy.NewProcedure.NewElementEmail = action.Email;
-      return state;
-    }
-    case UPDATENEW_PROCEDURENAME: {
-      let stateCopy = { ...state };
-      stateCopy.NewProcedure.NewElementProcedureName = action.ProcedureName;
-      return state;
-    }
-    case UPDATENEW_PROCEDURECLASS: {
-      let stateCopy = { ...state };
-      stateCopy.NewProcedure.NewElementProcedureClass = action.ProcedureClass;
-      return state;
-    }
-    case UPDATE_NEW_NUMBER: {
-      let stateCopy = { ...state };
-      stateCopy.NewProcedure.NewElementNumber = action.Number;
-      return state;
-    }
-    case UPDATE_NEW_GENDER: {
-      let stateCopy = { ...state };
-      stateCopy.NewProcedure.NewElementGender = action.Gender;
-      return state;
-    }
+    };
     default:
       return state;
-  }
-}
-export const AddNewProcedure = () => ({ type: ADD_ROCEDURE })
-export const UpdateNewName = (Name) => ({ type: UPDATE_NEW_NAME, Name })
-export const UpdateNewSurname = (Surname) => ({ type: UPDATE_NEW_SURNAME, Surname })
-export const UpdateNewEmail = (Email) => ({ type: UPDATE_NEW_EMAIL, Email })
-export const UpdateNewProcedureName = (ProcedureName) => ({ type: UPDATENEW_PROCEDURENAME, ProcedureName })
-export const UpdateNewProcedureClass = (ProcedureClass) => ({ type: UPDATENEW_PROCEDURECLASS, ProcedureClass })
-export const UpdateNewNumber = (Number) => ({ type: UPDATE_NEW_NUMBER, Number })
-export const UpdateNewGender = (Gender) => ({ type: UPDATE_NEW_GENDER, Gender })
+  };
+};
+export const AddNewProcedureCart = (FormData) => ({ type: ADD_ROCEDURE_CART, FormData });
+export const ChangeNewId = (id) => ({ type: CHANGE_NEW_ID, id });
+export const DelNewProcedureCart = () => ({ type: DEL_NEW_PROCEDURE_CART });
+export const BayNewProcedure = () => ({ type: BAY_NEW_ROCEDURE });
 export default NewProcedureReducer;

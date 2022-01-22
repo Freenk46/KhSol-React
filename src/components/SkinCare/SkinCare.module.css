@@ -1,0 +1,40 @@
+.SkinCare_wrapper {
+   display: grid;
+   grid-template-areas:
+      "p p"
+      "a a"
+      "x x"
+      "c c"
+      "i i"
+      "b b";
+}
+.w {
+   grid-area: w;
+   float: left;
+   margin-left: 200px;
+}
+
+.m {
+   grid-area: m;
+   margin-right: 300px;
+   float: right;
+}
+
+.x {
+   grid-area: p;
+   align-items: center;
+   margin-bottom: 60px;
+}
+.p {
+   grid-area: p;
+}
+.a {
+   grid-area: a;
+}
+.n {
+   grid-area: n;
+}
+
+.x {
+   grid-area: x;
+}

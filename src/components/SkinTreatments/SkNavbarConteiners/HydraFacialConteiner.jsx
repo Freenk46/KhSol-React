@@ -1,6 +1,6 @@
 import SkinTreatments from '../SkinTreatments'
 import { connect } from 'react-redux'
-import { AddNewProcedure, UpdateNewName, UpdateNewSurname, UpdateNewEmail, UpdateNewProcedureName, UpdateNewProcedureClass, UpdateNewNumber, UpdateNewGender } from '../../../redux/NewProcedure-reducer';
+import { AddNewProcedureCart, } from '../../../redux/NewProcedure-reducer';
 let mapStateToProps = (state) => {
 
   return {
@@ -9,14 +9,14 @@ let mapStateToProps = (state) => {
     email: state.authReducer.email,
     login: state.authReducer.login,
     id: state.authReducer.id,
+    Poster: state.SkinTreatmentsreducer.SkinTreatments.Poster,
+    About: state.SkinTreatmentsreducer.SkinTreatments.About,
 
   }
 }
 
 const HydraFacialConteiner = connect(mapStateToProps,
   {
-    AddNewProcedure, UpdateNewName, UpdateNewSurname,
-    UpdateNewEmail, UpdateNewProcedureName, UpdateNewProcedureClass,
-    UpdateNewNumber, UpdateNewGender
+    AddNewProcedureCart,
   })(SkinTreatments)
 export default HydraFacialConteiner;

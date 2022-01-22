@@ -1,6 +1,8 @@
 import SkinTreatments from '../SkinTreatments'
 import { connect } from 'react-redux'
-import { AddNewProcedure, UpdateNewName, UpdateNewSurname, UpdateNewEmail, UpdateNewProcedureName, UpdateNewProcedureClass, UpdateNewNumber, UpdateNewGender } from '../../../redux/NewProcedure-reducer';
+import { AddNewProcedureCart, } from '../../../redux/NewProcedure-reducer';
+import { withAuthRedirect } from '../../../hoc/withAuthRedirect';
+import { compose } from 'redux';
 let mapStateToProps = (state) => {
    return {
       STPricNavbarData: state.SkinTreatmentsreducer.SkinTreatments.PricNavbarDate,
@@ -8,13 +10,19 @@ let mapStateToProps = (state) => {
       email: state.authReducer.email,
       login: state.authReducer.login,
       id: state.authReducer.id,
+      isAuth: state.authReducer.isAuth,
+      Poster: state.SkinTreatmentsreducer.SkinTreatments.Poster,
+      About: state.SkinTreatmentsreducer.SkinTreatments.About,
    }
 }
 
-const SkinTreatmentsConteiner = connect(mapStateToProps,
-   {
-      AddNewProcedure, UpdateNewName, UpdateNewSurname,
-      UpdateNewEmail, UpdateNewProcedureName, UpdateNewProcedureClass,
-      UpdateNewNumber, UpdateNewGender
-   })(SkinTreatments)
+const SkinTreatmentsConteiner = compose(
+   connect(mapStateToProps,
+      {
+         AddNewProcedureCart,
+      }),
+   withAuthRedirect
+
+)
+   (SkinTreatments)
 export default SkinTreatmentsConteiner;

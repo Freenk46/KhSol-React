@@ -1,10 +1,11 @@
 import s from './Header.module.css';
-import { NavLink } from 'react-router-dom';
+import { Navigate, NavLink } from 'react-router-dom';
 import HeaderNavbaritem from './HeaderNavbaritem/HederNavbaritem';
+
 const Header = (props) => {
+
     let HeaderNavbarElements = props.HeaderNavbarDate.map((E) => <HeaderNavbaritem name={E.name} HeaderNavbarPath={E.HeaderNavbarPath} />);
     return (
-
         <div className={s.wrapper}>
             <div className={s.Header_Logo_Conteiner}>
                 <NavLink to="/Home" >
@@ -16,30 +17,31 @@ const Header = (props) => {
                     {HeaderNavbarElements}
                 </ul>
             </div>
-            <div className={s.Profile_conteiner}>
-                <div className={s.Profile_Logo_Conteiner}>
-
-                    <NavLink to="/MyProfile" >
-                        <img className={s.Profile_Logo} src={"https://i.pinimg.com/originals/1b/f2/b8/1bf2b80b8d29d938deafddb4c393a653.jpg"} alt="" />
-                        {props.login}
-                    </NavLink>
+            <div className={s.Header_end_conteiner}>
+                <div className={s.Profile_conteiner}>
+                    <div className={s.Profile_Logo_Conteiner}>
+                        <NavLink to="/MyProfile/Cart" >
+                            <img className={s.Profile_Logo} src={"https://i.pinimg.com/736x/cf/04/c1/cf04c1f86d5d9920131276f4db7ea7bf.jpg"} alt="" />
+                        </NavLink>
+                    </div>
                 </div>
+                <div className={s.Cart_conteiner}>
+                    <div className={s.Cart_Logo_Conteiner}>
+                        <NavLink to="/MyProfile/Cart" >
+                            <img className={s.Cart_logo} src={"https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQGd2sjxFQjvIeJHrB6h01ODTyCuzYmEwvy1w&usqp=CAU"} alt="" />
+                        </NavLink>
+                        {props.Id}
+                        <br />
+                        {props.TotalPrice}$
 
-            </div>
-            <div className={s.Cart_conteiner}>
-                <div className={s.Cart_Logo_Conteiner}>
-                    <NavLink to="/MyProfile" >
-                        <img className={s.Cart_logo} src={"https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQGd2sjxFQjvIeJHrB6h01ODTyCuzYmEwvy1w&usqp=CAU"} alt="" />
-                    </NavLink>
-                    {props.Id}
+                    </div>
                 </div>
+                <button className={s.SignUp_Conteiner}>
+                    {props.isAuth ? <button className={s.SignUp_Link} onClick={props.logout}>Logout</button>
+                        : <NavLink className={s.SignUp_Link} to="/login">Login</NavLink>}
 
+                </button>
             </div>
-
-            <button className={s.SignUp_Conteiner}>
-                {props.isAuth ? <NavLink className={s.SignUp_Link} to="sign-up">Log out</NavLink>
-                    : <NavLink className={s.SignUp_Link} to="sign-up">Log In</NavLink>}
-            </button>
         </div >
     );
 }

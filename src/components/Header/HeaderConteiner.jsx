@@ -1,18 +1,16 @@
 import Header from './Header'
 import React from 'react';
 import { connect } from 'react-redux'
-import { getAuthUsersDataThunk } from '../../../src/redux/auth-reducer';
+import { logout } from '../../redux/auth-reducer';
 
 
 class HeaderConteiner extends React.Component {
   componentDidMount() {
-    this.props.getAuthUsersDataThunk();
+
   }
   render() {
     return <Header {...this.props} />
   }
-
-
 }
 let mapStateToProps = (state) => {
   return {
@@ -20,9 +18,10 @@ let mapStateToProps = (state) => {
     Profile: state.ProfileReducer.Profile,
     isAuth: state.authReducer.isAuth,
     login: state.authReducer.login,
-    Id: state.NewProcedureReducer.NewProcedure.id
+    Id: state.NewProcedureReducer.NewProcedure.id,
+    TotalPrice: state.NewProcedureReducer.NewProcedure.Price,
   }
 }
 
 
-export default connect(mapStateToProps, { getAuthUsersDataThunk })(HeaderConteiner)
+export default connect(mapStateToProps, { logout })(HeaderConteiner)

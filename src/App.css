@@ -23,6 +23,7 @@
 }
 .c {
     grid-area: c;
+    margin-top: -30px;
 }
 .r {
     grid-area: r;

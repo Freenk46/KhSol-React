@@ -1,0 +1,94 @@
+.Chat_wrapper {
+   margin-top: -60px;
+   width: 100%;
+}
+.Chat_Header {
+   display: flex;
+   width: 100%;
+   background-color: #fff5f0;
+   border-bottom: rgb(0, 0, 0) solid 0.5px;
+}
+.Header_img_conteiner {
+   margin: 10px 0px 0px 190px;
+}
+.Header_img {
+   width: 50px;
+   border-radius: 20px;
+}
+.Header_Name_conteiner {
+   margin: 10px 0px 0px 10px;
+}
+.Header_Name {
+}
+.Header_status {
+   margin-top: -10px;
+   color: rgb(73, 119, 5);
+}
+.Chat_conteiner {
+   border-left: rgb(0, 0, 0) solid 0.5px;
+   border-right: rgb(0, 0, 0) solid 0.5px;
+   margin: 10px 180px 30px 180px;
+   height: 400px;
+   overflow: auto;
+}
+.Chat_item {
+   margin-top: 10px;
+   display: flex;
+   align-items: center;
+}
+.Message_conteiner {
+   display: flex;
+   align-items: center;
+   text-align: center;
+   margin: 10px 0 0 50px;
+   min-width: 50px;
+   min-height: 40px;
+   border-radius: 15px;
+   background-color: rgb(81, 81, 233);
+   color: white;
+}
+.Message {
+   margin: 5px 5px;
+}
+.Chat_Footer {
+   display: flex;
+   margin: 15px;
+}
+.Profile_logo_conteiner {
+   margin: 0 0 0 180px;
+}
+.Profile_logo {
+   width: 50px;
+   border-radius: 15px;
+}
+.Footer_input_conteiner {
+}
+.Footer_input {
+   margin: auto 10px;
+   width: 205px;
+   height: 40px;
+   border: rgb(0, 0, 0) solid 0.5px;
+   background-color: #fff5f0;
+   border-radius: 15px;
+}
+.Footer_btn_conteiner {
+}
+.btn_send {
+   display: flex;
+   text-align: center;
+   justify-content: center;
+   align-items: center;
+   text-transform: uppercase;
+   position: relative;
+   background-color: rgb(255, 254, 254);
+   color: rgb(0, 0, 0);
+   height: 40px;
+   width: 100px;
+   border-radius: 30px;
+   transition-duration: 0s;
+}
+.btn_send:hover {
+   top: 2px;
+   box-shadow: 0 3px 0px #b3b1b1;
+   background-color: #b1adad;
+}

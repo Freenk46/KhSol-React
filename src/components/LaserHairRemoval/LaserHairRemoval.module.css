@@ -1,0 +1,57 @@
+.LHR_wrapper {
+    display: grid;
+    grid-template-areas:
+        "p p"
+        "a a"
+        "t t"
+        "c c";
+}
+.p {
+    grid-area: p;
+}
+.a {
+    grid-area: a;
+}
+.Title_Conteiner {
+    grid-area: t;
+    align-items: center;
+    margin: 60px auto;
+}
+.Title {
+    text-align: center;
+    margin: 0 auto;
+}
+.Gender_Conteiner {
+    margin: 0 auto;
+    align-items: center;
+    display: flex;
+    justify-content: space-evenly;
+    width: 100%;
+    grid-area: c;
+    background-color: rgb(250, 236, 238);
+    display: flex;
+}
+.Women {
+    grid-area: w;
+    float: left;
+    margin-left: 100px;
+}
+.Women_P {
+    margin-top: 15px;
+    margin-left: 200px;
+}
+.Women img {
+    margin-top: 20px;
+}
+.Men {
+    grid-area: m;
+    margin-right: 200px;
+    float: right;
+}
+.Men_p {
+    margin-top: 15px;
+    margin-left: 200px;
+}
+.Men img {
+    margin-top: 20px;
+}

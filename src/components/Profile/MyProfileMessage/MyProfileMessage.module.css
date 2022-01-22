@@ -1,0 +1,67 @@
+.table_wrapper {
+   font-family: Arial, Helvetica, sans-serif;
+   border-collapse: collapse;
+   width: 100%;
+   font-size: 25px;
+   border: 1px solid #ddd;
+   padding: 8px;
+}
+.table_header td thead {
+   order: 1px solid #ddd;
+   padding: 8px;
+}
+.table_header {
+   padding-top: 12px;
+   padding-bottom: 12px;
+   text-align: left;
+   background-color: #000000;
+   color: white;
+}
+.table_wrapper tr {
+   border-bottom: 0.5px black solid;
+   height: 50px;
+}
+.table_wrapper tr:nth-child(even) {
+   background-color: #f2f2f2;
+}
+
+.stable_wrapper tr:hover {
+   background-color: rgb(182, 179, 179);
+}
+.Cart_wrapper {
+   font-family: Arial, Helvetica, sans-serif;
+   border-collapse: collapse;
+   width: 100%;
+   font-size: 25px;
+   border: 1px solid #ddd;
+   padding: 8px;
+   display: flex;
+}
+.Cart_Header {
+}
+.Message_Menu_conteiner {
+   display: flex;
+   flex-direction: column;
+   margin: 30px 30px 30px 30px;
+   border-right: rgb(0, 0, 0) solid 0.5px;
+   width: 100px;
+}
+.Message_Menu_conteiner a {
+   width: 50px;
+   margin: 0 150px;
+   display: flex;
+   text-align: center;
+   justify-content: center;
+   align-items: center;
+   position: relative;
+   background-color: rgb(255, 254, 254);
+   color: rgb(0, 0, 0);
+   transition-duration: 0s;
+   text-decoration: none;
+   font-size: 20px;
+   margin-bottom: 40px;
+}
+.Message_Menu_conteiner a:hover {
+   top: 2px;
+   color: rgb(0, 0, 0);
+}
