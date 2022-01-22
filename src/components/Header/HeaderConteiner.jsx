@@ -1,15 +1,28 @@
 import Header from './Header'
-import {connect} from 'react-redux'
-  let mapStateToProps=(state) =>{
-    return{
-      HeaderNavbarDate: state.ManePagereducer.ManePage.HNbD
-     }
+import React from 'react';
+import { connect } from 'react-redux'
+import { getAuthUsersDataThunk } from '../../../src/redux/auth-reducer';
+
+
+class HeaderConteiner extends React.Component {
+  componentDidMount() {
+    this.props.getAuthUsersDataThunk();
   }
-  let mapDispatchToProps=(dispatch) =>{
-  return{
-   
- 
+  render() {
+    return <Header {...this.props} />
   }
+
+
+}
+let mapStateToProps = (state) => {
+  return {
+    HeaderNavbarDate: state.ManePagereducer.ManePage.HNbD,
+    Profile: state.ProfileReducer.Profile,
+    isAuth: state.authReducer.isAuth,
+    login: state.authReducer.login,
+    Id: state.NewProcedureReducer.NewProcedure.id
   }
-  const HeaderConteiner=connect(mapStateToProps,mapDispatchToProps)(Header)
-  export default HeaderConteiner;
+}
+
+
+export default connect(mapStateToProps, { getAuthUsersDataThunk })(HeaderConteiner)

@@ -2,17 +2,17 @@ import RegistLaserHairRemoval from './RegistLaserHairRemoval/RegistLaserHairRemo
 import ImageSlider from '../Slider/ImageSlider';
 import { SliderData } from '../Slider/SliderData';
 
- const RegisterProcedure = (props) => {
-     
+const RegisterProcedure = (props) => {
+
     return (
         <div>
-                 <div>
-            <ImageSlider slides={SliderData} />
-                  </div>
-                  <div>
-                  <RegistLaserHairRemoval  />
-                  </div>
-                  </div>  
+            <div>
+                <ImageSlider slides={SliderData} />
+            </div>
+            <div>
+                <RegistLaserHairRemoval />
+            </div>
+        </div>
     );
 }
-export default RegisterProcedure;  
+export default RegisterProcedure;

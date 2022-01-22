@@ -1,54 +1,56 @@
 import s from './RegistLaserHairRemoval.module.css'
 import React from 'react';
+import Procedures from '../../Profile/Procedures';
 
 const FormRegist = (props) => {
-  debugger;
-    let ElementName= React.createRef();
-    let ElementSurname= React.createRef();
-    let ElementEmail= React.createRef();
-    let ElementProcedureName= React.createRef();
-    let ElementProcedureClass= React.createRef();
-    let ElementNumber= React.createRef();
-    let ElementGender= React.createRef();
-let addProcedure = () =>{
+
+  let ElementName = React.createRef();
+  let ElementSurname = React.createRef();
+  let ElementEmail = React.createRef();
+  let ElementProcedureName = React.createRef();
+  let ElementProcedureClass = React.createRef();
+  let ElementNumber = React.createRef();
+  let ElementGender = React.createRef();
+  let addProcedure = () => {
     props.AddNewProcedure();
-}
-let onNamechange = (ElementName)=>{
-  
-  let  Name = ElementName.target.value;
-  props.UpdateNewName(Name);
-}
-let onSurnamechange = (ElementSurname)=>{
-  let  Surname = ElementSurname.target.value;
- props.UpdateNewSurname(Surname);
-}
-let onEmailchange = (ElementEmail)=>{
-  let  Email = ElementEmail.target.value;
-  props.UpdateNewEmail(Email);
-}
-let onProcedureNamechange = (ElementProcedureName)=>{
-  let  ProcedureName = ElementProcedureName.target.value;
-  props.UpdateNewProcedureName(ProcedureName);
-}
-let onProcedureClasschange = (ElementProcedureClass)=>{
-  let  ProcedureClass = ElementProcedureClass.target.value;
-  props.UpdateNewProcedureClass(ProcedureClass);
-}
-let onNumberchange = (ElementNumber)=>{
-  let  Number = ElementNumber.target.value;
-  props.UpdateNewNumber(Number);
-}
-let onGenderchange = (ElementGender)=>{
-  let  Gender = ElementGender.target.value;
-  props.UpdateNewGender(Gender);
-}
+  }
+  let onNamechange = (ElementName) => {
+
+    let Name = ElementName.target.value;
+    props.UpdateNewName(Name);
+  }
+  let onSurnamechange = (ElementSurname) => {
+    let Surname = ElementSurname.target.value;
+    props.UpdateNewSurname(Surname);
+  }
+  let onEmailchange = (ElementEmail) => {
+    let Email = ElementEmail.target.value;
+    props.UpdateNewEmail(Email);
+  }
+  let onProcedureNamechange = (ElementProcedureName) => {
+    let ProcedureName = ElementProcedureName.target.value;
+    props.UpdateNewProcedureName(ProcedureName);
+  }
+  let onProcedureClasschange = (ElementProcedureClass) => {
+    let ProcedureClass = ElementProcedureClass.target.value;
+    props.UpdateNewProcedureClass(ProcedureClass);
+  }
+  let onNumberchange = (ElementNumber) => {
+    let Number = ElementNumber.target.value;
+    props.UpdateNewNumber(Number);
+  }
+  let onGenderchange = (ElementGender) => {
+    let Gender = ElementGender.target.value;
+    props.UpdateNewGender(Gender);
+  }
   return (
+
     <div className={s.formcontentright}>
-      <form  className={s.form} noValidate>
+      <div className={s.form} noValidate>
         <div className={s.forminputs}>
-          <label  className={s.formlabel}>Name</label>
+          <label className={s.formlabel}>Name</label>
           <input
-          onChange={onNamechange}
+            onChange={onNamechange}
             value={props.NewElementName}
             ref={ElementName}
             className={s.forminput}
@@ -56,24 +58,24 @@ let onGenderchange = (ElementGender)=>{
           />
         </div>
         <div className={s.forminputs}>
-          <label  className={s.formlabel}>Surname</label>
+          <label className={s.formlabel}>Surname</label>
           <input
             onChange={onSurnamechange}
             value={props.NewElementSurname}
             ref={ElementSurname}
             className={s.forminput}
-        
+
             name='Surname'
           />
         </div>
         <div className={s.forminputs}>
-          <label  className={s.formlabel}>Email</label>
+          <label className={s.formlabel}>Email</label>
           <input
             onChange={onEmailchange}
             value={props.NewElementEmail}
             ref={ElementEmail}
             className={s.forminput}
-        
+
             name='Email'
           />
         </div>
@@ -88,7 +90,7 @@ let onGenderchange = (ElementGender)=>{
           />
         </div>
         <div className={s.forminputs}>
-          <label  className={s.formlabel}>ProcedureClass</label>
+          <label className={s.formlabel}>ProcedureClass</label>
           <input
             onChange={onProcedureClasschange}
             value={props.NewElementProcedureClass}
@@ -98,17 +100,17 @@ let onGenderchange = (ElementGender)=>{
           />
         </div>
         <div className={s.forminputs}>
-          <label  className={s.formlabel}>Number</label>
+          <label className={s.formlabel}>Number</label>
           <input
             onChange={onNumberchange}
             value={props.NewElementNumber}
             ref={ElementNumber}
             className={s.forminput}
-            name='Number'     
+            name='Number'
           />
         </div>
         <div className={s.forminputs}>
-          <label  className={s.formlabel}>Gender</label>
+          <label className={s.formlabel}>Gender</label>
           <input
             onChange={onGenderchange}
             value={props.NewElementGender}
@@ -117,13 +119,13 @@ let onGenderchange = (ElementGender)=>{
             name='Gender'
           />
         </div>
-        <button onClick={addProcedure} className={s.forminputbtn} type='submit'>
-         Next
+        <button onClick={addProcedure} className={s.forminputbtn}>
+          Next
         </button>
         <span className={s.forminputNext}>
-           We wish you beauty<a href='#'>here</a>
+          We wish you beauty<a href='#'>here</a>
         </span>
-      </form>
+      </div>
     </div>
   );
 };

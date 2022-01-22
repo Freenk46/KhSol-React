@@ -1,31 +1,45 @@
-import react from 'react';
-import Users from "./Users";
+import React from 'react';
 import { connect } from 'react-redux'
-import { setUsersAC } from '../../../../redux/Users-reducer';
-import { setCurrentPageAC } from '../../../../redux/Users-reducer';
-import { setUsersTotalCountAC } from '../../../../redux/Users-reducer';
- let  mapSteatToProps =(state)=>{
-     return{
-         users:state.Usersreducer.users,
-         pageSize:state.Usersreducer.pageSize,
-         totalUsersCount:state.Usersreducer.totalUsersCount,
-         currentPage:state.Usersreducer.currentPage,
-     }
- }
- let mapDispatchToProps =(dispatch)=>{
-     return{
-     setUsers: (users)=>{
-         dispatch(setUsersAC(users));
+import { setUsers } from '../../../../redux/Users-reducer';
+import { setCurrentPage } from '../../../../redux/Users-reducer';
+import { toggServerInProgres, getUsersThunkCreater } from '../../../../redux/Users-reducer';
+import Users from './Users';
+import Preloader from '../../../Common/Preloader/Preloader';
 
-     },
-     setCurrentPage:(currentPage)=>{
-        dispatch(setCurrentPageAC(currentPage));
 
-    },
-    setUsersTotalCount:(totalCount)=>{
-        dispatch(setUsersTotalCountAC(totalCount));
+class UsersConteiner extends React.Component {
+    componentDidMount() {
 
+        this.props.getUsersThunk(this.props.currentPage, this.props.pageSize);
     }
- }
- }
-export default connect(mapSteatToProps,mapDispatchToProps)(Users) ; 
+    onPageChanged = (pageNumber) => {
+        this.props.getUsersThunk(pageNumber, this.props.pageSize);
+    }
+    render() {
+
+        return <>
+            {this.props.isFetching ? <Preloader /> : null}
+            <Users currentPage={this.props.currentPage}
+                totalUsersCount={this.props.totalUsersCount}
+                pageSize={this.props.pageSize}
+                users={this.props.users}
+                onPageChanged={this.onPageChanged}
+                isFetching={this.props.isFetching}
+            />
+        </>
+    }
+}
+
+let mapStateToProps = (state) => {
+    return {
+        users: state.Usersreducer.users,
+        pageSize: state.Usersreducer.pageSize,
+        totalUsersCount: state.Usersreducer.totalUsersCount,
+        currentPage: state.Usersreducer.currentPage,
+        isFetching: state.Usersreducer.isFetching,
+    }
+}
+export default connect(mapStateToProps, {
+    setUsers, setCurrentPage,
+    toggServerInProgres, getUsersThunk: getUsersThunkCreater
+})(UsersConteiner);

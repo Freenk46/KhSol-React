@@ -1,35 +1,38 @@
-
-.Nav{
+.wrapper {
     position: sticky;
     top: 0;
     width: 100%;
     background: #000;
     height: 120px;
-     display: flex;
-     justify-content: space-between;
-     padding: 0.5rem calc((100vw - 1000px) /2);
-     z-index: 10;
+    display: flex;
+    justify-content: space-between;
+    padding: 0.5rem calc((100vw - 1000px) / 2);
+    z-index: 10;
 }
-.active{
-    color: #15cdfc;
-}
-.NavMenu{
-    
+.Header_Menu_Conteiner {
+    margin: auto 0;
     display: flex;
     align-items: center;
 }
-.Navbtn{
+.Header_List {
+    margin: auto 0;
+    display: flex;
+    align-items: center;
+}
+.Head_Menu_item {
+}
+.Head_Menu_link {
+}
+.SignUp_Conteiner {
     border-radius: 20px;
-
-    margin-top: 10px;
+    margin: auto 0;
     height: 50px;
     display: flex;
     align-items: center;
-    margin-right: -200px;
+    margin-right: -250px;
     background-color: rgb(58, 53, 53);
-   
 }
-.NavbtnLink{
+.SignUp_Link {
     border-radius: 20px;
     background-color: rgb(58, 53, 53);
     padding: 10px 22px;
@@ -39,30 +42,62 @@
     cursor: pointer;
     transition: all 0.2s ease-in-out;
     text-decoration: none;
-    
 }
-.logo img{
-    width: 180px;
-    
-}
-.logo{
+.Header_Logo_Conteiner {
     width: 50px;
-    margin-top: 5px;
+    margin: auto 0;
     margin-left: -200px;
-    color: green
-
-    ;
 }
-.NavMenu a{
-  margin-left: 20px;
-color: gray;
-text-decoration: none;
-font-size: 18px;
-
+.Head_Menu_link {
+    margin-left: 20px;
+    color: gray;
+    text-decoration: none;
+    font-size: 18px;
 }
-.NavMenu a.active
-{
-    color: red;
+.Profile_conteiner {
+    margin: auto 0;
+    align-items: center;
+    display: flex;
+    justify-content: flex-end;
+    margin-right: -200px;
+    flex-direction: column;
 }
-
-        
+.Profile_Name {
+    width: 50px;
+    font-size: 20px;
+    color: rgb(65, 66, 66);
+    text-decoration: none;
+}
+.Profile_Logo_Conteiner {
+    width: 30px;
+    margin: auto 0;
+    margin-left: -50px;
+    color: green;
+    text-decoration: none;
+    margin-right: 20px;
+}
+.Header_Logo {
+    width: 100px;
+    border-radius: 40px;
+}
+.Profile_Logo {
+    width: 50px;
+}
+.Profile_Logo_Conteiner a {
+    color: white;
+}
+.Cart_conteiner {
+    margin: auto 0;
+    display: flex;
+    align-items: center;
+    margin-right: -200px;
+    color: white;
+}
+.Cart_Logo_Conteiner {
+    color: white;
+    text-decoration: none;
+}
+.Cart_logo {
+    width: 50px;
+    color: white;
+}

@@ -1,57 +1,52 @@
-.LaserHairRemovalwrapper{
+.wrapper {
     display: grid;
-    grid-template-areas: 
-    "p p"
-    "c c"
-    "i i"
-  ;
-   
-   grid-template-columns: 5fr 5fr   ;
-   }
-   .w{
-       grid-area:w;
-      float: left;
-      margin-left: 100px;
-      
-   }
-   .w p{
-     margin-top: 15px;
-    margin-left: 200px;
-   }
-   .w img{
-    margin-top: 20px;
-   }
-   .m{
-       
-       grid-area:m;
-       margin-right: 200px;
-       float: right;
-    
-       ;
-       
-   }
-   .m p{
+    grid-template-areas:
+        "p p"
+        "c c"
+        "i i";
+    margin: 0 auto;
+}
+.Women {
+    grid-area: w;
+    float: left;
+    margin-left: 100px;
+}
+.Women_P {
     margin-top: 15px;
     margin-left: 200px;
-   }
-   .m img{
+}
+.Women img {
     margin-top: 20px;
-   }
-   .p{
-    grid-area:p;
-
+}
+.Men {
+    grid-area: m;
+    margin-right: 200px;
+    float: right;
+}
+.Men_p {
+    margin-top: 15px;
+    margin-left: 200px;
+}
+.Men img {
+    margin-top: 20px;
+}
+.Title_Conteiner {
+    grid-area: p;
     align-items: center;
     margin-bottom: 60px;
-   
-    
-;
+    margin-top: 60px;
 }
-.p h1{
-    margin-top: 50px;
-    margin-left: 700px
+.Title {
+    text-align: center;
+    margin: 0 auto;
 }
-.c{
-    grid-area:c; 
+.Gender_Conteiner {
+    margin: 0 auto;
+    align-items: center;
+    display: flex;
+    justify-content: space-evenly;
+    width: 100%;
+    grid-area: c;
     background-color: rgb(250, 236, 238);
     display: flex;
 }

@@ -1,79 +1,61 @@
-.SkinTreatmentswrapper{
+.SkinTreatmentswrapper {
     display: grid;
-    grid-template-areas: 
-    "p p"
-    "c c"
-    "i i"
-    "b b"
-  ;
-
-   }
-   .PricNavbar{
-       margin-top: -40px;
-       grid-area:i;
-      height: 50pxs;
-       color: rgb(0, 0, 0);
-       text-decoration: none;
-       font-size: 20px;
-       background-color: rgb(250, 236, 238);
-       
-   }
-.w{
-    grid-area:w;
-   float: left;
-   margin-left: 200px;
+    grid-template-areas:
+        "p p"
+        "c c"
+        "i i"
+        "b b";
+}
+.PricNavbar {
+    margin-top: -40px;
+    grid-area: i;
+    height: 50pxs;
+    color: rgb(0, 0, 0);
+    text-decoration: none;
+    font-size: 20px;
+    background-color: rgb(250, 236, 238);
+}
+.w {
+    grid-area: w;
+    float: left;
+    margin-left: 200px;
 }
 
-
-.m{
-    grid-area:m;
+.m {
+    grid-area: m;
     margin-right: 300px;
     float: right;
- 
-    ;
-    
 }
 
+.x {
+    grid-area: p;
 
-.x{
- grid-area:p;
-
- align-items: center;
- margin-bottom: 60px;
-
- 
- 
-;
-}
-
-.c{
-    grid-area:c;
-   
     align-items: center;
     margin-bottom: 60px;
-   background-color: white
-   
-    
-;
-
 }
-.c h1{
+
+.c {
+    grid-area: c;
+
+    align-items: center;
+    margin-bottom: 60px;
+    background-color: white;
+}
+.c h1 {
     margin-bottom: 40px;
     margin-top: 50px;
-    margin-left: 700px
-    
+    margin-left: 700px;
 }
 
-.p{
+.p {
     grid-area: p;
 }
-.n{
- width: 100%;
+.n {
+    width: 100%;
     grid-area: n;
 }
-.LaserPricboxs{
+.LaserPricboxs {
     grid-area: b;
-    
+
     background-color: rgb(250, 236, 238);
-    
 }

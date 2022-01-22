@@ -1,0 +1,44 @@
+.Profile_wrapper {
+}
+.Profile_Conteiner {
+   display: flex;
+}
+.Profile_title_conteiner {
+}
+.Profile_title {
+   margin: 0 auto;
+   align-items: center;
+   text-align: center;
+}
+.Profile_Img_Conteiner {
+   margin: 40px auto;
+   display: flex;
+   width: 200px;
+}
+.Profile_Img {
+   width: 200px;
+}
+.Profile_Info_Conteiner {
+   margin: 40px auto;
+}
+.Profile_Info_name {
+   font-size: 20px;
+}
+.Profile_Info_Country {
+   font-size: 15px;
+}
+.Profile_Info_City {
+   font-size: 20px;
+}
+.Profile_Info_Gender {
+   font-size: 20px;
+}
+.Profile_Info_Number {
+   font-size: 20px;
+}
+.Procedure_conteiner {
+   margin: 40px auto;
+   width: 900px;
+   flex: end;
+   font-size: 20px;
+}

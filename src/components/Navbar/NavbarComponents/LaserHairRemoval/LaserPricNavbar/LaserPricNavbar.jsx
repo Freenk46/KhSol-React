@@ -2,17 +2,17 @@
 import LaserPricNavbaritem from '../LaserPricNavbaritem/LaserPricNavbaritem';
 import s from './LaserPricNavbar.module.css';
 
-    
-    
+
+
 
 const LaserPricNavbar = (props) => {
     debugger;
 
-    let LaserPricNavbarElements= props.PricNavbarDate.map((E) =>  <LaserPricNavbaritem name={E.name} PricNavbarPath={E.PricNavbarPath} Path={props.Path} />) ;
+    let LaserPricNavbarElements = props.PricNavbarDate.map((E) => <LaserPricNavbaritem name={E.name} PricNavbarPath={E.PricNavbarPath} Path={props.Path} />);
 
 
 
-    
+
 
     return (
         <div className={s.NavMenu}>
@@ -21,4 +21,4 @@ const LaserPricNavbar = (props) => {
         </div>
     )
 }
-export default LaserPricNavbar ;
+export default LaserPricNavbar;

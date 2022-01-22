@@ -1,36 +1,46 @@
-.app-wrapper{
- display: grid;
- grid-template-areas: 
- "h h h"
- "n n n"
- "c c c"
- "m m m";
+.app-wrapper {
+    display: grid;
+    grid-template-areas:
+        "h h h"
+        "n n n"
+        "c c c"
+        "m m m";
+    width: 100%;
+    min-height: 100%;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
 }
-.h{
+.h {
     grid-area: h;
+    width: 100%;
+    position: fixed;
+    z-index: 50;
 }
-.n{
+.n {
     grid-area: n;
+    height: 200px;
 }
-.c{
+.c {
     grid-area: c;
 }
-.r{
-    grid-area:r;
+.r {
+    grid-area: r;
 }
-.l{
-    grid-area:l;
+.l {
+    grid-area: l;
 }
-.m{
-    grid-area:m;
+.m {
+    grid-area: m;
     background-color: black;
+    position: fixed bottom;
 }
 
-@import url('https://fonts.googleapis.com/css2?family=PT+Sans&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=PT+Sans&display=swap");
 
 * {
-  box-sizing: border-box;
-  margin: 0;
-  padding: 0;
-  font-family: 'PT Sans', sans-serif;
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: "PT Sans", sans-serif;
 }

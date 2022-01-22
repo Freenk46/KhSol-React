@@ -9,24 +9,27 @@ import NavbarConteiner from './components/Navbar/NavbarConteiner';
 export const App = (props) => {
     return (
         <BrowserRouter>
+
             <div className='app-wrapper'>
-                <div className='h'>
-                    <HeaderConteiner/>
-                </div>
+                <header className='h'>
+                    <HeaderConteiner />
+                    <NavbarConteiner />
+                </header>
                 <div className='n'>
-                    <NavbarConteiner/>
+
                 </div>
                 <div className='c'>
-                <ContentBlockConteiner/>
+                    <ContentBlockConteiner />
                 </div>
                 <div className='r'>
                 </div>
-                <div className='l'>  
+                <div className='l'>
                 </div>
-                <div className='m'>
-                <BottomMenuConteiner/>
-                 </div>
+                <footer className='m'>
+                    <BottomMenuConteiner />
+                </footer>
             </div>
+
         </BrowserRouter>
 
     );

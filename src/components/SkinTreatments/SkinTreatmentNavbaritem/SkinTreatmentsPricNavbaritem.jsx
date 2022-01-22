@@ -7,7 +7,7 @@ const SkinTreatmentsPricNavbaritem = (props) => {
     return <div  >
         <NavLink activeClassName={s.active} to={path} ><strong>{props.name}</strong></NavLink>
     </div>
-    
+
 }
 
 export default SkinTreatmentsPricNavbaritem;

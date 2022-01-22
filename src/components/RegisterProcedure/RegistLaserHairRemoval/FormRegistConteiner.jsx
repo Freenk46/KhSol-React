@@ -1,54 +1,59 @@
 import React from 'react';
-import { addProcedureActionCreator,UpdateNameActionCreator,UpdateSurnameActionCreator, UpdateEmailActionCreator,UpdateProcedureNameActionCreator,UpdateProcedureCassActionCreator,UpdateNumberActionCreator,UpdateGenderActionCreator} from '../../../redux/NewProcedure-reducer';
+import { AddNewProcedure, UpdateNewName, UpdateNewSurname, UpdateNewEmail, UpdateNewProcedureName, UpdateNewProcedureClass, UpdateNewNumber, UpdateNewGender } from '../../../redux/NewProcedure-reducer';
 import FormRegist from './FormRegist'
-import {connect} from 'react-redux'
- 
-  let mapStateToProps=(state) =>{
-    debugger;
-    return{
-      NewElementProcedureName: state.NewProcedurereducer.NewProcedure.NewElementProcedureName,
-      NewElementProcedureClass: state.NewProcedurereducer.NewProcedure.NewElementProcedureClass,
-      NewElementGender: state.NewProcedurereducer.NewProcedure.NewElementGender,
-      NewElementName: state.NewProcedurereducer.NewProcedure.NewElementName,
-      NewElementSurname: state.NewProcedurereducer.NewProcedure.NewElementSurname,
-      NewElementEmail: state.NewProcedurereducer.NewProcedure.NewElementEmail,
-      NewElementNumber: state.NewProcedurereducer.NewProcedure.NewElementNumber,
+import { connect } from 'react-redux'
+
+
+class FormRegistConteiner extends React.Component {
+  componentDidMount() {
   }
+  render() {
+    return (<FormRegist {...this.props} />)
   }
-  let mapDispatchToProps=(dispatch) =>{
-  return{
-    UpdateNewName:(Name)=>{
-      let  action=UpdateNameActionCreator(Name)
-      dispatch(action);
+}
+let mapStateToProps = (state) => {
+  return {
+    NewElementProcedureName: state.NewProcedureReducer.NewProcedure.NewElementProcedureName,
+    NewElementProcedureClass: state.NewProcedureReducer.NewProcedure.NewElementProcedureClass,
+    NewElementGender: state.NewProcedureReducer.NewProcedure.NewElementGender,
+    NewElementName: state.NewProcedureReducer.NewProcedure.NewElementName,
+    NewElementSurname: state.NewProcedureReducer.NewProcedure.NewElementSurname,
+    NewElementEmail: state.NewProcedureReducer.NewProcedure.NewElementEmail,
+    NewElementNumber: state.NewProcedureReducer.NewProcedure.NewElementNumber,
+    NewProcedure: state.NewProcedureReducer.NewProcedure.ProcedureLaserHairRemoval,
+  }
+}
+let mapDispatchToProps = (dispatch) => {
+  return {
+    UpdateNewName: (Name) => {
+      dispatch(UpdateNewName(Name));
     },
-    UpdateNewSurname:(Surname)=>{
-      let  action=UpdateSurnameActionCreator(Surname)
-      dispatch(action);  
+    UpdateNewSurname: (Surname) => {
+      dispatch(UpdateNewSurname(Surname));
     },
-    UpdateNewEmail:(Email)=>{
-      let  action=UpdateEmailActionCreator(Email)
-      dispatch(action);  
+    UpdateNewEmail: (Email) => {
+
+      dispatch(UpdateNewEmail(Email));
     },
-    UpdateNewProcedureName:(ProcedureName)=>{
-      let  action=UpdateProcedureNameActionCreator(ProcedureName)
-      dispatch(action);  
+    UpdateNewProcedureName: (ProcedureName) => {
+
+      dispatch(UpdateNewProcedureName(ProcedureName));
     },
-    UpdateNewProcedureClass:(ProcedureClass)=>{
-      let  action= UpdateProcedureCassActionCreator(ProcedureClass)
-      dispatch(action);  
-    } ,
-    UpdateNewNumber:(Number)=>{
-      let  action= UpdateNumberActionCreator(Number)
-      dispatch(action);  
+    UpdateNewProcedureClass: (ProcedureClass) => {
+      dispatch(UpdateNewProcedureClass(ProcedureClass));
     },
-    UpdateNewGender:(Gender)=>{
-      let  action=UpdateGenderActionCreator(Gender)
-      dispatch(action);  
+    UpdateNewNumber: (Number) => {
+
+      dispatch(UpdateNewNumber(Number));
     },
-    AddNewProcedure:()=>{
-      dispatch(addProcedureActionCreator());
+    UpdateNewGender: (Gender) => {
+
+      dispatch(UpdateNewGender(Gender));
+    },
+    AddNewProcedure: () => {
+      dispatch(AddNewProcedure());
     },
   }
-  }
-  const FormRegistConteiner=connect(mapStateToProps,mapDispatchToProps)(FormRegist)
-  export default FormRegistConteiner;
+}
+
+export default connect(mapStateToProps, mapDispatchToProps)(FormRegistConteiner);

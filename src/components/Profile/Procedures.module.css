@@ -1,0 +1,25 @@
+.table_wrapper {
+   font-family: Arial, Helvetica, sans-serif;
+   border-collapse: collapse;
+   width: 100%;
+   border: 1px solid #ddd;
+   padding: 8px;
+}
+.table_header td thead {
+   order: 1px solid #ddd;
+   padding: 8px;
+}
+.table_header {
+   padding-top: 12px;
+   padding-bottom: 12px;
+   text-align: left;
+   background-color: #868f06;
+   color: white;
+}
+.table_wrapper tr:nth-child(even) {
+   background-color: #f2f2f2;
+}
+
+.stable_wrapper tr:hover {
+   background-color: #ddd;
+}

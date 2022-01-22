@@ -2,24 +2,24 @@
 
 import ImageSlider from '../../../Slider/ImageSlider';
 import { SliderData } from '../../../Slider/SliderData';
+import './Home.css';
+const Home = (props) => {
 
- const Home = (props) => {
-     
     return (
-        <div>
+        <div className="wrapper">
 
-        
-                 <div>
-            
-            <ImageSlider slides={SliderData} />
 
-                  </div>
+            <div className="">
 
-         
-                  <div>
-                  </div>
-                  </div>
-                
+                <ImageSlider slides={SliderData} />
+
+            </div>
+
+
+            <div>
+            </div>
+        </div>
+
     );
 }
-export default Home;         
+export default Home;
