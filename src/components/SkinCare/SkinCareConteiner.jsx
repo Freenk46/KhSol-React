@@ -1,7 +1,7 @@
 import React from 'react';
 import { connect } from 'react-redux'
 import SkinCare from './SkinCare';
-
+import { getSkinCarePoster } from '../../selectors/SkinCare-selectors'
 
 class SkinCareConteiner extends React.Component {
 
@@ -11,7 +11,7 @@ class SkinCareConteiner extends React.Component {
 }
 let mapStateToProps = (state) => {
    return {
-      Poster: state.SkinCareReducer.SkinCare.Poster,
+      Poster: getSkinCarePoster(state),
    }
 }
 export default connect(mapStateToProps)(SkinCareConteiner)

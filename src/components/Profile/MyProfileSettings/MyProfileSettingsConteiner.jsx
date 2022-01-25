@@ -3,6 +3,8 @@ import { connect } from 'react-redux';
 import { withAuthRedirect } from '../../../hoc/withAuthRedirect';
 import { compose } from 'redux';
 import MyProfileSettings from './MyProfileSettings';
+import { getemail, getlogin, getid, getisAuth } from '../../../selectors/auth-selectors'
+import { getTotalpriceCart } from '../../../selectors/NewProcedure-selectors'
 class MyProfileSettingsConteiner extends React.Component {
    componentDidMount() {
    }
@@ -11,13 +13,12 @@ class MyProfileSettingsConteiner extends React.Component {
    }
 }
 let mapStateToProps = (state) => ({
-   email: state.authReducer.email,
-   login: state.authReducer.login,
+   email: getemail(state),
+   login: getlogin(state),
    img: state.authReducer.img,
-   id: state.authReducer.id,
-   NewProcedure: state.NewProcedureReducer.NewProcedure.Procedure,
-   TotalPrice: state.NewProcedureReducer.NewProcedure.Price,
-   isAuth: state.authReducer.isAuth,
+   id: getid(state),
+   TotalPrice: getTotalpriceCart(state),
+   isAuth: getisAuth(state),
 });
 export default compose(
    connect(mapStateToProps),

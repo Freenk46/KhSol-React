@@ -1,5 +1,5 @@
 
-import InformationNet from '../../../../InformationNet/InformationNet';
+import InformationNet from '../../InformationNet/InformationNet';
 import LaserPicCard from '../LaserPric/LaserPicCard';
 import LaserPricNavbar from '../LaserPricNavbar/LaserPricNavbar';
 import s from './Women.module.css';

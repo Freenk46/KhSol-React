@@ -4,6 +4,9 @@ import { withAuthRedirect } from '../../../hoc/withAuthRedirect';
 import { AddNewMessage, } from '../../../redux/Messages-reducer';
 import { compose } from 'redux';
 import MyProfileMessage from './MyProfileMessage';
+import { getemail, getlogin, getid, getisAuth } from '../../../selectors/auth-selectors'
+import { getTotalpriceCart } from '../../../selectors/NewProcedure-selectors'
+import { getDialog } from '../../../selectors/Messages-selectors'
 class MyProfileMessageConteiner extends React.Component {
    componentDidMount() {
 
@@ -13,14 +16,13 @@ class MyProfileMessageConteiner extends React.Component {
    }
 }
 let mapStateToProps = (state) => ({
-   email: state.authReducer.email,
-   login: state.authReducer.login,
+   email: getemail(state),
+   login: getlogin(state),
    img: state.authReducer.img,
-   id: state.authReducer.id,
-   NewProcedure: state.NewProcedureReducer.NewProcedure.Procedure,
-   TotalPrice: state.NewProcedureReducer.NewProcedure.Price,
-   isAuth: state.authReducer.isAuth,
-   Dialog: state.MessagesReducer.Messages.Dialog,
+   id: getid(state),
+   TotalPrice: getTotalpriceCart(state),
+   isAuth: getisAuth(state),
+   Dialog: getDialog(state),
 });
 export default compose(
    connect(mapStateToProps,

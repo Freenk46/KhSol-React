@@ -1,10 +1,9 @@
 import { Routes, Route, BrowserRouter } from 'react-router-dom';
 import Form from '../../authRegister/Form';
-import LaserHairRemoval from '../Navbar/NavbarComponents/LaserHairRemoval/LaserHairRemoval';
-import Men from '../Navbar/NavbarComponents/LaserHairRemoval/Men/Men';
-import Women from '../Navbar/NavbarComponents/LaserHairRemoval/Women/Women';
+import Men from '../LaserHairRemoval/Men/Men';
+import Women from '../LaserHairRemoval/Women/Women';
 import RegisterProcedure from '../RegisterProcedure/RegisterProcedure';
-import UsersConteiner from '../Navbar/NavbarComponents/Users/UsersConteiner';
+import UsersConteiner from '../Users/UsersConteiner';
 import ProfileConteiner from '../Profile/ProfileConteiner';
 import SkinTreatmentsConteiner from '../SkinTreatments/SkNavbarConteiners/SkinTreatmentsConteiner';
 import MicrodermabrasionConteiner from '../SkinTreatments/SkNavbarConteiners/MicrodermabrasionConteiner';
@@ -16,8 +15,8 @@ import FormAuth from '../Login/FormAuth';
 import CosmeticInjectionsConteiner from '../CosmeticInjections/CosmeticInjectionsConteiner';
 import SkinCareConteiner from '../SkinCare/SkinCareConteiner';
 import SkinConcernsConteiner from '../SkinCare/SkinConcerns/SkinConcernsConteiner';
-import HomeConteiner from '../Navbar/NavbarComponents/Home/HomeConteiner';
-import LaserHairRemovalConteiner from '../Navbar/NavbarComponents/LaserHairRemoval/LaserHairRemovalConteiner';
+import HomeConteiner from '../Home/HomeConteiner';
+import LaserHairRemovalConteiner from '../LaserHairRemoval/LaserHairRemovalConteiner';
 import MyProfileCartConteiner from '../Profile/MyProfileCart/MyProfileCartConteiner';
 import MyProfileProcedureConteiner from '../Profile/MyProfileProcedures/MyProfileProcedureConteiner';
 import MyProfileSettingsConteiner from '../Profile/MyProfileSettings/MyProfileSettingsConteiner';
@@ -43,8 +42,7 @@ const COntentBLock = (props) => {
       <Route path="/CosmeticInjections" element={<CosmeticInjectionsConteiner />} />
       <Route path="/SkinCare" element={<SkinCareConteiner />} />
       <Route path="/SkinConcerns" element={<SkinConcernsConteiner />} />
-
-
+      { /*
       < Route path="/LaserHairRemoval/Men" element={< Men
         text1={props.text1} text2={props.text2} text3={props.text3} text4={props.text4}
         Mimg1={props.Mimg1} Mimg2={props.Mimg2} Mimg3={props.Mimg3}
@@ -93,7 +91,7 @@ const COntentBLock = (props) => {
         text1={props.text1} text2={props.text2} text3={props.text3} text4={props.text4}
         Wimg1={props.Wimg1} Wimg2={props.Wimg2} Wimg3={props.Wimg3}
         Path={props.PathWomen} LHRPricNavbarData={props.LHRPricNavbarData} state={props.FullBodyProcedurePric} />} />
-
+      */}
       < Route path="/SkinTreatments" element={< SkinTreatmentsConteiner />} />
       < Route path="/SkinTreatments/Microdermabrasion" element={< MicrodermabrasionConteiner />} />
       < Route path="/SkinTreatments/Rejuvapen" element={< RejuvapenConteiner />} />

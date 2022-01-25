@@ -1,6 +1,6 @@
 import { NavLink } from 'react-router-dom';
-import About from '../../../About/About';
-import Poster from '../../../Poster/Poster';
+import About from '../About/About';
+import Poster from '../Poster/Poster';
 import s from './LaserHairRemoval.module.css'
 const LaserHairRemoval = (props) => {
     return (

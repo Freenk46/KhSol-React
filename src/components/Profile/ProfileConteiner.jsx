@@ -4,18 +4,23 @@ import { useMatch } from "react-router-dom";
 import { getUsersProfileThunk } from '../../../src/redux/Profile-reducer';
 import { withAuthRedirect } from '../../hoc/withAuthRedirect';
 import Profile from './Profile';
+import { getid, getisAuth } from '../../selectors/auth-selectors'
+import { getProfile } from '../../selectors/Profile-selectors'
+import { getinitialized } from '../../selectors/App-selectors'
 
 class ProfileConteiner extends React.Component {
 
    componentDidMount() {
 
       let userId = this.props.match.params.userId;
+      let initialized = this.props.match.params.initialized;
       if (!userId) {
          userId = this.props.id;
+         if (!userId) {
+            this.props.history.push("/login");
+         }
       }
-      if (!userId) {
-         this.props.history.push("/login");
-      }
+
       this.props.getUsersProfileThunk(userId);
 
    }
@@ -26,11 +31,10 @@ class ProfileConteiner extends React.Component {
    }
 }
 let mapStateToProps = (state) => ({
-   Profile: state.ProfileReducer.Profile,
-   id: state.authReducer.id,
-   NewProcedure: state.NewProcedureReducer.NewProcedure.ProcedureLaserHairRemoval,
-   isAuth: state.authReducer.isAuth,
-   initialized: state.AppReducer.initialized,
+   Profile: getProfile(state),
+   id: getid(state),
+   isAuth: getisAuth(state),
+   initialized: getinitialized(state),
 
 });
 const ProfileMatch = (props) => {

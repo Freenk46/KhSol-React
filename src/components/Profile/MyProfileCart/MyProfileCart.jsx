@@ -22,7 +22,7 @@ const MyProfileCart = (props) => {
          <div className={s.Menu_item_conteiner}>
             <CartProcedure ChangeNewId={props.ChangeNewId} TotalPrice={props.TotalPrice}
                DelNewProcedureCart={props.DelNewProcedureCart}
-               NewProcedure={props.NewProcedure} />
+               CartProcedure={props.CartProcedure} />
          </div>
          <div className={s.Bay_btn_conteiner}>
             <button className={s.Bay_btn} onClick={BayNewProcedure} >Bay</button>

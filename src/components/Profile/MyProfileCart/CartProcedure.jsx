@@ -2,7 +2,7 @@ import React from "react";
 import CartProcedureItem from "./CartProcedureItem";
 import s from "./CartProcedure.module.css"
 const CartProcedure = (props) => {
-   let ProceduresData = props.NewProcedure.map((E) =>
+   let ProceduresData = props.CartProcedure.map((E) =>
       <CartProcedureItem id={E.id} ProcedureName={E.ProcedureName} ProcedureClass={E.ProcedureClass}
          ChangeNewId={props.ChangeNewId}
          DelNewProcedureCart={props.DelNewProcedureCart}

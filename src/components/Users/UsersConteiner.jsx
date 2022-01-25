@@ -1,11 +1,9 @@
 import React from 'react';
 import { connect } from 'react-redux'
-import { setUsers } from '../../../../redux/Users-reducer';
-import { setCurrentPage } from '../../../../redux/Users-reducer';
-import { toggServerInProgres, getUsersThunkCreater } from '../../../../redux/Users-reducer';
+import { setUsers, setCurrentPage, toggServerInProgres, getUsersThunkCreater } from '../../redux/Users-reducer';
 import Users from './Users';
-import Preloader from '../../../Common/Preloader/Preloader';
-import { withAuthRedirect } from '../../../../hoc/withAuthRedirect';
+import Preloader from '../Common/Preloader/Preloader';
+import { getUsers, getPageSize, getTotalUsersCount, getCurrentPage, getIsFetching } from '../../selectors/Users-selectors'
 class UsersConteiner extends React.Component {
     componentDidMount() {
         this.props.getUsersThunk(this.props.currentPage, this.props.pageSize);
@@ -21,25 +19,24 @@ class UsersConteiner extends React.Component {
                 pageSize={this.props.pageSize}
                 users={this.props.users}
                 onPageChanged={this.onPageChanged}
-                isFetching={this.props.isFetching}
+
             />
         </>
     }
 }
 let mapStateToProps = (state) => {
     return {
-        users: state.Usersreducer.users,
-        pageSize: state.Usersreducer.pageSize,
-        totalUsersCount: state.Usersreducer.totalUsersCount,
-        currentPage: state.Usersreducer.currentPage,
-        isFetching: state.Usersreducer.isFetching,
-        isAuth: state.authReducer.isAuth,
+        users: getUsers(state),
+        pageSize: getPageSize(state),
+        totalUsersCount: getTotalUsersCount(state),
+        currentPage: getCurrentPage(state),
+        isFetching: getIsFetching(state),
+
     }
 }
 
-let authRedirectComponent = withAuthRedirect(UsersConteiner);
 
 export default connect(mapStateToProps, {
     setUsers, setCurrentPage,
     toggServerInProgres, getUsersThunk: getUsersThunkCreater
-})(authRedirectComponent);
+})(UsersConteiner);

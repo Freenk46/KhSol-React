@@ -1,5 +1,4 @@
 import { applyMiddleware, combineReducers, createStore } from "redux";
-import ManePagereducer from "./ManePage-reducer";
 import LaserHairRemovalreducer from "./LaserHairRemoval-reducer";
 import NewProcedureReducer from "./NewProcedure-reducer";
 import SkinTreatmentsreducer from "./SkinTreatments-reducer";
@@ -18,7 +17,6 @@ let reducers = combineReducers({
     CosmeticInjectionsReducer: CosmeticInjectionsReducer,
     NewProcedureReducer: NewProcedureReducer,
     LaserHairRemovalreducer: LaserHairRemovalreducer,
-    ManePagereducer: ManePagereducer,
     SkinTreatmentsreducer: SkinTreatmentsreducer,
     Usersreducer: Usersreducer,
     ProfileReducer: ProfileReducer,

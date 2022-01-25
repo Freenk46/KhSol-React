@@ -1,18 +1,19 @@
 import SkinTreatments from '../SkinTreatments'
 import { connect } from 'react-redux'
 import { AddNewProcedureCart, } from '../../../redux/NewProcedure-reducer';
+import { getemail, getlogin, getid, getisAuth } from '../../../selectors/auth-selectors'
+import { getPricNavbarDate, getLEDlightTherapy, getSkinTreatmentsPoster, getSkinTreatmentsAbout } from '../../../selectors/SkinTreatments-selectors'
 let mapStateToProps = (state) => {
-  debugger;
 
   return {
-
-    STPricNavbarData: state.SkinTreatmentsreducer.SkinTreatments.PricNavbarDate,
-    state: state.SkinTreatmentsreducer.SkinTreatments.LEDlightTherapy,
-    email: state.authReducer.email,
-    login: state.authReducer.login,
-    id: state.authReducer.id,
-    Poster: state.SkinTreatmentsreducer.SkinTreatments.Poster,
-    About: state.SkinTreatmentsreducer.SkinTreatments.About,
+    STPricNavbarData: getPricNavbarDate(state),
+    state: getLEDlightTherapy(state),
+    email: getemail(state),
+    login: getlogin(state),
+    id: getid(state),
+    isAuth: getisAuth(state),
+    Poster: getSkinTreatmentsPoster(state),
+    About: getSkinTreatmentsAbout(state),
   }
 }
 

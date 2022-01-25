@@ -1,6 +1,7 @@
 import React from 'react';
 import { connect } from 'react-redux'
 import LaserHairRemoval from './LaserHairRemoval';
+import { getLaserHairRemovalPoster, getLaserHairRemovalAbout, } from '../../selectors/LaserHairRemoval-selectors'
 
 class LaserHairRemovalConteiner extends React.Component {
 
@@ -10,8 +11,8 @@ class LaserHairRemovalConteiner extends React.Component {
 }
 let mapStateToProps = (state) => {
    return {
-      Poster: state.LaserHairRemovalreducer.LaserHairRemoval.Poster,
-      About: state.LaserHairRemovalreducer.LaserHairRemoval.About,
+      Poster: getLaserHairRemovalPoster(state),
+      About: getLaserHairRemovalAbout(state),
    }
 }
 export default connect(mapStateToProps)(LaserHairRemovalConteiner)

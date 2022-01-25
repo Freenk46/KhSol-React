@@ -1,7 +1,7 @@
 import React from 'react';
 import { connect } from 'react-redux'
 import CosmeticInjections from '../CosmeticInjections/CosmeticInjections'
-
+import { getCosmeticInjectionsPoster, getCosmeticInjectionsAbout, getCosmeticInjectionsColumnas } from '../../selectors/CosmeticInjections-selectors'
 
 class CosmeticInjectionsConteiner extends React.Component {
 
@@ -12,9 +12,9 @@ class CosmeticInjectionsConteiner extends React.Component {
 let mapStateToProps = (state) => {
    return {
 
-      Poster: state.CosmeticInjectionsReducer.CosmeticInjections.Poster,
-      About: state.CosmeticInjectionsReducer.CosmeticInjections.About,
-      Columnas: state.CosmeticInjectionsReducer.CosmeticInjections.Columnas,
+      Poster: getCosmeticInjectionsPoster(state),
+      About: getCosmeticInjectionsAbout(state),
+      Columnas: getCosmeticInjectionsColumnas(state),
 
    }
 }

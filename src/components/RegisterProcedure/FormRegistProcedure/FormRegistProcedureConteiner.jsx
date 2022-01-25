@@ -4,6 +4,7 @@ import { UpdateProcedureNames } from '../../../redux/SkinTreatments-reducer';
 import FormRegistProcedure from './FormRegistProcedure'
 import { connect } from 'react-redux'
 import { compose } from 'redux';
+import { getPricNavbarDate, getProcedureNames } from '../../../selectors/SkinTreatments-selectors'
 
 
 class FormRegistConteiner extends React.Component {
@@ -17,8 +18,8 @@ class FormRegistConteiner extends React.Component {
 }
 
 let mapStateToProps = (state) => ({
-  PricNavbarDate: state.SkinTreatmentsreducer.SkinTreatments.PricNavbarDate,
-  ProcedureNames: state.SkinTreatmentsreducer.SkinTreatments.ProcedureNames,
+  PricNavbarDate: getPricNavbarDate(state),
+  ProcedureNames: getProcedureNames(state),
 });
 export default compose(
   connect(mapStateToProps,

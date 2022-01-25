@@ -1,10 +1,10 @@
 import React from 'react';
 import Navbar from './Navbar'
 import { connect } from 'react-redux'
-
+import { getNbD } from '../../selectors/App-selectors'
 let mapStateToProps = (state) => {
   return {
-    NavbarDate: state.ManePagereducer.ManePage.NbD
+    NavbarDate: getNbD(state)
   }
 }
 let mapDispatchToProps = (dispatch) => {

@@ -17,7 +17,7 @@ const MyProfileMessage = (props) => {
             <div className={s.Message_Menu_item}>
                <MyProfileMessageChat
                   img={props.img}
-                  login={props.login} AddNewMessage={props.AddNewMessage} UpdateNewMessage={props.UpdateNewMessage}
+                  login={props.login} AddNewMessage={props.AddNewMessage}
                   Dialog={props.Dialog} NewElementMessage={props.NewElementMessage}
                />
             </div>

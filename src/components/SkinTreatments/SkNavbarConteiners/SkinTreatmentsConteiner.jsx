@@ -3,16 +3,18 @@ import { connect } from 'react-redux'
 import { AddNewProcedureCart, } from '../../../redux/NewProcedure-reducer';
 import { withAuthRedirect } from '../../../hoc/withAuthRedirect';
 import { compose } from 'redux';
+import { getemail, getlogin, getid, getisAuth } from '../../../selectors/auth-selectors'
+import { getPricNavbarDate, getCosmeticGradePeels, getSkinTreatmentsPoster, getSkinTreatmentsAbout } from '../../../selectors/SkinTreatments-selectors'
 let mapStateToProps = (state) => {
    return {
-      STPricNavbarData: state.SkinTreatmentsreducer.SkinTreatments.PricNavbarDate,
-      state: state.SkinTreatmentsreducer.SkinTreatments.CosmeticGradePeels,
-      email: state.authReducer.email,
-      login: state.authReducer.login,
-      id: state.authReducer.id,
-      isAuth: state.authReducer.isAuth,
-      Poster: state.SkinTreatmentsreducer.SkinTreatments.Poster,
-      About: state.SkinTreatmentsreducer.SkinTreatments.About,
+      STPricNavbarData: getPricNavbarDate(state),
+      state: getCosmeticGradePeels(state),
+      email: getemail(state),
+      login: getlogin(state),
+      id: getid(state),
+      isAuth: getisAuth(state),
+      Poster: getSkinTreatmentsPoster(state),
+      About: getSkinTreatmentsAbout(state),
    }
 }
 

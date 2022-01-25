@@ -3,7 +3,7 @@ import MyProfile from '../MyProfile';
 import s from "./MyProfileSettings.module.css";
 
 const MyProfileSettings = (props) => {
-   if (!props.login) {
+   if (!props.img) {
       return < Preloader />
    }
    return (

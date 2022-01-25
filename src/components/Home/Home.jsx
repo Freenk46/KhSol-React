@@ -1,9 +1,9 @@
 
-import About from '../../../About/About';
-import Injection from '../../../injectionNet/injectionNet';
-import LHR from '../../../LHRNet/LHRNet';
-import Poster from '../../../Poster/Poster';
-import SKT from '../../../SKTNet/SKTNet';
+import About from '../About/About';
+import Injection from '../injectionNet/injectionNet';
+import LHR from '../LHRNet/LHRNet';
+import Poster from '../Poster/Poster';
+import SKT from '../SKTNet/SKTNet';
 import s from '../Home/Home.module.css';
 const Home = (props) => {
     return (

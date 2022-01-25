@@ -3,90 +3,92 @@ const CHANGE_NEW_ID = 'CHANGE_NEW_ID';
 const DEL_NEW_PROCEDURE_CART = 'DEL_NEW_PROCEDURE_CART';
 const BAY_NEW_ROCEDURE = 'BAY_NEW_ROCEDURE';
 let initialState = {
-  NewProcedure: {
-    MyProcedure: [
 
-    ],
-    CartProcedure: [
+  MyProcedure: [
 
-    ],
-    NewElementWhen: '12/07/2021 05:04 PM',
-    id: 0,
-    Price: 0,
-    ProcedureChangeId: null,
-  },
+  ],
+  CartProcedure: [
+
+  ],
+  NewElementWhen: '12/07/2021 05:04 PM',
+  QuantityCart: 0,
+  totalpriceCart: 0,
+  ProcedureChangeId: null,
+
 }
 const NewProcedureReducer = (state = initialState, action) => {
   var totalprice = 0;
-  let id = [state.NewProcedure.CartProcedure.length + 1];
+  let id = [state.CartProcedure.length + 1];
   switch (action.type) {
     case BAY_NEW_ROCEDURE: {
       let stateCopy = { ...state };
-      stateCopy.NewProcedure.MyProcedure = [...state.NewProcedure.MyProcedure];
-      stateCopy.NewProcedure.CartProcedure = [...state.NewProcedure.CartProcedure];
-      for (var m = 0; m < state.NewProcedure.CartProcedure.length; m++) {
+      stateCopy.MyProcedure = [...state.MyProcedure];
+      stateCopy.CartProcedure = [...state.CartProcedure];
+      for (var m = 0; m < state.CartProcedure.length; m++) {
         let MyProcedure = {
-          id: state.NewProcedure.MyProcedure.length + 1,
-          ProcedureName: state.NewProcedure.CartProcedure[m].ProcedureName,
-          ProcedureClass: state.NewProcedure.CartProcedure[m].ProcedureClass,
-          When: state.NewProcedure.CartProcedure[m].When,
-          Time: state.NewProcedure.CartProcedure[m].Time,
-          Price: state.NewProcedure.CartProcedure[m].Price,
+          id: state.MyProcedure.length + 1,
+          ProcedureName: state.CartProcedure[m].ProcedureName,
+          ProcedureClass: state.CartProcedure[m].ProcedureClass,
+          When: state.CartProcedure[m].When,
+          Time: state.CartProcedure[m].Time,
+          Price: state.CartProcedure[m].Price,
         };
-        stateCopy.NewProcedure.MyProcedure.push(MyProcedure);
+        stateCopy.MyProcedure.push(MyProcedure);
       };
-      while (stateCopy.NewProcedure.CartProcedure.length) {
-        stateCopy.NewProcedure.CartProcedure.pop();
+      while (stateCopy.CartProcedure.length) {
+        stateCopy.CartProcedure.pop();
       }
-      stateCopy.NewProcedure.Price = 0;
-      stateCopy.NewProcedure.id = 0;
-      return state;
+      stateCopy.totalpriceCart = 0;
+      stateCopy.QuantityCart = 0;
+      return stateCopy;
     };
     case DEL_NEW_PROCEDURE_CART: {
-      let id = state.NewProcedure.ProcedureChangeId;
-      var index = state.NewProcedure.CartProcedure.map(x => {
+      let id = state.ProcedureChangeId;
+      var index = state.CartProcedure.map(x => {
         return x.id;
       }).indexOf(id);
       let stateCopy = { ...state };
-      stateCopy.NewProcedure.CartProcedure = [...state.NewProcedure.CartProcedure];
-      stateCopy.NewProcedure.CartProcedure.splice(index, 1);
-      for (var k = 0; k < stateCopy.NewProcedure.CartProcedure.length; k++) {
-        stateCopy.NewProcedure.CartProcedure[k].id = k + 1
+      stateCopy.CartProcedure = [...state.CartProcedure];
+      stateCopy.CartProcedure.splice(index, 1);
+      for (var k = 0; k < stateCopy.CartProcedure.length; k++) {
+        stateCopy.CartProcedure[k].id = k + 1
       };
-      for (var j = 0; j < state.NewProcedure.CartProcedure.length; j++) {
-        totalprice += state.NewProcedure.CartProcedure[j].Price;
+      for (var j = 0; j < stateCopy.CartProcedure.length; j++) {
+        totalprice += state.CartProcedure[j].Price;
       };
-      if (state.NewProcedure.CartProcedure.length === 0) (
+      if (stateCopy.CartProcedure.length === 0) {
         id = 0
-      );
-      stateCopy.NewProcedure.Price = totalprice;
-      stateCopy.NewProcedure.id = id
-      return state;
+        totalprice = 0
+      };
+      stateCopy.totalpriceCart = totalprice;
+      stateCopy.QuantityCart = id
+      return stateCopy;
     }
     case ADD_ROCEDURE_CART: {
       totalprice = action.FormData.Price;
-      for (var i = 0; i < state.NewProcedure.CartProcedure.length; i++) {
-        totalprice += state.NewProcedure.CartProcedure[i].Price;
+      for (var i = 0; i < state.CartProcedure.length; i++) {
+        totalprice += state.CartProcedure[i].Price;
       }
       let NewProcedure = {
         id: id,
         ProcedureName: action.FormData.ProcedureName,
         ProcedureClass: action.FormData.ProcedureClass,
-        When: state.NewProcedure.NewElementWhen,
+        When: 0,
         Time: action.FormData.Time,
         Price: action.FormData.Price,
       };
-      let stateCopy = { ...state };
-      stateCopy.NewProcedure.CartProcedure = [...state.NewProcedure.CartProcedure];
-      stateCopy.NewProcedure.CartProcedure.push(NewProcedure);
-      stateCopy.NewProcedure.Price = totalprice
-      stateCopy.NewProcedure.id = id
-      return state;
+      return {
+        ...state,
+        totalpriceCart: totalprice,
+        QuantityCart: id,
+        CartProcedure: [...state.CartProcedure, { ...NewProcedure }],
+      };
     };
     case CHANGE_NEW_ID: {
-      let stateCopy = { ...state };
-      stateCopy.NewProcedure.ProcedureChangeId = action.id;
-      return state;
+      return {
+        ...state,
+        ProcedureChangeId: action.id,
+      }
     };
     default:
       return state;
