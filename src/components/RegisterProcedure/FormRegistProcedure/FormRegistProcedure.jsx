@@ -6,12 +6,7 @@ const FormRegistProcedure = (props) => {
   const options = props.PricNavbarDate;
   const ProcedureNames = props.ProcedureNames;
   const onSubmit = (formData) => {
-    console.log(formData);
     props.AddNewProcedureCart(formData);
-  };
-  const UpdateProcedureNames = (id) => {
-    console.log(id);
-    props.UpdateProcedureNames(id);
   };
   return (
     <AddProcedureReduxForm UpdateProcedureNames={UpdateProcedureNames} options={options} ProcedureNames={ProcedureNames} onSubmit={onSubmit} />
@@ -26,8 +21,7 @@ const AddNewProcedureForm = (props) => {
           <label className={s.formlabel}>ProcedureClass</label>
           <Field placeholder={"ProcedureClass"} name={"ProcedureClass"} component={"select"}>
             {props.options.map((option) => (
-              <option onClick={props.UpdateProcedureNames(option.id)} value={option.name} > {option.name}  </option>
-
+              <option onClick={() => props.UpdateProcedureNames(option.id)} value={option.name} > {option.name}  </option>
             ))}
           </Field>
         </div>
