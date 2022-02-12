@@ -1,0 +1,39 @@
+.NavMenu a {
+  margin-left: 20px;
+  color: rgb(0, 0, 0);
+  text-decoration: none;
+}
+.NavMenu {
+  font-size: 17px;
+  margin-bottom: 15px;
+  height: 40px;
+  display: flex;
+  border-color: rgb(31, 6, 6);
+  border-style: solid;
+  border-width: 0.5px;
+}
+.Nav {
+  align-items: center;
+  margin: auto;
+  display: flex;
+}
+.Navbar_btn {
+  margin-left: 15px;
+  display: flex;
+  text-align: center;
+  justify-content: center;
+  align-items: center;
+  text-transform: uppercase;
+  position: relative;
+  background-color: black;
+  color: white;
+  height: 30px;
+  width: 200px;
+  color: #fff;
+  transition-duration: 0s;
+}
+.Navbar_btn:hover {
+  top: 2px;
+  box-shadow: 0 3px 0px #222222;
+  background-color: #222222;
+}

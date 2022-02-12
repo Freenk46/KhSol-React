@@ -1,33 +1,22 @@
-export const getPricNavbarDate = (state) => {
-   return state.AppReducer.PricNavbarDate;
+export const getLaserPricNavbarData = (state) => {
+   return state.LaserHairRemovalreducer.PricNavData;
 }
-export const getMostPopular = (state) => {
-   return state.AppReducer.MostPopular;
+export const getLaserProcedures = (state) => {
+   return state.LaserHairRemovalreducer.Procedures;
 }
-export const getUpperBody = (state) => {
-   return state.AppReducer.initialized;
-}
-export const getFaceNeck = (state) => {
-   return state.LaserHairRemovalreducer.FaceNeck;
-}
-export const getLowerBody = (state) => {
-   return state.LaserHairRemovalreducer.LowerBody;
-}
-export const getFullBody = (state) => {
-   return state.LaserHairRemovalreducer.FullBody;
-}
-export const getPathMen = (state) => {
-   return state.LaserHairRemovalreducer.PathMen;
-}
-export const getPathWomen = (state) => {
-   return state.LaserHairRemovalreducer.PathMen;
-}
-export const getLaserHairRemovalInformationNet = (state) => {
+export const getLaserInformationNet = (state) => {
    return state.LaserHairRemovalreducer.InformationNet;
 }
-export const getLaserHairRemovalPoster = (state) => {
+export const getLaserPoster = (state) => {
    return state.LaserHairRemovalreducer.Poster;
 }
-export const getLaserHairRemovalAbout = (state) => {
+export const getLaserAbout = (state) => {
    return state.LaserHairRemovalreducer.About;
+}
+export const getLaserNet = (state) => {
+   return state.LaserHairRemovalreducer.Net;
+}
+
+export const getLaserindex = (state) => {
+   return state.LaserHairRemovalreducer.index;
 }

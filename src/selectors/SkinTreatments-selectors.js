@@ -1,27 +1,16 @@
-export const getMicrodermabrasion = (state) => {
-   return state.AppReducer.Microdermabrasion;
+export const getTreatmentProcedure = (state) => {
+   return state.SkinTreatmentsreducer.Procedures;
 }
-export const getRejuvapen = (state) => {
-   return state.SkinTreatmentsreducer.Rejuvapen;
+export const getTreatmentsPricNavbarData = (state) => {
+   return state.SkinTreatmentsreducer.PricNavData;
 }
-export const getLEDlightTherapy = (state) => {
-   return state.SkinTreatmentsreducer.LEDlightTherapy;
-}
-export const getHydraFacial = (state) => {
-   return state.SkinTreatmentsreducer.HydraFacial;
-}
-export const getCosmeticGradePeels = (state) => {
-   return state.SkinTreatmentsreducer.CosmeticGradePeels;
-}
-export const getPricNavbarDate = (state) => {
-   return state.SkinTreatmentsreducer.PricNavbarDate;
-}
-export const getSkinTreatmentsPoster = (state) => {
+export const getTreatmentsPoster = (state) => {
    return state.SkinTreatmentsreducer.Poster;
 }
-export const getSkinTreatmentsAbout = (state) => {
+export const getTreatmentsAbout = (state) => {
    return state.SkinTreatmentsreducer.About;
 }
-export const getProcedureNames = (state) => {
-   return state.SkinTreatmentsreducer.ProcedureNames;
+export const getindex = (state) => {
+   return state.SkinTreatmentsreducer.index;
 }
+

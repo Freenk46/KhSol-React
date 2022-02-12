@@ -1,10 +1,9 @@
-import React from 'react';
+import React, { PureComponent } from 'react';
 import { connect } from 'react-redux'
 import SkinCare from './SkinCare';
 import { getSkinCarePoster } from '../../selectors/SkinCare-selectors'
 
-class SkinCareConteiner extends React.Component {
-
+class SkinCareConteiner extends PureComponent {
    render() {
       return <SkinCare {...this.props} />
    }

@@ -1,4 +1,5 @@
 import Preloader from '../Common/Preloader/Preloader';
+import MyProfileStatus from './MyProfileSettings/MyProfileStatus';
 import s from './Profile.module.css'
 const Profile = (props) => {
    if (!props.initialized) {
@@ -6,9 +7,7 @@ const Profile = (props) => {
    }
    if (!props.Profile) {
       return < Preloader />
-
    }
-
    return (
       <div>
          <div className={s.About_Conteiner}>
@@ -17,7 +16,6 @@ const Profile = (props) => {
                   <h1 className={s.About_title}>{props.Profile.fullName} Profile</h1>
                </div>
                <div className={s.text_conteiner}>
-                  <h4 className={s.About_text}>{props.status}</h4>
                </div>
                <div className={s.btn_conteiner}>
                   <button className={s.About_btn}>

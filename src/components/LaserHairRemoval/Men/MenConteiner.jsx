@@ -1,30 +1,40 @@
-import Men from '../Men/Men'
-import { connect } from 'react-redux'
-import { AddNewProcedure, UpdateNewName, UpdateNewSurname, UpdateNewEmail, UpdateNewProcedureName, UpdateNewProcedureClass, UpdateNewNumber, UpdateNewGender } from '../../../../../redux/NewProcedure-reducer';
+import Men from './Men';
+import React, { PureComponent } from 'react';
 import { compose } from 'redux';
-let mapStateToProps = (state) => {
-   return {
-      PathMen: state.LaserHairRemovalreducer.LaserHairRemoval.PathMen,
-      PathWomen: state.LaserHairRemovalreducer.LaserHairRemoval.PathWomen,
-      LHRPricNavbarDate: state.LaserHairRemovalreducer.LaserHairRemoval.PricNavbarData,
-      MostPopularProcedurePric: state.LaserHairRemovalreducer.LaserHairRemoval.MostPopular,
-      text1: state.LaserHairRemovalreducer.LaserHairRemoval.InformationNet.text1,
-      text2: state.LaserHairRemovalreducer.LaserHairRemoval.InformationNet.text2,
-      text3: state.LaserHairRemovalreducer.LaserHairRemoval.InformationNet.text3,
-      text4: state.LaserHairRemovalreducer.LaserHairRemoval.InformationNet.text4,
-      Mimg1: state.LaserHairRemovalreducer.LaserHairRemoval.InformationNet.Mimg1,
-      Mimg2: state.LaserHairRemovalreducer.LaserHairRemoval.InformationNet.Mimg2,
-      Mimg3: state.LaserHairRemovalreducer.LaserHairRemoval.InformationNet.Mimg3,
+import { connect } from 'react-redux';
+import { AddNewProcedureCart, } from '../../../redux/Procedure-reducer';
+import { LaserProcedureIsBooked, setLaserProcedureindex } from '../../../redux/LaserHairRemoval-reducer';
+import { getemail, getlogin, getid, getisAuth } from '../../../selectors/auth-selectors';
+import { getLaserPricNavbarData, getLaserProcedures, getLaserPoster, getLaserAbout, getLaserNet, getLaserindex } from '../../../selectors/LaserHairRemoval-selectors';
+class MenConteiner extends PureComponent {
+   componentDidMount() {
+   }
+   render() {
+      return (<Men  {...this.props} />)
    }
 }
-const MenConteiner = compose(
+let mapStateToProps = (state) => {
+   return {
+      LHRPricNavbarData: getLaserPricNavbarData(state),
+      LaserProcedures: getLaserProcedures(state),
+      email: getemail(state),
+      login: getlogin(state),
+      id: getid(state),
+      isAuth: getisAuth(state),
+      Poster: getLaserPoster(state),
+      About: getLaserAbout(state),
+      Net: getLaserNet(state),
+      index: getLaserindex(state)
+
+   }
+}
+export default compose(
    connect(mapStateToProps,
       {
-         AddNewProcedure, UpdateNewName, UpdateNewSurname,
-         UpdateNewEmail, UpdateNewProcedureName, UpdateNewProcedureClass,
-         UpdateNewNumber, UpdateNewGender
-      }),
-
+         LaserProcedureIsBooked,
+         AddNewProcedureCart,
+         setLaserProcedureindex
+      }
+   ),
 )
-   (Men)
-export default MenConteiner;
+   (MenConteiner)

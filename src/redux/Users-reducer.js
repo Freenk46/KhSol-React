@@ -1,11 +1,13 @@
-import { userAPI } from "../API/API";
+import { userAPI, ProfileAPI } from "../API/API";
 
 const SET_USERS = 'SET_USERS';
 const SET_CURRENT_PAGE = 'SET_CURRENT_PAGE';
 const SET_USERS_TOTAL_COUNT = 'SET_USERS_TOTAL_COUNT';
 const TOGGLE_IS_FETCHING = 'TOGGLE_IS_FETCHING';
 const TOGGLE_IS_PROGRES = 'TOGGLE_IS_PROGRES';
+const SET_USERS_PROFILE = 'SET_USERS_PROFILE';
 let initialState = {
+  Profile: null,
   users: [],
   pageSize: 50,
   totalUsersCount: 0,
@@ -31,6 +33,9 @@ const UseReducer = (state = initialState, action) => {
     case TOGGLE_IS_PROGRES: {
       return { ...state, getServerInProgres: action.isFetching }
     }
+    case SET_USERS_PROFILE: {
+      return { ...state, Profile: action.Profile }
+    }
     default:
       return state;
   }
@@ -41,14 +46,19 @@ export const setUsersTotalCount = (totalCount) => ({ type: SET_USERS_TOTAL_COUNT
 export const toggleIsFetching = (isFetching) => ({ type: TOGGLE_IS_FETCHING, isFetching })
 export const toggServerInProgres = (isFetching) => ({ type: TOGGLE_IS_PROGRES, isFetching })
 
+export const setUsersProfile = (Profile) => ({ type: SET_USERS_PROFILE, Profile })
+
 export const getUsersThunkCreater = (currentPage, pageSize) => {
-  return (dispatch) => {
+  return async (dispatch) => {
     dispatch(toggleIsFetching(true));
-    userAPI.getUsers(currentPage, pageSize).then(data => {
-      dispatch(toggleIsFetching(false));
-      dispatch(setUsers(data.items));
-      dispatch(setUsersTotalCount(data.totalCount));
-    });
+    let data = await userAPI.getUsers(currentPage, pageSize)
+    dispatch(toggleIsFetching(false));
+    dispatch(setUsers(data.items));
+    dispatch(setUsersTotalCount(data.totalCount));
   }
+}
+export const getUsersProfileThunk = (userId) => async (dispatch) => {
+  let response = await ProfileAPI.getProfile(userId)
+  dispatch(setUsersProfile(response.data));
 }
 export default UseReducer;

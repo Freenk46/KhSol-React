@@ -5,23 +5,26 @@ const INITIALAIZED_SUCCESS = 'INITIALAIZED_SUCCESS';
 let initialState = {
 
    NbD: [
-      { name: 'LaserHairRemoval', NavbarPath: 'LaserHairRemoval', },
-      { name: 'SkinCare', NavbarPath: 'SkinCare' },
-      { name: 'CosmeticInjections ', NavbarPath: 'CosmeticInjections' },
-      { name: 'Promo', NavbarPath: 'Promo' },
-      { name: 'Procedure', NavbarPath: 'Procedure' },
-      { name: 'Register', NavbarPath: 'Register' },
+      { id: 0, name: 'LaserHairRemoval', NavbarPath: 'LaserHairRemoval', },
+      { id: 1, name: 'SkinCare', NavbarPath: 'SkinCare' },
+      { id: 2, name: 'CosmeticInjections ', NavbarPath: 'CosmeticInjections' },
+
    ],
    HNbD: [
-      { name: 'OurStory', HeaderNavbarPath: 'OurStory' },
-      { name: 'MedicalTeam', HeaderNavbarPath: 'MedicalTeam' },
-      { name: 'COVID Info', HeaderNavbarPath: 'COVID Info' },
-      { name: 'Users', HeaderNavbarPath: 'Users' },
-      { name: 'MyProfile', HeaderNavbarPath: 'MyProfile' }
+      { id: 0, name: 'OurStory', NavbarPath: 'OurStory' },
+      { id: 1, name: 'MedicalTeam', NavbarPath: 'MedicalTeam' },
+      { id: 2, name: 'COVID Info', NavbarPath: 'COVID Info' },
+      { id: 3, name: 'Users', NavbarPath: 'Users' },
+      { id: 4, name: 'MyProfile', NavbarPath: 'MyProfile' }
    ],
-   img: 'https://i.pinimg.com/736x/cf/04/c1/cf04c1f86d5d9920131276f4db7ea7bf.jpg',
-
+   FND: [
+      { id: 0, name: 'Profile Cart', NavbarPath: 'MyProfile/Cart' },
+      { id: 1, name: 'My Procedure', NavbarPath: 'MyProfile/MyProcedure' },
+      { id: 2, name: 'Profile Setting', NavbarPath: 'MyProfile/Setting' },
+      { id: 3, name: 'Chat', NavbarPath: 'MyProfile/Chat' },
+   ],
    initialized: false,
+   img: "https://media.istockphoto.com/vectors/property-corporate-icon-logo-sign-abstract-design-gold-color-on-black-vector-id1153638665?k=20&m=1153638665&s=612x612&w=0&h=0-mZ0r7xrF9LSSkosidcQ8MI7gmmN9guHC1JMChdClA="
 }
 const AppReducer = (state = initialState, action) => {
    switch (action.type) {

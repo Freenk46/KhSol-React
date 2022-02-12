@@ -1,11 +1,10 @@
-import React from 'react';
+import React, { PureComponent } from 'react';
 import { connect } from 'react-redux'
 import Home from './Home';
 import { getHomePoster, getHomeAbout } from '../../selectors/Home-selectors'
 
 
-class HomeConteiner extends React.Component {
-
+class HomeConteiner extends PureComponent {
    render() {
       return <Home {...this.props} />
    }

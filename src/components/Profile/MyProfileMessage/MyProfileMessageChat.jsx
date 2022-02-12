@@ -31,7 +31,7 @@ const MyProfileMessageChat = (props) => {
          </div>
          <div className={s.Chat_Footer} >
             <div className={s.Profile_logo_conteiner} >
-               <img className={s.Profile_logo} src={props.img} alt=''></img>
+               <img className={s.Profile_logo} src={props.Profile.photos.large != null ? props.Profile.photos.large : props.img} alt="large"></img>
             </div>
             <AddMessageReduxForm onSubmit={addNewMessage} />
          </div>

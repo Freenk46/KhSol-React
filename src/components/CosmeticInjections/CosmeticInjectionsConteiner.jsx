@@ -1,10 +1,9 @@
-import React from 'react';
+import React, { PureComponent } from 'react';
 import { connect } from 'react-redux'
 import CosmeticInjections from '../CosmeticInjections/CosmeticInjections'
 import { getCosmeticInjectionsPoster, getCosmeticInjectionsAbout, getCosmeticInjectionsColumnas } from '../../selectors/CosmeticInjections-selectors'
 
-class CosmeticInjectionsConteiner extends React.Component {
-
+class CosmeticInjectionsConteiner extends PureComponent {
    render() {
       return <CosmeticInjections {...this.props} />
    }

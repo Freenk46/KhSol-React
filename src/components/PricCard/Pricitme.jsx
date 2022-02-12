@@ -1,18 +1,26 @@
 import { NavLink } from 'react-bootstrap';
-import s from './SkinTreatmentsPric.module.css'
-const SkinTreatmentsPricitme = (props) => {
+import { connect } from 'react-redux';
+import { useNavigate } from 'react-router-dom';
+import s from './Pric.module.css'
+const Pricitme = (props) => {
+    const navigate = useNavigate();
     let addProcedureCart = () => {
         let formData = {
+            ProcedureId: props.id,
             ProcedureName: props.Procedure,
             ProcedureClass: props.NavbarClass,
             Time: '12/07/2021 05:04 PM',
             Price: props.Pric,
+            ClassId: props.index
         };
+        if (!props.isAuth) {
+            return navigate("/Login");
+        } else
+            props.ProcedureIsBooked(props.index, props.id, props.NavbarClass);
         props.AddNewProcedureCart(formData);
     }
     return (
         <div>
-
             <div className={s.PricCard}>
                 <span className={s.NavbarClass}> {props.NavbarClass}  </span>
                 <div className={s.include}>
@@ -29,7 +37,8 @@ const SkinTreatmentsPricitme = (props) => {
                         <h5>{props.Duration}</h5>
                     </div>
                     <div className={s.ADD}>
-                        <button className={s.Navbtn} onClick={addProcedureCart} > <NavLink className={s.NavbtnLink}> ADD </NavLink> </button>
+                        {props.Booking ? <button>Booked</button>
+                            : <button className={s.Navbtn} onClick={addProcedureCart} > <NavLink className={s.NavbtnLink}> ADD </NavLink> </button>}
                     </div>
                 </div>
             </div>
@@ -38,5 +47,4 @@ const SkinTreatmentsPricitme = (props) => {
         </div>
     )
 }
-
-export default SkinTreatmentsPricitme;
+export default connect()(Pricitme);

@@ -1,11 +1,17 @@
 import s from './Header.module.css';
-import { Navigate, NavLink } from 'react-router-dom';
+import { NavLink, useNavigate } from 'react-router-dom';
 import HeaderNavbaritem from './HeaderNavbaritem/HederNavbaritem';
+import Preloader from '../Common/Preloader/Preloader';
 
 const Header = (props) => {
-
-    let HeaderNavbarElements = props.HeaderNavbarDate.map((E) => <HeaderNavbaritem name={E.name} HeaderNavbarPath={E.HeaderNavbarPath} />);
+    const logout = props.logout
+    let Logout = () => {
+        logout();
+        window.location.reload();
+    }
+    let HeaderNavbarElements = props.HeaderNavbarDate.map((E) => <HeaderNavbaritem key={E.id} name={E.name} HeaderNavbarPath={E.NavbarPath} />);
     return (
+
         <div className={s.wrapper}>
             <div className={s.Header_Logo_Conteiner}>
                 <NavLink to="/Home" >
@@ -18,26 +24,19 @@ const Header = (props) => {
                 </ul>
             </div>
             <div className={s.Header_end_conteiner}>
-                <div className={s.Profile_conteiner}>
-                    <div className={s.Profile_Logo_Conteiner}>
-                        <NavLink to="/MyProfile/Cart" >
-                            <img className={s.Profile_Logo} src={"https://i.pinimg.com/736x/cf/04/c1/cf04c1f86d5d9920131276f4db7ea7bf.jpg"} alt="" />
-                        </NavLink>
-                    </div>
-                </div>
+
                 <div className={s.Cart_conteiner}>
                     <div className={s.Cart_Logo_Conteiner}>
                         <NavLink to="/MyProfile/Cart" >
                             <img className={s.Cart_logo} src={"https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQGd2sjxFQjvIeJHrB6h01ODTyCuzYmEwvy1w&usqp=CAU"} alt="" />
                         </NavLink>
-                        {props.Id}
-                        <br />
-                        {props.TotalPrice}$
-
                     </div>
+                    {props.TotalPrice}$
+                    <br />
+                    {props.Id}
                 </div>
                 <button className={s.SignUp_Conteiner}>
-                    {props.isAuth ? <button className={s.SignUp_Link} onClick={props.logout}>Logout</button>
+                    {props.isAuth ? <button className={s.SignUp_Link} onClick={Logout}>Logout</button>
                         : <NavLink className={s.SignUp_Link} to="/login">Login</NavLink>}
 
                 </button>

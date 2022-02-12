@@ -1,6 +1,6 @@
-import { applyMiddleware, combineReducers, createStore } from "redux";
+import { applyMiddleware, combineReducers, createStore, compose } from "redux";
 import LaserHairRemovalreducer from "./LaserHairRemoval-reducer";
-import NewProcedureReducer from "./NewProcedure-reducer";
+import ProcedureReducer from "./Procedure-reducer";
 import SkinTreatmentsreducer from "./SkinTreatments-reducer";
 import Usersreducer from "./Users-reducer";
 import ProfileReducer from "./Profile-reducer";
@@ -15,7 +15,7 @@ import { reducer as formReducer } from 'redux-form'
 import AppReducer from "./App-reducer";
 let reducers = combineReducers({
     CosmeticInjectionsReducer: CosmeticInjectionsReducer,
-    NewProcedureReducer: NewProcedureReducer,
+    ProcedureReducer: ProcedureReducer,
     LaserHairRemovalreducer: LaserHairRemovalreducer,
     SkinTreatmentsreducer: SkinTreatmentsreducer,
     Usersreducer: Usersreducer,
@@ -29,7 +29,8 @@ let reducers = combineReducers({
     AppReducer: AppReducer,
 
 });
-let store = createStore(reducers, applyMiddleware(thunkMiddleware));
+const composeEnhancers = window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ || compose;
+const store = createStore(reducers, composeEnhancers(applyMiddleware(thunkMiddleware)));
 
-window.store = store;
+window._store_ = store;
 export default store;

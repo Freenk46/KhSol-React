@@ -1,10 +1,10 @@
-import React from 'react';
+import React, { PureComponent } from 'react';
 import { connect } from 'react-redux'
 import { setUsers, setCurrentPage, toggServerInProgres, getUsersThunkCreater } from '../../redux/Users-reducer';
 import Users from './Users';
 import Preloader from '../Common/Preloader/Preloader';
 import { getUsers, getPageSize, getTotalUsersCount, getCurrentPage, getIsFetching } from '../../selectors/Users-selectors'
-class UsersConteiner extends React.Component {
+class UsersConteiner extends PureComponent {
     componentDidMount() {
         this.props.getUsersThunk(this.props.currentPage, this.props.pageSize);
     }

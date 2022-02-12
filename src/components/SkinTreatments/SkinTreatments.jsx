@@ -1,11 +1,10 @@
 
 import s from './SKinTreatments.module.css';
-import SkinTreatmentsPricCard from './SkinTreatmentsPric/SkinTreatmentsPriCard';
-import SkinTreatmentsPricNavbar from './SkinTreatmentPricNavbar/SkinTreatmentsPricNavbar';
+import PricCard from '../PricCard/PriCard';
+import PricNavbar from '../PricNavbar/PricNavbar';
 import Poster from '../Poster/Poster';
 import About from '../About/About';
 const SkinTreatments = (props) => {
-
     return (
         <div className={s.SkinTreatmentswrapper}>
             <div className={s.p} >
@@ -20,15 +19,18 @@ const SkinTreatments = (props) => {
                 <h1>SkinTreatments</h1>
             </div>
             <div className={s.PricNavbar}>
-                <SkinTreatmentsPricNavbar PricNavbarDate={props.STPricNavbarData} />
+                <PricNavbar PricNavbarData={props.STPricNavbarData}
+                    setProcedureType={props.setProcedureType}
+                />
             </div>
             <div className={s.LaserPricboxs}>
-                <SkinTreatmentsPricCard
+                <PricCard
+                    index={props.index}
+                    ProcedureIsBooked={props.TreatmentProcedureIsBooked}
                     AddNewProcedureCart={props.AddNewProcedureCart}
-                    login={props.login} email={props.email} state={props.state} isAuth={props.isAuth} />
+                    login={props.login} email={props.email} Procedures={props.TreatmentsProcedures} isAuth={props.isAuth} />
             </div>
         </div>
-
     );
 }
 export default SkinTreatments;

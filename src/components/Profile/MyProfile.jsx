@@ -1,17 +1,16 @@
 import { NavLink } from 'react-router-dom';
+import MyProfileStatus from './MyProfileSettings/MyProfileStatus';
 import s from './Profile.module.css';
-
 const MyProfile = (props) => {
-
    return (
       <div>
          <div className={s.About_Conteiner}>
             <div className={s.About_info_conteiner}>
                <div className={s.tile_conteiner}>
-                  <h1 className={s.About_title}>{props.login} Profile</h1>
+                  <h1 className={s.About_title}>{props.Profile.fullName}</h1>
                </div>
-               <div className={s.text_conteiner}>
-                  <h4 className={s.About_text}>{props.status}</h4>
+               <div className={s.Status_conteiner}>
+                  <MyProfileStatus status={props.status} getProfileStatus={props.getProfileStatus} UpdateProfileStatus={props.UpdateProfileStatus} />
                </div>
                <div className={s.btn_conteiner}>
                   <button className={s.About_btn}>
@@ -20,7 +19,7 @@ const MyProfile = (props) => {
                </div>
             </div>
             <div className={s.About_video_conteienr}>
-               <img src={props.img} alt="" />
+               <img className={s.Profile_Img} src={props.Profile.photos.large != null ? props.Profile.photos.large : props.img} alt="large" />
             </div>
          </div>
          <div className={s.Menu_conteiner} >
@@ -33,10 +32,6 @@ const MyProfile = (props) => {
             </div>
          </div>
       </div >
-
-
-
-
    );
-}
+};
 export default MyProfile;

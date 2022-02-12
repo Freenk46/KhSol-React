@@ -1,13 +1,10 @@
-import React from 'react';
-import { AddNewProcedureCart } from '../../../redux/NewProcedure-reducer';
-import { UpdateProcedureNames } from '../../../redux/SkinTreatments-reducer';
+import React, { PureComponent } from 'react';
+import { AddNewProcedureCart } from '../../../redux/Procedure-reducer';
 import FormRegistProcedure from './FormRegistProcedure'
 import { connect } from 'react-redux'
 import { compose } from 'redux';
-import { getPricNavbarDate, getProcedureNames } from '../../../selectors/SkinTreatments-selectors'
-
-
-class FormRegistConteiner extends React.Component {
+import { } from '../../../selectors/SkinTreatments-selectors'
+class FormRegistConteiner extends PureComponent {
 
   componentDidMount() {
   }
@@ -18,14 +15,13 @@ class FormRegistConteiner extends React.Component {
 }
 
 let mapStateToProps = (state) => ({
-  PricNavbarDate: getPricNavbarDate(state),
-  ProcedureNames: getProcedureNames(state),
+
+
 });
 export default compose(
   connect(mapStateToProps,
     {
       AddNewProcedureCart,
-      UpdateProcedureNames,
     }
   ),
 )

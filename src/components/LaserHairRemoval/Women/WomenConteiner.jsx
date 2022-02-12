@@ -1,33 +1,39 @@
-import Women from '../Women/Women'
-import { connect } from 'react-redux'
-import { AddNewProcedure, UpdateNewName, UpdateNewSurname, UpdateNewEmail, UpdateNewProcedureName, UpdateNewProcedureClass, UpdateNewNumber, UpdateNewGender } from '../../../../../redux/NewProcedure-reducer';
-import { withAuthRedirect } from '../../../../../hoc/withAuthRedirect';
+import Women from './Women';
+import React, { PureComponent } from 'react';
 import { compose } from 'redux';
-let mapStateToProps = (state) => {
-   return {
-      PathMen: state.LaserHairRemovalreducer.LaserHairRemoval.PathMen,
-      PathWomen: state.LaserHairRemovalreducer.LaserHairRemoval.PathWomen,
-      LHRPricNavbarDate: state.LaserHairRemovalreducer.LaserHairRemoval.PricNavbarData,
-      MostPopularProcedurePric: state.LaserHairRemovalreducer.LaserHairRemoval.MostPopular,
-      text1: state.LaserHairRemovalreducer.LaserHairRemoval.InformationNet.text1,
-      text2: state.LaserHairRemovalreducer.LaserHairRemoval.InformationNet.text2,
-      text3: state.LaserHairRemovalreducer.LaserHairRemoval.InformationNet.text3,
-      text4: state.LaserHairRemovalreducer.LaserHairRemoval.InformationNet.text4,
-      Wimg1: state.LaserHairRemovalreducer.LaserHairRemoval.InformationNet.Wimg1,
-      Wimg2: state.LaserHairRemovalreducer.LaserHairRemoval.InformationNet.Wimg2,
-      Wimg3: state.LaserHairRemovalreducer.LaserHairRemoval.InformationNet.Wimg3,
+import { connect } from 'react-redux';
+import { AddNewProcedureCart, } from '../../../redux/Procedure-reducer';
+import { LaserProcedureIsBooked, setLaserProcedureindex } from '../../../redux/LaserHairRemoval-reducer';
+import { getemail, getlogin, getid, getisAuth } from '../../../selectors/auth-selectors';
+import { getLaserPricNavbarData, getLaserProcedures, getLaserPoster, getLaserAbout, getLaserNet, getLaserindex } from '../../../selectors/LaserHairRemoval-selectors';
+class WomenConteiner extends PureComponent {
+   componentDidMount() {
+   }
+   render() {
+      return (<Women  {...this.props} />)
    }
 }
-
-
-const WomenConteiner = compose(
+let mapStateToProps = (state) => {
+   return {
+      LHRPricNavbarData: getLaserPricNavbarData(state),
+      LaserProcedures: getLaserProcedures(state),
+      email: getemail(state),
+      login: getlogin(state),
+      id: getid(state),
+      isAuth: getisAuth(state),
+      Poster: getLaserPoster(state),
+      About: getLaserAbout(state),
+      Net: getLaserNet(state),
+      index: getLaserindex(state),
+   }
+}
+export default compose(
    connect(mapStateToProps,
       {
-         AddNewProcedure, UpdateNewName, UpdateNewSurname,
-         UpdateNewEmail, UpdateNewProcedureName, UpdateNewProcedureClass,
-         UpdateNewNumber, UpdateNewGender
-      }),
-   withAuthRedirect
+         LaserProcedureIsBooked,
+         AddNewProcedureCart,
+         setLaserProcedureindex
+      }
+   ),
 )
-   (Women)
-export default WomenConteiner;
+   (WomenConteiner)

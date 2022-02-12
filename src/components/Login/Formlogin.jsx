@@ -3,7 +3,6 @@ import './Form.css';
 import { reduxForm, Field } from 'redux-form';
 import { required, maxLengthCreator } from '../../utils/validators/validators';
 import { Textarea } from '../Common/FormsControls/FormsControls';
-import s from '../Common/FormsControls/FormsControls.module.css';
 import { connect } from 'react-redux';
 import { login } from '../../redux/auth-reducer';
 import { Navigate } from 'react-router-dom';
@@ -53,7 +52,6 @@ const Formlogin = (props) => {
 const LoginReduxForm = reduxForm({ form: 'login' })(Formlogin)
 const Login = (props) => {
    const onSubmit = (formData) => {
-
       props.login(formData.email, formData.password, formData.rememberMe);
    }
    if (props.isAuth) {

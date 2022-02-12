@@ -1,98 +1,91 @@
+const LASER_PROCEDURE_IS_BOKED = 'LASER_PROCEDURE_IS_BOKED';
+const ALL_LASER_PROCEDURE_IS_BOKED = 'ALL_LASER_PROCEDURE_IS_BOKED';
+const LASER_PROCEDURE_TYPE = 'LASER_PROCEDURE_TYPE';
 let initialState = {
-  PricNavbarDate: [
-    { name: 'MostPopular', PricNavbarPath: 'MostPopular', Followed: 'False' },
-    { name: 'Face&Neck', PricNavbarPath: 'FaceNeck', Followed: 'False' },
-    { name: 'UpperBody', PricNavbarPath: 'UpperBody', Followed: 'False' },
-    { name: 'LowerBody', PricNavbarPath: 'LowerBody', Followed: 'False' },
-    { name: 'FullBody', PricNavbarPath: 'FullBody', Followed: 'False' }
+  Procedures: [
+    [
+      { id: 0, Procedure: 'Underarms', NavbarClass: 'UpperBody', Duration: '20m', Pric: 232, Booking: false },
+      { id: 1, Procedure: 'Naval', NavbarClass: 'UpperBody', Duration: '20m', Pric: 232, Booking: false },
+      { id: 2, Procedure: 'Laser Hair Removal Snail Trail', NavbarClass: 'UpperBody', Duration: '20m', Pric: 232, Booking: false },
+      { id: 3, Procedure: 'Areola', NavbarClass: 'UpperBody', Duration: '20m', Pric: 232, Booking: false },
+      { id: 4, Procedure: 'Neck (Front or Back)', NavbarClass: 'UpperBody', Duration: '20m', Pric: 232, Booking: false },
+      { id: 5, Procedure: 'Hands & Fingers', NavbarClass: 'UpperBody', Duration: '20m', Pric: 232, Booking: false },
+      { id: 6, Procedure: 'Female Stomach', NavbarClass: 'UpperBody', Duration: '20m', Pric: 232, Booking: false },
+      { id: 7, Procedure: 'Female Shoulders', NavbarClass: 'UpperBody', Duration: '20m', Pric: 232, Booking: false },
+      { id: 8, Procedure: 'Female 1/4 Arms', NavbarClass: 'UpperBody', Duration: '20m', Pric: 232, Booking: false },
+      { id: 9, Procedure: 'Male 1/4 Arms', NavbarClass: 'UpperBody', Duration: '20m', Pric: 232, Booking: false },
+      { id: 10, Procedure: 'Female 1/4 Back', NavbarClass: 'UpperBody', Duration: '20m', Pric: 232, Booking: false },
+      { id: 11, Procedure: 'Female 1/2 Arms', NavbarClass: 'UpperBody', Duration: '20m', Pric: 232, Booking: false },
+      { id: 12, Procedure: 'Female Chest', NavbarClass: 'UpperBody', Duration: '20m', Pric: 232, Booking: false },
+      { id: 13, Procedure: 'Male 1/4 Back', NavbarClass: 'UpperBody', Duration: '20m', Pric: 232, Booking: false },
+      { id: 14, Procedure: 'Female 1/2 Back', NavbarClass: 'UpperBody', Duration: '20m', Pric: 232, Booking: false },
+      { id: 15, Procedure: 'Male Chest', NavbarClass: 'UpperBody', Duration: '20m', Pric: 232, Booking: false },
+      { id: 16, Procedure: 'Male 1/2 Arms', NavbarClass: 'UpperBody', Duration: '20m', Pric: 232, Booking: false },
+      { id: 17, Procedure: 'Male Shoulders', NavbarClass: 'UpperBody', Duration: '20m', Pric: 232, Booking: false },
+      { id: 18, Procedure: 'Male 1/2 Back', NavbarClass: 'UpperBody', Duration: '20m', Pric: 232, Booking: false },
+      { id: 19, Procedure: 'Female Full Arms', NavbarClass: 'UpperBody', Duration: '20m', Pric: 232, Booking: false },
+      { id: 20, Procedure: 'Male Full Arms', NavbarClass: 'UpperBody', Duration: '20m', Pric: 232, Booking: false },
+      { id: 21, Procedure: 'Male Chest & Stomach', NavbarClass: 'UpperBody', Duration: '20m', Pric: 232, Booking: false },
+      { id: 22, Procedure: 'Female 3/4 Back', NavbarClass: 'UpperBody', Duration: '20m', Pric: 232, Booking: false },
+      { id: 23, Procedure: 'Female Back', NavbarClass: 'UpperBody', Duration: '20m', Pric: 232, Booking: false },
+      { id: 24, Procedure: 'Back & Shoulders', NavbarClass: 'UpperBody', Duration: '20m', Pric: 232, Booking: false },
+      { id: 25, Procedure: 'Male Back', NavbarClass: 'UpperBody', Duration: '20m', Pric: 232, Booking: false },
+      { id: 26, Procedure: 'Male Back & Shoulders', NavbarClass: 'UpperBody', Duration: '20m', Pric: 232, Booking: false }
+    ],
+    [
+      { id: 0, Procedure: 'Chin', NavbarClass: 'FaceNeck', Duration: '20m', Pric: 232, Booking: false },
+      { id: 1, Procedure: 'Ears', NavbarClass: 'FaceNeck', Duration: '20m', Pric: 232, Booking: false },
+      { id: 2, Procedure: 'Eyebrows', NavbarClass: 'FaceNeck', Duration: '20m', Pric: 232, Booking: false },
+      { id: 3, Procedure: 'Lip', NavbarClass: 'FaceNeck', Pric: 232, Booking: false },
+      { id: 4, Procedure: 'LipChin', NavbarClass: 'FaceNeck', Duration: '20m', Pric: 232, Booking: false },
+      { id: 5, Procedure: '1/2 Face (forehead to nose OR upper lip to chin)', NavbarClass: 'FaceNeck', Duration: '20m', Pric: 232, Booking: false },
+      { id: 6, Procedure: 'Full Face', NavbarClass: 'FaceNeck', Duration: '20m', Pric: 232, Booking: false },
+      { id: 7, Procedure: 'Male Facial Hair Sculpting', PricNavbarPath: 'FaceNeck', Duration: '20m', Pric: 232, Booking: false },
+      { id: 8, Procedure: 'Face & Neck', NavbarClass: 'FaceNeck', Duration: '20m', Pric: 232, Booking: false },
+    ],
+    [
+      { id: 0, Procedure: 'Peri Anal', NavbarClass: 'LowerBody', Duration: '20m', Pric: 232, Booking: false },
+      { id: 1, Procedure: 'Fingers & Toes', NavbarClass: 'LowerBody', Duration: '20m', Pric: 232, Booking: false },
+      { id: 2, Procedure: 'Bikini', NavbarClass: 'LowerBody', Duration: '20m', Pric: 232, Booking: false },
+      { id: 3, Procedure: 'Feet & Toes', NavbarClass: 'LowerBody', Duration: '20m', Pric: 232, Booking: false },
+      { id: 4, Procedure: 'Female Brazilian', NavbarClass: 'LowerBody', Duration: '20m', Pric: 232, Booking: false },
+      { id: 5, Procedure: 'Female Brazilian & Underarms', NavbarClass: 'LowerBody', Duration: '20m', Pric: 232, Booking: false },
+      { id: 6, Procedure: 'Buttocks', NavbarClass: 'LowerBody', Duration: '20m', Pric: 232, Booking: false },
+      { id: 7, Procedure: '1/4 Legs', NavbarClass: 'LowerBody', Duration: '20m', Pric: 232, Booking: false },
+      { id: 8, Procedure: 'Male Brazilian', NavbarClass: 'LowerBody', Duration: '20m', Pric: 232, Booking: false },
+      { id: 9, Procedure: '1/2 Legs', NavbarClass: 'LowerBody', Duration: '20m', Pric: 232, Booking: false },
+      { id: 10, Procedure: 'Female Full Legs', NavbarClass: 'LowerBody', Duration: '20m', Pric: 232, Booking: false },
+      { id: 11, Procedure: 'Female 1/2 Legs + Brazilian & Underarms', NavbarClass: 'LowerBody', Duration: '20m', Pric: 232, Booking: false },
+      { id: 12, Procedure: 'Full Arms, Brazilian & Underarms', NavbarClass: 'LowerBody', Duration: '20m', Pric: 232, Booking: false },
+      { id: 13, Procedure: 'Female Full Legs, Brazilian & Underarms', NavbarClass: 'LowerBody', Duration: '20m', Pric: 232, Booking: false },
+      { id: 14, Procedure: 'Male Full Legs', NavbarClass: 'LowerBody', Duration: '20m', Pric: 232, Booking: false }
+    ],
+    [
+      { id: 0, Procedure: 'Female Full Body', NavbarClass: 'FullBody', Duration: '20m', Pric: 232, Booking: false },
+      { id: 1, Procedure: 'Female Full Body (excludes back & shoulders)', NavbarClass: 'FullBody', Duration: '20m', Pric: 232, Booking: false },
+      { id: 2, Procedure: 'Male Full Body', NavbarClass: 'FullBody', Duration: '20m', Pric: 232, Booking: false }
+    ],
   ],
-  MostPopular: [
-    { id: '1', Procedure: 'Chin', NavbarClass: 'MostPopular', Pric: '23$', Followed: 'False' },
-    { id: '2', Procedure: 'Ears', NavbarClass: 'MostPopular', Pric: '23$', Followed: 'False' },
-    { id: '3', Procedure: 'UpperBody', NavbarClass: 'MostPopular', Pric: '23$', Followed: 'False' },
-    { id: '4', Procedure: 'LowerBody', NavbarClass: 'MostPopular', Pric: '23$', Followed: 'False' },
-    { id: '5', Procedure: 'FullBody', NavbarClass: 'MostPopular', Pric: '23$', Followed: 'False' },
-    { id: '6', Procedure: 'LowerBody', NavbarClass: 'MostPopular', Pric: '23$', Followed: 'False' },
-    { id: '7', Procedure: 'LowerBody', NavbarClass: 'MostPopular', Pric: '23$', Followed: 'False' },
+  PricNavData: [
+    { id: 0, name: 'UpperBody', PricNavbarPath: 'UpperBody' },
+    { id: 1, name: 'Face&Neck', PricNavbarPath: 'FaceNeck' },
+    { id: 2, name: 'LowerBody', PricNavbarPath: 'LowerBody' },
+    { id: 3, name: 'FullBody', PricNavbarPath: 'FullBody' },
   ],
-  UpperBody: [
-    { id: '1', Procedure: 'Underarms', NavbarClass: 'UpperBody', Pric: '23$', Followed: 'False' },
-    { id: '2', Procedure: 'Naval', NavbarClass: 'UpperBody', Pric: '23$' },
-    { id: '3', Procedure: 'Laser Hair Removal Snail Trail', NavbarClass: 'UpperBody', Pric: '23$', Followed: 'False' },
-    { id: '4', Procedure: 'Areola', NavbarClass: 'UpperBody', Pric: '23$ ', Followed: 'False' },
-    { id: '5', Procedure: 'Neck (Front or Back)', NavbarClass: 'UpperBody', Pric: '23$', Followed: 'False' },
-    { id: '6', Procedure: 'Hands & Fingers', NavbarClass: 'UpperBody', Pric: '23$', Followed: 'False' },
-    { id: '7', Procedure: 'Female Stomach', NavbarClass: 'UpperBody', Pric: '23$', Followed: 'False' },
-    { id: '8', Procedure: 'Female Shoulders', NavbarClass: 'UpperBody', Pric: '23$', Followed: 'False' },
-    { id: '9', Procedure: 'Female 1/4 Arms', NavbarClass: 'UpperBody', Pric: '23$', Followed: 'False' },
-    { id: '10', Procedure: 'Male 1/4 Arms', NavbarClass: 'UpperBody', Pric: '23$', Followed: 'False' },
-    { id: '11', Procedure: 'Female 1/4 Back', NavbarClass: 'UpperBody', Pric: '23$', Followed: 'False' },
-    { id: '12', Procedure: 'Female 1/2 Arms', NavbarClass: 'UpperBody', Pric: '23$', Followed: 'False' },
-    { id: '13', Procedure: 'Female Chest', NavbarClass: 'UpperBody', Pric: '23$', Followed: 'False' },
-    { id: '14', Procedure: 'Male 1/4 Back', NavbarClass: 'UpperBody', Pric: '23$', Followed: 'False' },
-    { id: '15', Procedure: 'Female 1/2 Back', NavbarClass: 'UpperBody', Followed: 'False' },
-    { id: '16', Procedure: 'Male Chest', NavbarClass: 'UpperBody', Pric: '23$', Followed: 'False' },
-    { id: '17', Procedure: 'Male 1/2 Arms', NavbarClass: 'UpperBody', Pric: '23$', Followed: 'False' },
-    { id: '18', Procedure: 'Male Shoulders', NavbarClass: 'UpperBody', Pric: '23$', Followed: 'False' },
-    { id: '19', Procedure: 'Male 1/2 Back', NavbarClass: 'UpperBody', Pric: '23$', Followed: 'False' },
-    { id: '20', Procedure: 'Female Full Arms', NavbarClass: 'UpperBody', Pric: '23$', Followed: 'False' },
-    { id: '21', Procedure: 'Male Full Arms', NavbarClass: 'UpperBody', Pric: '23$' },
-    { id: '22', Procedure: 'Male Chest & Stomach', NavbarClass: 'UpperBody', Pric: '23$', Followed: 'False' },
-    { id: '23', Procedure: 'Female 3/4 Back', NavbarClass: 'UpperBody', Pric: '23$', Followed: 'False' },
-    { id: '24', Procedure: 'Female Back', NavbarClass: 'UpperBody', Pric: '23$', Followed: 'False' },
-    { id: '25', Procedure: 'Back & Shoulders', NavbarClass: 'UpperBody', Pric: '23$', Followed: 'False' },
-    { id: '26', Procedure: 'Male Back', NavbarClass: 'UpperBody', Pric: '23$' },
-    { id: '27', Procedure: 'Male Back & Shoulders', NavbarClass: 'UpperBody', Pric: '23$', Followed: 'False' }
+  Net: [
+    {
+      text1: 'Our experienced therapists will take your skin and hair type into account before creating a personalised treatment plan.',
+      text2: 'Our lasers use a large treatment spot size which allows multiple hair follicles to be targeted at the same time. ',
+      text3: 'The Candela GentleLASE Pro is designed to work for clients with dark hair and lighter skin, while the GentleYAG Pro works best on a darker skin tone.',
+      text4: 'With each session, hair is reduced. We recommend an initial course of 6-12 treatments, spaced 4 weeks apart (depending on area and skin tone).',
+      Mimg1: 'https://www.laserclinics.co.uk/globalassets/mens-laser-after-359x318-1.jpg',
+      Mimg2: 'https://www.laserclinics.co.uk/globalassets/mens-laser-consult-359x318.jpg',
+      Mimg3: 'https://www.laserclinics.co.uk/globalassets/mens-laser-359x318.jpg',
+      Wimg1: 'https://www.laserclinics.co.uk/contentassets/a9e6051552e242ba8ca6513dc81ee148/legs-11-359x318.jpg',
+      Wimg2: 'https://www.laserclinics.co.uk/contentassets/e1922bf74756449a9f55c9e9fbbf0c37/legs-10-359x318.jpg',
+      Wimg3: 'https://www.laserclinics.co.uk/contentassets/5cb5d3490dd54c989448e28611013522/ladies-laser-final.jpg',
+    }
   ],
-  FaceNeck: [
-    { id: '1', Procedure: 'Chin', NavbarClass: 'FaceNeck', Pric: '23$', Followed: 'False' },
-    { id: '2', Procedure: 'Ears', NavbarClass: 'FaceNeck', Pric: '23$', Followed: 'False' },
-    { id: '3', Procedure: 'Eyebrows', NavbarClass: 'FaceNeck', Pric: '23$', Followed: 'False' },
-    { id: '4', Procedure: 'Lip', NavbarClass: 'FaceNeck', Pric: '23$' },
-    { id: '5', Procedure: 'LipChin', NavbarClass: 'FaceNeck', Pric: '23$', Followed: 'False' },
-    { id: '6', Procedure: '1/2 Face (forehead to nose OR upper lip to chin)', NavbarClass: 'FaceNeck', Pric: '23$', Followed: 'False' },
-    { id: '7', Procedure: 'Full Face', NavbarClass: 'FaceNeck', Pric: '23$', Followed: 'False' },
-    { id: '8', Procedure: 'Male Facial Hair Sculpting', PricNavbarPath: 'FaceNeck', Pric: '23$', Followed: 'False' },
-    { id: '9', Procedure: 'Face & Neck', NavbarClass: 'FaceNeck', Pric: '23$', Followed: 'False' },
-  ],
-  LowerBody: [
-
-    { id: '1', Procedure: 'Peri Anal', NavbarClass: 'LowerBody', Pric: '23$', Followed: 'False' },
-    { id: '2', Procedure: 'Fingers & Toes', NavbarClass: 'LowerBody', Pric: '23$', Followed: 'False' },
-    { id: '3', Procedure: 'Bikini', NavbarClass: 'LowerBody', Pric: '23$', Followed: 'False' },
-    { id: '4', Procedure: 'Feet & Toes', NavbarClass: 'LowerBody', Pric: '23$', Followed: 'False' },
-    { id: '5', Procedure: 'Female Brazilian', NavbarClass: 'LowerBody', Pric: '23$', Followed: 'False' },
-    { id: '6', Procedure: 'Female Brazilian & Underarms', NavbarClass: 'LowerBody', Pric: '23$', Followed: 'False' },
-    { id: '7', Procedure: 'Buttocks', NavbarClass: 'LowerBody', Pric: '23$', Followed: 'False' },
-    { id: '8', Procedure: '1/4 Legs', NavbarClass: 'LowerBody', Pric: '23$', Followed: 'False' },
-    { id: '9', Procedure: 'Male Brazilian', NavbarClass: 'LowerBody', Pric: '23$', Followed: 'False' },
-    { id: '10', Procedure: '1/2 Legs', NavbarClass: 'LowerBody', Pric: '23$', Followed: 'False' },
-    { id: '11', Procedure: 'Female Full Legs', NavbarClass: 'LowerBody', Pric: '23$', Followed: 'False' },
-    { id: '12', Procedure: 'Female 1/2 Legs + Brazilian & Underarms', NavbarClass: 'LowerBody', Pric: '23$', Followed: 'False' },
-    { id: '13', Procedure: 'Full Arms, Brazilian & Underarms', NavbarClass: 'LowerBody', Pric: '23$', Followed: 'False' },
-    { id: '14', Procedure: 'Female Full Legs, Brazilian & Underarms', NavbarClass: 'LowerBody', Pric: '23$', Followed: 'False' },
-    { id: '15', Procedure: 'Male Full Legs', NavbarClass: 'LowerBody', Pric: '23$', Followed: 'False' }
-  ],
-  FullBody: [
-
-    { id: '1', Procedure: 'Female Full Body', NavbarClass: 'FullBody', Pric: '23$', Followed: 'False' },
-    { id: '2', Procedure: 'Female Full Body (excludes back & shoulders)', NavbarClass: 'FullBody', Pric: '23$', Followed: 'False' },
-    { id: '3', Procedure: 'Male Full Body', NavbarClass: 'FullBody', Pric: '23$', Followed: 'False' }
-  ],
-  PathMen: ['Men'],
-  PathWomen: ['Women'],
-  InformationNet: {
-    text1: ['Our experienced therapists will take your skin and hair type into account before creating a personalised treatment plan.'],
-    text2: ['Our lasers use a large treatment spot size which allows multiple hair follicles to be targeted at the same time. '],
-    text3: ['The Candela GentleLASE Pro is designed to work for clients with dark hair and lighter skin, while the GentleYAG Pro works best on a darker skin tone.'],
-    text4: ['With each session, hair is reduced. We recommend an initial course of 6-12 treatments, spaced 4 weeks apart (depending on area and skin tone).'],
-    Mimg1: ['https://www.laserclinics.co.uk/globalassets/mens-laser-after-359x318-1.jpg'],
-    Mimg2: ['https://www.laserclinics.co.uk/globalassets/mens-laser-consult-359x318.jpg'],
-    Mimg3: ['https://www.laserclinics.co.uk/globalassets/mens-laser-359x318.jpg'],
-    Wimg1: ['https://www.laserclinics.co.uk/contentassets/a9e6051552e242ba8ca6513dc81ee148/legs-11-359x318.jpg'],
-    Wimg2: ['https://www.laserclinics.co.uk/contentassets/e1922bf74756449a9f55c9e9fbbf0c37/legs-10-359x318.jpg'],
-    Wimg3: ['https://www.laserclinics.co.uk/contentassets/5cb5d3490dd54c989448e28611013522/ladies-laser-final.jpg'],
-  },
   Poster: [
     {
       title: 'Get that glow',
@@ -107,10 +100,40 @@ let initialState = {
       img: 'https://www.laserclinics.co.uk/contentassets/3d20614fc4d54bf49ba6f98338be3562/df-icon-banner-e0ae9b.png',
     },
   ],
+  index: 0
 }
-const LaserHairRemovalreducer = (state = initialState) => {
-  return {
-    ...state
+const LaserHairRemovalreducer = (state = initialState, action) => {
+  switch (action.type) {
+    case LASER_PROCEDURE_IS_BOKED: {
+      let stateCopy = { ...state };
+      stateCopy.Procedures = [...state.Procedures];
+      if (stateCopy.Procedures[action.ClassId][action.ProcedureId].NavbarClass === action.ProcedureClass) {
+        if (stateCopy.Procedures[action.ClassId][action.ProcedureId].Booking === true) {
+          stateCopy.Procedures[action.ClassId][action.ProcedureId].Booking = false;
+        } else
+          stateCopy.Procedures[action.ClassId][action.ProcedureId].Booking = true;
+      }
+      return stateCopy
+    };
+    case ALL_LASER_PROCEDURE_IS_BOKED: {
+      let stateCopy = { ...state };
+      stateCopy.Procedures = [...state.Procedures];
+      for (var i = 0; i < stateCopy.Procedures.length; i++) {
+        for (var k = 0; k < stateCopy.Procedures[i].length; k++) {
+          if (stateCopy.Procedures[i][k].Booking === true) {
+            stateCopy.Procedures[i][k].Booking = false;
+          };
+        };
+      };
+      return stateCopy
+    };
+    case LASER_PROCEDURE_TYPE: {
+      return { ...state, index: action.index }
+    };
+    default: return state;
   };
-}
+};
+export const LaserProcedureIsBooked = (ClassId, ProcedureId, ProcedureClass) => ({ type: LASER_PROCEDURE_IS_BOKED, ClassId, ProcedureId, ProcedureClass })
+export const AllLaserProcedureIsBooked = () => ({ type: ALL_LASER_PROCEDURE_IS_BOKED })
+export const setLaserProcedureindex = (index) => ({ type: LASER_PROCEDURE_TYPE, index })
 export default LaserHairRemovalreducer;

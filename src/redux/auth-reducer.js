@@ -1,4 +1,6 @@
+import { UNSAFE_NavigationContext } from "react-router-dom";
 import { authAPI } from "../API/API";
+import { getMyProfileThunk, getMyStatus } from "./Profile-reducer";
 
 const SET_USERS_DATA = 'SET_USERS_DATA';
 let initialState = {
@@ -6,7 +8,6 @@ let initialState = {
    email: null,
    login: null,
    isAuth: false,
-   img: 'https://i.pinimg.com/736x/cf/04/c1/cf04c1f86d5d9920131276f4db7ea7bf.jpg',
 }
 const authReducer = (state = initialState, action) => {
    switch (action.type) {
@@ -27,16 +28,16 @@ export const getAuthUsersDataThunk = (id) => (dispatch) => {
       if (response.data.resultCode === 0) {
          let { id, login, email } = response.data.data;
          dispatch(SetAuthUserData(id, email, login, true));
+         dispatch(getMyProfileThunk(id));
+         dispatch(getMyStatus(id));
       }
    });
 }
-export const login = (email, password, rememberMe) => (dispatch) => {
-   authAPI.login(email, password, rememberMe)
-      .then(response => {
-         if (response.data.resultCode === 0) {
-            dispatch(getAuthUsersDataThunk())
-         }
-      });
+export const login = (email, password, rememberMe) => async (dispatch) => {
+   let response = await authAPI.login(email, password, rememberMe)
+   if (response.data.resultCode === 0) {
+      dispatch(getAuthUsersDataThunk())
+   }
 }
 export const logout = () => (dispatch) => {
    authAPI.logout()

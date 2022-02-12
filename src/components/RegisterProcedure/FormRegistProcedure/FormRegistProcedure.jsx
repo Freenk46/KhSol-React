@@ -9,7 +9,7 @@ const FormRegistProcedure = (props) => {
     props.AddNewProcedureCart(formData);
   };
   return (
-    <AddProcedureReduxForm UpdateProcedureNames={UpdateProcedureNames} options={options} ProcedureNames={ProcedureNames} onSubmit={onSubmit} />
+    <AddProcedureReduxForm options={options} ProcedureNames={ProcedureNames} onSubmit={onSubmit} />
   );
 };
 

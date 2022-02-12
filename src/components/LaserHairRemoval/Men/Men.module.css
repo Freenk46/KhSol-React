@@ -1,11 +1,12 @@
 .Menwrapper {
     display: grid;
     grid-template-areas:
-        "p "
-        "n "
-        "c "
-        "i "
-        "b ";
+        "p p"
+        "a a"
+        "n n"
+        "c c"
+        "i i"
+        "b b";
     background-color: rgb(250, 236, 238);
 }
 .PricNavbar {
@@ -24,7 +25,10 @@
     align-items: center;
     margin-bottom: 60px;
 }
-
+.a {
+    grid-area: a;
+    margin-bottom: 50px;
+}
 .c {
     grid-area: c;
 

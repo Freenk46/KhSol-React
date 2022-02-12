@@ -4,11 +4,14 @@ import s from "./CartProcedure.module.css"
 const CartProcedure = (props) => {
    let ProceduresData = props.CartProcedure.map((E) =>
       <CartProcedureItem id={E.id} ProcedureName={E.ProcedureName} ProcedureClass={E.ProcedureClass}
-         ChangeNewId={props.ChangeNewId}
+         ClassId={E.ClassId}
+         ProcedureId={E.ProcedureId}
+         LaserIsBooked={props.LaserIsBooked}
+         TreatmentIsBooked={props.TreatmentIsBooked}
          DelNewProcedureCart={props.DelNewProcedureCart}
-         Gender={E.Gender} Time={E.Time} When={E.When} Price={E.Price} />);
+         UnBooking={props.UnBooking}
+         When={E.When} Price={E.Price} />);
    return (
-
       <table className={s.table_wrapper}>
          <thead className={s.table_header}  >
             <tr>
@@ -16,7 +19,6 @@ const CartProcedure = (props) => {
                <td>ProcedureName</td>
                <td>ProcedureClass</td>
                <td>When</td>
-               <td>ProcedureTime</td>
                <td>Price</td>
                <td>Edit</td>
             </tr>
@@ -24,9 +26,7 @@ const CartProcedure = (props) => {
          <tbody>
             {ProceduresData}
          </tbody>
-
       </table >
-
    )
 }
 export default CartProcedure;

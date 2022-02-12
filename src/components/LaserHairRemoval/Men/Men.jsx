@@ -1,30 +1,38 @@
-
 import InformationNet from '../../InformationNet/InformationNet';
-
-import LaserPicCard from '../LaserPric/LaserPicCard';
-import LaserPricNavbar from '../LaserPricNavbar/LaserPricNavbar';
 import s from './Men.module.css';
+import PricCard from '../../PricCard/PriCard';
+import PricNavbar from '../../PricNavbar/PricNavbar';
+import Poster from '../../Poster/Poster';
+import About from '../../About/About';
 const Men = (props) => {
-
     return (
         <div className={s.Menwrapper}>
             <div className={s.p} >
-
+                <Poster Poster={props.Poster} />
+            </div>
+            <div className={s.a}>
+                <About About={props.About} />
             </div>
             <div className={s.c}>
                 <h1>LaserHairRemoval</h1>
             </div>
             <div className={s.n}>
-                <InformationNet text1={props.text1} text2={props.text2} text3={props.text3} text4={props.text4}
-                    img1={props.Mimg1} img2={props.Mimg2} img3={props.Mimg3} />
+                <InformationNet Net={props.Net} />
             </div>
             <div className={s.PricNavbar}>
-                <LaserPricNavbar Path={props.Path} PricNavbarDate={props.LHRPricNavbarDate} />
+
+                <PricNavbar PricNavbarData={props.LHRPricNavbarData}
+                    setProcedureType={props.setLaserProcedureindex} />
             </div>
             <div className={s.LaserPricboxs}>
-                <LaserPicCard state={props.state} />
+                <PricCard
+                    index={props.index}
+                    ProcedureIsBooked={props.LaserProcedureIsBooked}
+                    AddNewProcedureCart={props.AddNewProcedureCart}
+                    Net={props.Net}
+                    login={props.login} email={props.email} Procedures={props.LaserProcedures} isAuth={props.isAuth} />
             </div>
         </div>
     );
-}
+};
 export default Men;  

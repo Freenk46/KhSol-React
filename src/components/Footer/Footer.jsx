@@ -1,11 +1,12 @@
-import s from './BottomMenu.module.css';
+import s from './Footer.module.css';
 import { NavLink } from 'react-router-dom';
 import HeaderNavbaritem from '../Header/HeaderNavbaritem/HederNavbaritem';
 import Navbaritem from '../Navbar/Navbaritem/Navbaritem';
 import { AiOutlineCaretUp } from "react-icons/ai";
-const BottomMenu = (props) => {
-    let HeaderNavbarElements = props.HeaderNavbarDate.map((E) => <HeaderNavbaritem name={E.name} HeaderNavbarPath={E.HeaderNavbarPath} />);
-    let NavbarElements = props.NavbarDate.map((E) => <Navbaritem name={E.name} NavbarPath={E.NavbarPath} HeaderNavbarPath={E.HeaderNavbarPath} />);
+const Footer = (props) => {
+    let HeaderNavbarElements = props.HeaderNavbarDate.map((E) => <HeaderNavbaritem key={E.id} name={E.name} HeaderNavbarPath={E.NavbarPath} />);
+    let NavbarElements = props.NavbarDate.map((E) => <Navbaritem key={E.id} name={E.name} NavbarPath={E.NavbarPath} />);
+    let FNDElements = props.FND.map((E) => <Navbaritem key={E.id} name={E.name} NavbarPath={E.NavbarPath} />);
     return (
         <div className={s.Footer_Wrapper}>
             <div className={s.Footer_Conteiner}>
@@ -22,7 +23,7 @@ const BottomMenu = (props) => {
                         {NavbarElements}
                     </div>
                     <div className={s.Contact_Menu}>
-                        {NavbarElements}
+                        {FNDElements}
                     </div>
                 </div>
                 <span className={s.AiOutlineCaretUp}>
@@ -32,4 +33,4 @@ const BottomMenu = (props) => {
         </div>
     );
 }
-export default BottomMenu;
+export default Footer;
