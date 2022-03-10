@@ -11,12 +11,13 @@ const Pricitme = (props) => {
             ProcedureClass: props.NavbarClass,
             Time: '12/07/2021 05:04 PM',
             Price: props.Pric,
-            ClassId: props.index
+            ClassId: props.index,
+            GenderId: props.GenderId,
         };
         if (!props.isAuth) {
             return navigate("/Login");
         } else
-            props.ProcedureIsBooked(props.index, props.id, props.NavbarClass);
+            props.ProcedureIsBooked(props.index, props.id, props.NavbarClass, props.GenderId);
         props.AddNewProcedureCart(formData);
     }
     return (

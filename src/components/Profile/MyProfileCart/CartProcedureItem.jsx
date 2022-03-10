@@ -5,7 +5,7 @@ const CartProcedureItem = (props) => {
 
    let DelNewProcedureCart = () => {
       props.DelNewProcedureCart(props.id);
-      props.LaserIsBooked(props.ClassId, props.ProcedureId, props.ProcedureClass)
+      props.LaserIsBooked(props.ClassId, props.ProcedureId, props.ProcedureClass, props.GenderId)
       props.TreatmentIsBooked(props.ClassId, props.ProcedureId, props.ProcedureClass)
 
    }

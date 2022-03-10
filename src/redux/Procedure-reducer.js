@@ -1,14 +1,16 @@
+import { ProcedureAPI, AdminAPI } from "../API/RestAPI";
 const ADD_ROCEDURE_CART = 'ADD_ROCEDURE_CART';
 const DEL_NEW_PROCEDURE_CART = 'DEL_NEW_PROCEDURE_CART';
 const BAY_NEW_ROCEDURE = 'BAY_NEW_ROCEDURE';
-
+const SET_PROCEDURES = 'SET_PROCEDURES';
+const SET_PROCEDURES_TYPE = 'SET_PROCEDURES_TYPE';
+const SET_PROCEDURES_CLASS = 'SET_PROCEDURES_CLASS';
 let initialState = {
-  MyProcedure: [
-
-  ],
-  CartProcedure: [
-
-  ],
+  Procedure: [],
+  ProcedureClass: [],
+  ProcedureType: [],
+  MyProcedure: [],
+  CartProcedure: [],
   NewElementWhen: '12/07/2021 05:04 PM',
   QuantityCart: 0,
   totalpriceCart: 0,
@@ -64,6 +66,7 @@ const ProcedureReducer = (state = initialState, action) => {
         Price: action.FormData.Price,
         ClassId: action.FormData.ClassId,
         ProcedureId: action.FormData.ProcedureId,
+        GenderId: action.FormData.GenderId,
       };
       return {
         ...state,
@@ -72,13 +75,42 @@ const ProcedureReducer = (state = initialState, action) => {
         CartProcedure: [...state.CartProcedure, { ...NewProcedure }],
       };
     };
+    case SET_PROCEDURES: {
+      return { ...state, Procedure: action.procedures }
+    }
+    case SET_PROCEDURES_TYPE: {
+      return { ...state, ProcedureType: action.Type }
+    }
+    case SET_PROCEDURES_CLASS: {
+      return { ...state, ProcedureClass: action.Class }
+    }
 
     default:
       return state;
   };
 };
+export const setProcedures = (procedures) => ({ type: SET_PROCEDURES, procedures })
+export const setClass = (Class) => ({ type: SET_PROCEDURES_CLASS, Class })
+export const setType = (Type) => ({ type: SET_PROCEDURES_TYPE, Type })
 export const AddNewProcedureCart = (FormData) => ({ type: ADD_ROCEDURE_CART, FormData });
 export const DelNewProcedureCart = (id) => ({ type: DEL_NEW_PROCEDURE_CART, id });
 export const BayNewProcedure = () => ({ type: BAY_NEW_ROCEDURE });
+
+
+export const getAllProcedure = () => async (dispatch) => {
+  const response = await ProcedureAPI.getAllProcedure()
+  dispatch(setProcedures(response.data));
+}
+
+
+export const getAllProcedureClass = () => async (dispatch) => {
+  const response = await AdminAPI.getAllClass()
+  dispatch(setClass(response.data));
+}
+
+export const getAllProcedureType = () => async (dispatch) => {
+  const response = await AdminAPI.getAllType()
+  dispatch(setType(response.data));
+}
 
 export default ProcedureReducer;

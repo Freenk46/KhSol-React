@@ -33,7 +33,7 @@ const LHR = (props) => {
             </div>
             <div className={s.btn_conteiner} >
                <button className={s.btn_1} >SEE ALL LASER HAIR</button>
-               <button className={s.btn_2}>LEARN MORE</button>
+               <button className={s.btn_2}><NavLink to="/LaserHairRemoval" className={s.btn_Nav}>LEARN MORE</NavLink></button>
             </div>
          </div>
       </div >

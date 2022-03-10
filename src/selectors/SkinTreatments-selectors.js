@@ -13,4 +13,7 @@ export const getTreatmentsAbout = (state) => {
 export const getindex = (state) => {
    return state.SkinTreatmentsreducer.index;
 }
+export const getGenderId = (state) => {
+   return state.SkinTreatmentsreducer.GenderId;
+}
 

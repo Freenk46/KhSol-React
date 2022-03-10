@@ -14,14 +14,17 @@ import MyProfileCartConteiner from '../Profile/MyProfileCart/MyProfileCartContei
 import MyProfileProcedureConteiner from '../Profile/MyProfileProcedures/MyProfileProcedureConteiner';
 import MyProfileSettingsConteiner from '../Profile/MyProfileSettings/MyProfileSettingsConteiner';
 import MyProfileMessageConteiner from '../Profile/MyProfileMessage/MyProfileMessageConteiner';
-import Men from '../LaserHairRemoval/Men/Men';
 import MenConteiner from '../LaserHairRemoval/Men/MenConteiner';
 import WomenConteiner from '../LaserHairRemoval/Women/WomenConteiner';
+import AdminConteiner from '../Admin/AdminConteiner';
+
 
 
 const COntentBLock = (props) => {
   return (
     <Routes>
+      <Route path='/ADMIN' element={<AdminConteiner />} />
+
       <Route path='/MyProfile/Cart' element={<MyProfileCartConteiner />} />
       <Route path='/MyProfile/MyProcedure' element={<MyProfileProcedureConteiner />} />
       <Route path='/MyProfile/Setting' element={<MyProfileSettingsConteiner />} />

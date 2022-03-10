@@ -1,7 +1,7 @@
 import s from './Header.module.css';
-import { NavLink, useNavigate } from 'react-router-dom';
+import { NavLink } from 'react-router-dom';
 import HeaderNavbaritem from './HeaderNavbaritem/HederNavbaritem';
-import Preloader from '../Common/Preloader/Preloader';
+
 
 const Header = (props) => {
     const logout = props.logout
@@ -23,6 +23,7 @@ const Header = (props) => {
                     {HeaderNavbarElements}
                 </ul>
             </div>
+            <NavLink className={s.admin_nav} to="/ADMIN"> ადმინი</NavLink>
             <div className={s.Header_end_conteiner}>
 
                 <div className={s.Cart_conteiner}>

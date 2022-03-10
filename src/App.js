@@ -13,8 +13,12 @@ import React, { PureComponent } from 'react';
 import { getMyProfileThunk, getMyStatus } from '../src/redux/Profile-reducer';
 import { getid } from './selectors/auth-selectors';
 import { getProfile } from './selectors/Profile-selectors';
+import { getAllProcedureClass, getAllProcedureType } from './redux/Procedure-reducer';
 class App extends PureComponent {
     componentDidMount() {
+
+        this.props.getAllProcedureClass();
+        this.props.getAllProcedureType();
         this.props.InitialaizedApp();
     }
     render() {
@@ -51,4 +55,4 @@ const mapStateToProps = (state) => ({
 });
 
 export default compose(
-    connect(mapStateToProps, { InitialaizedApp, getMyProfileThunk, getMyStatus }))(App);
+    connect(mapStateToProps, { InitialaizedApp, getMyProfileThunk, getMyStatus, getAllProcedureClass, getAllProcedureType }))(App);

@@ -20,3 +20,10 @@ export const getLaserNet = (state) => {
 export const getLaserindex = (state) => {
    return state.LaserHairRemovalreducer.index;
 }
+
+export const getMenGenderId = (state) => {
+   return state.LaserHairRemovalreducer.Men;
+}
+export const getWomenGenderId = (state) => {
+   return state.LaserHairRemovalreducer.Women;
+}

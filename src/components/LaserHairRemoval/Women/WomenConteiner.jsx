@@ -5,7 +5,7 @@ import { connect } from 'react-redux';
 import { AddNewProcedureCart, } from '../../../redux/Procedure-reducer';
 import { LaserProcedureIsBooked, setLaserProcedureindex } from '../../../redux/LaserHairRemoval-reducer';
 import { getemail, getlogin, getid, getisAuth } from '../../../selectors/auth-selectors';
-import { getLaserPricNavbarData, getLaserProcedures, getLaserPoster, getLaserAbout, getLaserNet, getLaserindex } from '../../../selectors/LaserHairRemoval-selectors';
+import { getLaserPricNavbarData, getLaserProcedures, getLaserPoster, getLaserAbout, getLaserNet, getLaserindex, getWomenGenderId } from '../../../selectors/LaserHairRemoval-selectors';
 class WomenConteiner extends PureComponent {
    componentDidMount() {
    }
@@ -25,6 +25,7 @@ let mapStateToProps = (state) => {
       About: getLaserAbout(state),
       Net: getLaserNet(state),
       index: getLaserindex(state),
+      GenderId: getWomenGenderId(state),
    }
 }
 export default compose(

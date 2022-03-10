@@ -1,4 +1,5 @@
 
+import { AdminAPI } from "../API/RestAPI";
 import { getAuthUsersDataThunk } from "./auth-reducer";
 
 const INITIALAIZED_SUCCESS = 'INITIALAIZED_SUCCESS';
@@ -48,4 +49,16 @@ export const InitialaizedApp = () => (dispatch) => {
       });
 
 }
-export default AppReducer;
+export const AddProcedureClass = (classData) => async (dispatch) => {
+   const response = await AdminAPI.addProcedureClass(classData)
+   return response.data
+}
+export const AddProcedureType = (typeData) => async (dispatch) => {
+   const response = await AdminAPI.addProcedureType(typeData)
+   return response.data
+}
+export const addProcedure = (ProceduData) => async (dispatch) => {
+   const response = await AdminAPI.addProcedure(ProceduData)
+   return response.data
+}
+export default AppReducer; 

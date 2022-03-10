@@ -5,7 +5,7 @@ import { connect } from 'react-redux'
 import { TreatmentProcedureIsBooked, setProcedureType } from '../../redux/SkinTreatments-reducer';
 import { AddNewProcedureCart, } from '../../redux/Procedure-reducer';
 import { getemail, getlogin, getid, getisAuth } from '../../selectors/auth-selectors'
-import { getTreatmentsPricNavbarData, getTreatmentProcedure, getTreatmentsPoster, getTreatmentsAbout, getindex } from '../../selectors/SkinTreatments-selectors'
+import { getTreatmentsPricNavbarData, getTreatmentProcedure, getTreatmentsPoster, getTreatmentsAbout, getindex, getGenderId } from '../../selectors/SkinTreatments-selectors'
 class SkinTreatmentsConteiner extends PureComponent {
    componentDidMount() {
    }
@@ -24,6 +24,7 @@ let mapStateToProps = (state) => {
       Poster: getTreatmentsPoster(state),
       About: getTreatmentsAbout(state),
       index: getindex(state),
+      GenderId: getGenderId(state)
    }
 }
 export default compose(

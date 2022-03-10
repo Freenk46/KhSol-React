@@ -1,4 +1,3 @@
-import { UNSAFE_NavigationContext } from "react-router-dom";
 import { authAPI } from "../API/API";
 import { getMyProfileThunk, getMyStatus } from "./Profile-reducer";
 

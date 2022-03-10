@@ -5,6 +5,7 @@ const CartProcedure = (props) => {
    let ProceduresData = props.CartProcedure.map((E) =>
       <CartProcedureItem id={E.id} ProcedureName={E.ProcedureName} ProcedureClass={E.ProcedureClass}
          ClassId={E.ClassId}
+         GenderId={E.GenderId}
          ProcedureId={E.ProcedureId}
          LaserIsBooked={props.LaserIsBooked}
          TreatmentIsBooked={props.TreatmentIsBooked}

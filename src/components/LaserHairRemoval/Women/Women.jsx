@@ -27,6 +27,7 @@ const Women = (props) => {
             </div>
             <div className={s.LaserPricboxs}>
                 <PricCard
+                    GenderId={props.GenderId}
                     index={props.index}
                     ProcedureIsBooked={props.LaserProcedureIsBooked}
                     AddNewProcedureCart={props.AddNewProcedureCart}

@@ -13,5 +13,11 @@ export const getTotalpriceCart = (state) => {
 export const getQuantityCart = (state) => {
    return state.ProcedureReducer.QuantityCart;
 }
+export const getClass = (state) => {
+   return state.ProcedureReducer.ProcedureClass;
+}
+export const getType = (state) => {
+   return state.ProcedureReducer.ProcedureType;
+}
 
 

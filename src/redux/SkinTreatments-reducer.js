@@ -5,42 +5,44 @@ const TOGGLE_PROCEDURE_TYPE = 'TOGGLE_PROCEDURE_TYPE';
 let initialState = {
   Procedures: [
     [
-      { id: 0, Procedure: 'Microdermabrasion Express', NavbarClass: 'Microdermabrasion', Duration: '20m', Pric: 232, Booking: false },
-      { id: 1, Procedure: 'Microdermabrasion Refine', NavbarClass: 'Microdermabrasion', Duration: '35m', Pric: 231, Booking: false },
-      { id: 2, Procedure: 'Microdermabrasion Body', NavbarClass: 'Microdermabrasion', Duration: '40m', Pric: 231, Booking: false },
-      { id: 3, Procedure: 'Extractions', NavbarClass: 'Microdermabrasion', Duration: '5m', Pric: 231, Booking: false },
-    ],
-    [
-      { id: 0, Procedure: 'Rejuvapen Decolletage', NavbarClass: 'Rejuvapen', Duration: '60m', Pric: 23, Prerequisite: '?', Booking: false },
-      { id: 1, Procedure: 'Rejuvapen Breasts', NavbarClass: 'Rejuvapen', Duration: '45m', Pric: 23, Prerequisite: '?', Booking: false },
-      { id: 2, Procedure: 'Rejuvapen Neck+LED', NavbarClass: 'Rejuvapen', Duration: '45m', Pric: 23, Prerequisite: '?', Booking: false },
-      { id: 3, Procedure: 'Rejuvapen Face', NavbarClass: 'Rejuvapen', Duration: '60m', Pric: 23, Prerequisite: '?', Booking: false },
-      { id: 4, Procedure: 'Rejuvapen Face+LED', NavbarClass: 'Rejuvapen', Duration: '80m', Pric: 23, Prerequisite: '?', Booking: false },
-      { id: 5, Procedure: 'Rejuvapen Hips', NavbarClass: 'Rejuvapen', Duration: '80m', Pric: 22, Prerequisite: '?', Booking: false },
-      { id: 6, Procedure: 'Rejuvapen Thighs', NavbarClass: 'Rejuvapen', Duration: '80m', Pric: 23, Prerequisite: '?', Booking: false },
-      { id: 7, Procedure: 'Rejuvapen Buttocks', NavbarClass: 'Rejuvapen', Duration: '60m', Pric: 23, Prerequisite: '?', Booking: false },
-      { id: 8, Procedure: 'Rejuvapen Stomach', NavbarClass: 'Rejuvapen', Duration: '45m', Pric: 23, Prerequisite: '?', Booking: false },
-      { id: 9, Procedure: 'Rejuvapen Face&Neck+LED', NavbarClass: 'Rejuvapen', Duration: '90m', Pric: 23, Prerequisite: '?', Booking: false },
-      { id: 10, Procedure: 'Rejuvapen Bottom', NavbarClass: 'Rejuvapen', Duration: '60m', Pric: 23, Prerequisite: '?', Booking: false },
-    ],
-    [
-      { id: 0, Procedure: 'LEDYellow(AddOn)', NavbarClass: 'LEDlightTherapy', Pric: 23, Duration: '15m', Booking: false },
-      { id: 1, Procedure: 'LEDYellow', NavbarClass: 'LEDlightTherapy', Pric: 23, Duration: '20m', Booking: false },
-      { id: 2, Procedure: 'LEDBlue', NavbarClass: 'LEDlightTherapy', Pric: 23, Duration: '30m', Booking: false },
-    ],
-    [
-      { id: 0, Procedure: 'HydraFacial Express', NavbarClass: 'HydraFacial', Pric: 233, Duration: '30m', Booking: false },
-      { id: 1, Procedure: 'HydraFacial (Deluxe)', NavbarClass: 'HydraFacial', Pric: 231, Duration: '45m', Booking: false },
-      { id: 2, Procedure: 'HydraFacial (PlatinumAnti-Acne)', NavbarClass: 'HydraFacial', Pric: 23, Duration: '50m', Booking: false },
-      { id: 3, Procedure: 'HydraFacial (PlatinumCollagen)', NavbarClass: 'HydraFacial', Pric: 223, Duration: '50m', Booking: false },
-      { id: 4, Procedure: 'HydraFacial (PlatinumPigmentation SunDamage)', NavbarClass: 'HydraFacial', Pric: 233, Duration: '50m', Booking: false },
-      { id: 5, Procedure: 'HydraFacial (PlatinumAnti-Ageing)', NavbarClass: 'HydraFacial', Pric: 213, Duration: '50m', Booking: false },
-      { id: 6, Procedure: 'HydraFacial (Deluxe12 Month Bundle)', NavbarClass: 'HydraFacial', Pric: 21, Duration: '45m', Booking: false },
-    ],
-    [
-      { id: 0, Procedure: 'institut PeelAccelerator', NavbarClass: 'CosmeticGradePeels', Pric: 23, Duration: '25m', Booking: false },
-      { id: 1, Procedure: 'institut AHA Enzymatic Micro Peel + LED', NavbarClass: 'CosmeticGradePeels', Pric: 23, Duration: '30m', Booking: false },
-      { id: 2, Procedure: 'institut Ageless Peel', NavbarClass: 'CosmeticGradePeels', Pric: 23, Duration: '30m', Booking: false }
+      [
+        { id: 0, Procedure: 'Microdermabrasion Express', NavbarClass: 'Microdermabrasion', Duration: '20m', Pric: 232, Booking: false },
+        { id: 1, Procedure: 'Microdermabrasion Refine', NavbarClass: 'Microdermabrasion', Duration: '35m', Pric: 231, Booking: false },
+        { id: 2, Procedure: 'Microdermabrasion Body', NavbarClass: 'Microdermabrasion', Duration: '40m', Pric: 231, Booking: false },
+        { id: 3, Procedure: 'Extractions', NavbarClass: 'Microdermabrasion', Duration: '5m', Pric: 231, Booking: false },
+      ],
+      [
+        { id: 0, Procedure: 'Rejuvapen Decolletage', NavbarClass: 'Rejuvapen', Duration: '60m', Pric: 23, Prerequisite: '?', Booking: false },
+        { id: 1, Procedure: 'Rejuvapen Breasts', NavbarClass: 'Rejuvapen', Duration: '45m', Pric: 23, Prerequisite: '?', Booking: false },
+        { id: 2, Procedure: 'Rejuvapen Neck+LED', NavbarClass: 'Rejuvapen', Duration: '45m', Pric: 23, Prerequisite: '?', Booking: false },
+        { id: 3, Procedure: 'Rejuvapen Face', NavbarClass: 'Rejuvapen', Duration: '60m', Pric: 23, Prerequisite: '?', Booking: false },
+        { id: 4, Procedure: 'Rejuvapen Face+LED', NavbarClass: 'Rejuvapen', Duration: '80m', Pric: 23, Prerequisite: '?', Booking: false },
+        { id: 5, Procedure: 'Rejuvapen Hips', NavbarClass: 'Rejuvapen', Duration: '80m', Pric: 22, Prerequisite: '?', Booking: false },
+        { id: 6, Procedure: 'Rejuvapen Thighs', NavbarClass: 'Rejuvapen', Duration: '80m', Pric: 23, Prerequisite: '?', Booking: false },
+        { id: 7, Procedure: 'Rejuvapen Buttocks', NavbarClass: 'Rejuvapen', Duration: '60m', Pric: 23, Prerequisite: '?', Booking: false },
+        { id: 8, Procedure: 'Rejuvapen Stomach', NavbarClass: 'Rejuvapen', Duration: '45m', Pric: 23, Prerequisite: '?', Booking: false },
+        { id: 9, Procedure: 'Rejuvapen Face&Neck+LED', NavbarClass: 'Rejuvapen', Duration: '90m', Pric: 23, Prerequisite: '?', Booking: false },
+        { id: 10, Procedure: 'Rejuvapen Bottom', NavbarClass: 'Rejuvapen', Duration: '60m', Pric: 23, Prerequisite: '?', Booking: false },
+      ],
+      [
+        { id: 0, Procedure: 'LEDYellow(AddOn)', NavbarClass: 'LEDlightTherapy', Pric: 23, Duration: '15m', Booking: false },
+        { id: 1, Procedure: 'LEDYellow', NavbarClass: 'LEDlightTherapy', Pric: 23, Duration: '20m', Booking: false },
+        { id: 2, Procedure: 'LEDBlue', NavbarClass: 'LEDlightTherapy', Pric: 23, Duration: '30m', Booking: false },
+      ],
+      [
+        { id: 0, Procedure: 'HydraFacial Express', NavbarClass: 'HydraFacial', Pric: 233, Duration: '30m', Booking: false },
+        { id: 1, Procedure: 'HydraFacial (Deluxe)', NavbarClass: 'HydraFacial', Pric: 231, Duration: '45m', Booking: false },
+        { id: 2, Procedure: 'HydraFacial (PlatinumAnti-Acne)', NavbarClass: 'HydraFacial', Pric: 23, Duration: '50m', Booking: false },
+        { id: 3, Procedure: 'HydraFacial (PlatinumCollagen)', NavbarClass: 'HydraFacial', Pric: 223, Duration: '50m', Booking: false },
+        { id: 4, Procedure: 'HydraFacial (PlatinumPigmentation SunDamage)', NavbarClass: 'HydraFacial', Pric: 233, Duration: '50m', Booking: false },
+        { id: 5, Procedure: 'HydraFacial (PlatinumAnti-Ageing)', NavbarClass: 'HydraFacial', Pric: 213, Duration: '50m', Booking: false },
+        { id: 6, Procedure: 'HydraFacial (Deluxe12 Month Bundle)', NavbarClass: 'HydraFacial', Pric: 21, Duration: '45m', Booking: false },
+      ],
+      [
+        { id: 0, Procedure: 'institut PeelAccelerator', NavbarClass: 'CosmeticGradePeels', Pric: 23, Duration: '25m', Booking: false },
+        { id: 1, Procedure: 'institut AHA Enzymatic Micro Peel + LED', NavbarClass: 'CosmeticGradePeels', Pric: 23, Duration: '30m', Booking: false },
+        { id: 2, Procedure: 'institut Ageless Peel', NavbarClass: 'CosmeticGradePeels', Pric: 23, Duration: '30m', Booking: false }
+      ],
     ],
   ],
   PricNavData: [
@@ -70,7 +72,8 @@ let initialState = {
     { id: 2, Procedure: 'Microdermabrasion Body', NavbarClass: 'Microdermabrasion', },
     { id: 3, Procedure: 'Extractions', NavbarClass: 'Microdermabrasion', },
   ],
-  index: 0
+  index: 0,
+  GenderId: 0,
 
 }
 const SkinTreatmentsreducer = (state = initialState, action) => {
@@ -78,21 +81,21 @@ const SkinTreatmentsreducer = (state = initialState, action) => {
     case TREATMENT_PROCEDURE_IS_BOKED: {
       let stateCopy = { ...state };
       stateCopy.Procedures = [...state.Procedures];
-      if (stateCopy.Procedures[action.ClassId][action.ProcedureId].NavbarClass === action.NavbarClass) {
-        if (stateCopy.Procedures[action.ClassId][action.ProcedureId].Booking === true) {
-          stateCopy.Procedures[action.ClassId][action.ProcedureId].Booking = false;
+      if (stateCopy.Procedures[0][action.ClassId][action.ProcedureId].NavbarClass === action.NavbarClass) {
+        if (stateCopy.Procedures[0][action.ClassId][action.ProcedureId].Booking === true) {
+          stateCopy.Procedures[0][action.ClassId][action.ProcedureId].Booking = false;
         } else
-          stateCopy.Procedures[action.ClassId][action.ProcedureId].Booking = true;
+          stateCopy.Procedures[0][action.ClassId][action.ProcedureId].Booking = true;
       }
       return stateCopy
     }
     case ALL_BOOKED_REMOVAL: {
       let stateCopy = { ...state };
       stateCopy.Procedures = [...state.Procedures];
-      for (var i = 0; i < stateCopy.Procedures.length; i++) {
-        for (var k = 0; k < stateCopy.Procedures[i].length; k++) {
-          if (stateCopy.Procedures[i][k].Booking === true) {
-            stateCopy.Procedures[i][k].Booking = false;
+      for (var i = 0; i < stateCopy.Procedures[0].length; i++) {
+        for (var k = 0; k < stateCopy.Procedures[0][i].length; k++) {
+          if (stateCopy.Procedures[0][i][k].Booking === true) {
+            stateCopy.Procedures[0][i][k].Booking = false;
           };
         };
       };

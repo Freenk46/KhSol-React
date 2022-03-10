@@ -4,9 +4,11 @@ import s from './Pric.module.css';
 import Preloader from '../Common/Preloader/Preloader';
 const PricCard = (props) => {
    let index = props.index;
-   const PricitmeElements = props.Procedures[index].map((E) =>
+   let GenderId = props.GenderId;
+   const PricitmeElements = props.Procedures[GenderId][index].map((E) =>
       <Pricitme
          index={props.index}
+         GenderId={props.GenderId}
          key={E.id}
          Duration={E.Duration} Procedure={E.Procedure} Pric={E.Pric} NavbarClass={E.NavbarClass}
          Prerequisite={E.Prerequisite} id={E.id} login={props.login} email={props.email}
