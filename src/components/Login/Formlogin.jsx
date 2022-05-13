@@ -31,15 +31,6 @@ const Formlogin = (props) => {
                validate={[required, maxLengthCreator9]}
             />
          </div>
-         <div className="form-inputs">
-            <Field
-               type={"checkbox"}
-               className='form-input'
-               component={"input"}
-               name={"rememberMe"} />
-
-            <label className='form-label'>remember Me</label>
-         </div>
          <button className='form-input-btn'>
             login
          </button>
@@ -52,7 +43,8 @@ const Formlogin = (props) => {
 const LoginReduxForm = reduxForm({ form: 'login' })(Formlogin)
 const Login = (props) => {
    const onSubmit = (formData) => {
-      props.login(formData.email, formData.password, formData.rememberMe);
+
+      props.login(formData.email, formData.password);
    }
    if (props.isAuth) {
       return <Navigate to={"/MyProfile/Cart"} />

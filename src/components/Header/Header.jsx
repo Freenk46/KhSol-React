@@ -11,7 +11,6 @@ const Header = (props) => {
     }
     let HeaderNavbarElements = props.HeaderNavbarDate.map((E) => <HeaderNavbaritem key={E.id} name={E.name} HeaderNavbarPath={E.NavbarPath} />);
     return (
-
         <div className={s.wrapper}>
             <div className={s.Header_Logo_Conteiner}>
                 <NavLink to="/Home" >
@@ -25,7 +24,6 @@ const Header = (props) => {
             </div>
             <NavLink className={s.admin_nav} to="/ADMIN"> ადმინი</NavLink>
             <div className={s.Header_end_conteiner}>
-
                 <div className={s.Cart_conteiner}>
                     <div className={s.Cart_Logo_Conteiner}>
                         <NavLink to="/MyProfile/Cart" >
@@ -39,7 +37,6 @@ const Header = (props) => {
                 <button className={s.SignUp_Conteiner}>
                     {props.isAuth ? <button className={s.SignUp_Link} onClick={Logout}>Logout</button>
                         : <NavLink className={s.SignUp_Link} to="/login">Login</NavLink>}
-
                 </button>
             </div>
         </div >

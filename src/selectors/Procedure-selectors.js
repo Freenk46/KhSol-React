@@ -19,5 +19,9 @@ export const getClass = (state) => {
 export const getType = (state) => {
    return state.ProcedureReducer.ProcedureType;
 }
+export const getProcedure = (state) => {
+   return state.ProcedureReducer.Procedure;
+}
+
 
 

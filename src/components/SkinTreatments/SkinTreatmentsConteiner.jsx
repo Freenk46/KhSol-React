@@ -8,6 +8,7 @@ import { getemail, getlogin, getid, getisAuth } from '../../selectors/auth-selec
 import { getTreatmentsPricNavbarData, getTreatmentProcedure, getTreatmentsPoster, getTreatmentsAbout, getindex, getGenderId } from '../../selectors/SkinTreatments-selectors'
 class SkinTreatmentsConteiner extends PureComponent {
    componentDidMount() {
+
    }
    render() {
       return (<SkinTreatments  {...this.props} />)

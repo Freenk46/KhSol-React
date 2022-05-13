@@ -20,6 +20,12 @@ export const getIsFetching = (state) => {
 export const getServerInProgres = (state) => {
    return state.Usersreducer.getServerInProgres;
 }
-export const getUsersProfile = (state) => {
-   return state.Usersreducer.Profile;
+export const getUser = (state) => {
+   return state.Usersreducer.User;
+}
+export const getRoles = (state) => {
+   return state.Usersreducer.Roles;
+}
+export const getBasket = (state) => {
+   return state.Usersreducer.Basket;
 }

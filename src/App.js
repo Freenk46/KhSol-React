@@ -13,16 +13,19 @@ import React, { PureComponent } from 'react';
 import { getMyProfileThunk, getMyStatus } from '../src/redux/Profile-reducer';
 import { getid } from './selectors/auth-selectors';
 import { getProfile } from './selectors/Profile-selectors';
-import { getAllProcedureClass, getAllProcedureType } from './redux/Procedure-reducer';
+import { getAllProcedureClass, getAllProcedureType, getAllProcedure } from './redux/Procedure-reducer';
+import { getUsersThunkCreater, getAllUserRoles } from './redux/Users-reducer';
 class App extends PureComponent {
     componentDidMount() {
-
         this.props.getAllProcedureClass();
         this.props.getAllProcedureType();
-        this.props.InitialaizedApp();
+        // this.props.InitialaizedApp();
+        this.props.getAllProcedure();
+        this.props.getAllUserRoles();
+
     }
     render() {
-        if (!this.props.initialized) {
+        if (this.props.initialized) {
             return <Preloader />
         } return (
             <BrowserRouter>
@@ -55,4 +58,9 @@ const mapStateToProps = (state) => ({
 });
 
 export default compose(
-    connect(mapStateToProps, { InitialaizedApp, getMyProfileThunk, getMyStatus, getAllProcedureClass, getAllProcedureType }))(App);
+    connect(mapStateToProps,
+        {
+            InitialaizedApp, getMyProfileThunk, getMyStatus,
+            getAllProcedureClass, getAllProcedureType, getAllProcedure,
+            getUsersThunkCreater, getAllUserRoles
+        }))(App);

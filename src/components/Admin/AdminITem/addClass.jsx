@@ -7,6 +7,7 @@ import { AddProcedureClass } from '../../../redux/App-reducer';
 const ClassForm = (props) => {
    return (
       <form onSubmit={props.handleSubmit}>
+         <h1>კატეგორიის დამატება</h1>
          <div >
             <label >კატეგორიის სახელი</label>
             <Field

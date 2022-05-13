@@ -18,19 +18,19 @@ let Users = (props) => {
          props.users.map(u => <div key={u.id}>
             <span>
                <div>
-                  <NavLink to={'/profile/' + u.id}>
-                     <img className={s.usersPhoto} alt="xui" src={u.photos.small != null ? u.photos.small : "https://i.pinimg.com/originals/1b/f2/b8/1bf2b80b8d29d938deafddb4c393a653.jpg"} />
+                  <NavLink to={'/user/' + u.id}>
+                     <img className={s.usersPhoto} alt="xui" src={"https://i.pinimg.com/originals/1b/f2/b8/1bf2b80b8d29d938deafddb4c393a653.jpg"} />
                   </NavLink>
                </div>
                <div>
-                  {u.Gender}
+                  {u.email}
                </div>
             </span>
             <span>
                <span>
-                  <div>{u.name}</div>
-                  <div>{u.Surname}</div>
-                  <div>{u.Number}</div>
+                  <div>{u.profile.name}</div>
+                  <div>{u.profile.lastname}</div>
+                  <div>u.Number</div>
                </span>
                <span>
                   <div>'u.Location.country'</div>

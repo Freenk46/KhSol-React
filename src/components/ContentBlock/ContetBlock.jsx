@@ -1,7 +1,5 @@
 import { Routes, Route } from 'react-router-dom';
 import Form from '../../authRegister/Form';
-import RegisterProcedure from '../RegisterProcedure/RegisterProcedure';
-import UsersConteiner from '../Users/UsersConteiner';
 import ProfileConteiner from '../Profile/ProfileConteiner';
 import SkinTreatmentsConteiner from '../SkinTreatments/SkinTreatmentsConteiner';
 import FormAuth from '../Login/FormAuth';
@@ -20,6 +18,8 @@ import AdminConteiner from '../Admin/AdminConteiner';
 
 
 
+
+
 const COntentBLock = (props) => {
   return (
     <Routes>
@@ -33,10 +33,8 @@ const COntentBLock = (props) => {
       <Route path="/SkinTreatments" element={< SkinTreatmentsConteiner />} />
       <Route path="/Register" element={< Form />} />
       <Route path='/profile' element={<ProfileConteiner />} />
-      <Route path='/profile/:userId' element={<ProfileConteiner />} />
-      <Route path="/Users" element={<UsersConteiner />} />
+      <Route path='/user/:userId' element={<ProfileConteiner />} />
       <Route path="/Home" element={<HomeConteiner />} />
-      <Route path="/Procedure" element={<RegisterProcedure />} />
       <Route path="/Login" element={<FormAuth />} />
       <Route path="/CosmeticInjections" element={<CosmeticInjectionsConteiner />} />
       <Route path="/SkinCare" element={<SkinCareConteiner />} />

@@ -8,6 +8,7 @@ import { AddProcedureType } from '../../../redux/App-reducer';
 const TypeForm = (props) => {
    return (
       <form onSubmit={props.handleSubmit}>
+         <h1 > ტიპის დამატება</h1>
          <div >
             <label >ტიპის სახელი</label>
             <Field

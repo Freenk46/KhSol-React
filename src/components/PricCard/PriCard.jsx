@@ -1,7 +1,6 @@
 
 import Pricitme from './Pricitme';
 import s from './Pric.module.css';
-import Preloader from '../Common/Preloader/Preloader';
 const PricCard = (props) => {
    let index = props.index;
    let GenderId = props.GenderId;

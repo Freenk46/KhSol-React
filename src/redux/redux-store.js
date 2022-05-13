@@ -13,6 +13,8 @@ import MessagesReducer from "./Messages-reducer";
 import thunkMiddleware from "redux-thunk";
 import { reducer as formReducer } from 'redux-form'
 import AppReducer from "./App-reducer";
+
+
 let reducers = combineReducers({
     CosmeticInjectionsReducer: CosmeticInjectionsReducer,
     ProcedureReducer: ProcedureReducer,
@@ -27,6 +29,8 @@ let reducers = combineReducers({
     MessagesReducer: MessagesReducer,
     form: formReducer,
     AppReducer: AppReducer,
+
+
 
 });
 const composeEnhancers = window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ || compose;

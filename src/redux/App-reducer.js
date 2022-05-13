@@ -3,20 +3,18 @@ import { AdminAPI } from "../API/RestAPI";
 import { getAuthUsersDataThunk } from "./auth-reducer";
 
 const INITIALAIZED_SUCCESS = 'INITIALAIZED_SUCCESS';
-let initialState = {
 
+let initialState = {
    NbD: [
       { id: 0, name: 'LaserHairRemoval', NavbarPath: 'LaserHairRemoval', },
       { id: 1, name: 'SkinCare', NavbarPath: 'SkinCare' },
       { id: 2, name: 'CosmeticInjections ', NavbarPath: 'CosmeticInjections' },
-
    ],
    HNbD: [
       { id: 0, name: 'OurStory', NavbarPath: 'OurStory' },
       { id: 1, name: 'MedicalTeam', NavbarPath: 'MedicalTeam' },
       { id: 2, name: 'COVID Info', NavbarPath: 'COVID Info' },
-      { id: 3, name: 'Users', NavbarPath: 'Users' },
-      { id: 4, name: 'MyProfile', NavbarPath: 'MyProfile' }
+      { id: 3, name: 'MyProfile', NavbarPath: 'MyProfile' }
    ],
    FND: [
       { id: 0, name: 'Profile Cart', NavbarPath: 'MyProfile/Cart' },
@@ -25,7 +23,6 @@ let initialState = {
       { id: 3, name: 'Chat', NavbarPath: 'MyProfile/Chat' },
    ],
    initialized: false,
-   img: "https://media.istockphoto.com/vectors/property-corporate-icon-logo-sign-abstract-design-gold-color-on-black-vector-id1153638665?k=20&m=1153638665&s=612x612&w=0&h=0-mZ0r7xrF9LSSkosidcQ8MI7gmmN9guHC1JMChdClA="
 }
 const AppReducer = (state = initialState, action) => {
    switch (action.type) {
@@ -46,19 +43,39 @@ export const InitialaizedApp = () => (dispatch) => {
    Promise.all([promise])
       .then(() => {
          dispatch(InitialaizedSuccess());
+
       });
 
 }
-export const AddProcedureClass = (classData) => async (dispatch) => {
+
+export const AddProcedureClass = (classData) => async () => {
    const response = await AdminAPI.addProcedureClass(classData)
    return response.data
 }
-export const AddProcedureType = (typeData) => async (dispatch) => {
+export const AddProcedureType = (typeData) => async () => {
    const response = await AdminAPI.addProcedureType(typeData)
    return response.data
 }
-export const addProcedure = (ProceduData) => async (dispatch) => {
+export const addProcedure = (ProceduData) => async () => {
    const response = await AdminAPI.addProcedure(ProceduData)
    return response.data
 }
-export default AppReducer; 
+export const UpdateProcedureType = (typeData) => async () => {
+   const response = await AdminAPI.UpdateType(typeData)
+   return response.data
+}
+export const UpdateProcedureClass = (ClassData) => async () => {
+   const response = await AdminAPI.UpdateClass(ClassData)
+   return response.data
+}
+export const updateProcedure = (ProcedureData) => async () => {
+   const response = await AdminAPI.UpdateProcedure(ProcedureData)
+   return response.data
+}
+export const CreateRole = (RoleData) => async () => {
+   const response = await AdminAPI.CreateRole(RoleData)
+   return response.data
+}
+
+
+export default AppReducer;

@@ -1,3 +1,83 @@
 .admin_wrapper {
    display: flex;
 }
+.conteiner {
+   display: flex;
+   justify-content: space-between;
+}
+.Menu_conteiner {
+   margin-top: -40px;
+
+   height: 50px;
+   border-bottom: rgb(0, 0, 0) solid 0.5px;
+   border-top: rgb(0, 0, 0) solid 0.5px;
+   align-items: center;
+   display: flex;
+   background-color: white;
+   justify-content: space-between;
+}
+.Menu_list {
+   background-color: white;
+   margin: 10px 0;
+   align-items: center;
+   display: flex;
+}
+.Menu_list_item {
+   margin: 0 100px;
+   display: flex;
+   text-align: center;
+   justify-content: center;
+   align-items: center;
+   position: relative;
+   background-color: rgb(255, 254, 254);
+   color: rgb(0, 0, 0);
+   transition-duration: 0s;
+   text-decoration: none;
+   font-size: 20px;
+}
+.Menu_list_item:hover {
+   top: 2px;
+   color: rgb(0, 0, 0);
+}
+.table_wrapper {
+   font-family: Arial, Helvetica, sans-serif;
+   border-collapse: collapse;
+   width: 95%;
+   margin: 50px 40px;
+   font-size: 25px;
+   border: 1px solid #ddd;
+   font-size: 25px;
+}
+.table_header {
+   padding-top: 12px;
+   padding-bottom: 12px;
+   text-align: left;
+   background-color: #000000;
+   color: white;
+}
+.table_wrapper tr {
+   width: 100%;
+   border-bottom: 0.5px black solid;
+   height: 50px;
+}
+.table_wrapper td {
+   width: 20px;
+   border-bottom: 0.5px black solid;
+   text-align: center;
+}
+.tr:hover {
+   border-bottom: 0.5px pink solid;
+   height: 55px;
+   background-color: pink;
+}
+.table_wrapper tbody {
+   display: block;
+   width: 100%;
+   min-height: 100px;
+   max-height: 300px;
+   overflow: auto;
+}
+thead,
+tbody tr {
+   display: table;
+}
