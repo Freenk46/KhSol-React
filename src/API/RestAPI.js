@@ -2,29 +2,16 @@ import * as axios from 'axios';
 
 const instance = axios.create({
    withCredentials: true,
-   baseURL: 'http://localhost:5000/',
+   baseURL: 'http://localhost:5000',
 })
-export const authAPI = {
+instance.interceptors.request.use(function (config) {
+   config.headers.Authorization = `Bearrer ${localStorage.getItem('token')}`
+   return config;
+});
+export const authAPI2 = {
+
    Registration(email, password) {
       return axios.post('http://localhost:5000/auth/registration', { email: email, password: password })
-         .then(response => {
-            return response
-         })
-   },
-   login(email, password) {
-      return axios.post('http://localhost:5000/auth/login', { email: email, password: password })
-         .then(response => {
-            return response
-         })
-
-   },
-}
-export const ProfileAPI2 = {
-   getProfile(userId) {
-      return axios.get('http://localhost:5000/profile/', + userId)
-         .then(response => {
-            return response
-         })
    },
    UpdateProfile(ProfileData) {
       return axios.put('http://localhost:5000/profile/', { ProfileData: ProfileData })
@@ -33,19 +20,30 @@ export const ProfileAPI2 = {
          })
    },
 }
+export const basketAPI = {
+   getBasket(basketId) {
+      return axios.get(`http://localhost:5000/basket/${basketId}`)
+         .then(response => {
 
+            return response
+         })
+   },
+   addProcedureBasket() {
+
+   }
+}
 
 export const ProcedureAPI = {
    getAllProcedure() {
-      return axios.get('http://localhost:5000/users/')
+      return axios.get('http://localhost:5000/procedures/')
          .then(response => {
             return response
          })
    },
 }
 export const AdminAPI = {
-   getAllUsers() {
-      return axios.get('http://localhost:5000/users/')
+   getAllUsers(currentPage, pageSize) {
+      return axios.get(`http://localhost:5000/users?page=${currentPage}&limit=${pageSize}`)
          .then(response => {
             return response
          })
@@ -68,14 +66,14 @@ export const AdminAPI = {
             return response
          })
    },
-   CreateRole(value, description) {
-      return axios.post('http://localhost:5000/role ', { value: value, description: description })
+   CreateRole(RoleData) {
+      return axios.post('http://localhost:5000/roles ', { value: RoleData.value, description: RoleData.description })
          .then(response => {
             return response
          })
    },
-   getProfile(userId) {
-      return axios.get('http://localhost:5000/profile/  ' + userId)
+   getUser(userId) {
+      return axios.get(`http://localhost:5000/users/${userId} `)
          .then(response => {
             return response
          })
@@ -113,6 +111,50 @@ export const AdminAPI = {
             return response
          })
    },
+   UpdateType(typeData) {
+      return axios.put('http://localhost:5000/procedures/type/', {
+         name: typeData.name, id: typeData.id
+      })
+         .then(response => {
+            return response
+         })
+   },
+   UpdateClass(classData) {
+      return axios.put('http://localhost:5000/procedures/class/', {
+         name: classData.name, id: classData.id
+      })
+         .then(response => {
+            return response
+         })
+   },
+   UpdateProcedure(ProcedureData) {
+      return axios.put('http://localhost:5000/procedures/', {
+         name: ProcedureData.name, id: ProcedureData.id, duration: ProcedureData.duration, price: ProcedureData.price,
+         typeId: ProcedureData.typeId, classId: ProcedureData.classId, info: ProcedureData.info
+      })
+         .then(response => {
+            return response
+         })
+   },
+   getAllRoles() {
+      return axios.get('http://localhost:5000/roles/')
+         .then(response => {
+            return response
+         })
+   },
+   userBan(BanReason, userId) {
+      return axios.put('http://localhost:5000/users/ban ', { BanReason: BanReason, userId: userId })
+         .then(response => {
+            return response
+         })
+   },
+   AddUserRole(value, userId) {
+      return axios.post('http://localhost:5000/users/role ', { value: value, userId: userId })
+         .then(response => {
+            return response
+         })
+   },
+
 
 }
 
